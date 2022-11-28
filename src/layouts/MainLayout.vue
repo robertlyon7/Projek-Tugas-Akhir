@@ -288,7 +288,7 @@
             style="margin-top: 30px; margin-left: 15px"
           >
             <q-btn
-              :ripple="{ center: true }"
+              clickable v-ripple @click="$router.push('/ListingPage')"
               style="
                 background: #0c8ce9;
                 color: white;
