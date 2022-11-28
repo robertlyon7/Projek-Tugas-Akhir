@@ -1,1 +1,50 @@
 // app global css in SCSS form
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: Poppins-Semibold;
+  src: url(../fonts/Poppins-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: Poppins-Bold;
+  src: url(../fonts/Poppins-Bold.ttf);
+}
+
+@font-face {
+  font-family: Poppins-Light;
+  src: url(../fonts/Poppins-Light.ttf);
+}
+
+.poppins-semibold {
+  font-family: Poppins-Semibold;
+}
+
+.poppins-bold {
+  font-family: Poppins-Bold;
+}
+
+.poppins-light {
+  font-family: Poppins-Light;
+}
+
+.title-section {
+  margin: 70px;
+  font-size: 32px;
+  text-align: center;
+}
+
+q-card-section {
+  text-align: center;
+}
+
+.landing-title {
+  color: white;
+  font-size: 68px;
+}
+
+.card-icon {
+  align-items: center;
+}
