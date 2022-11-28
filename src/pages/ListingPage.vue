@@ -151,7 +151,7 @@
                   </q-card-section>
 
                   <!-- Notice v-close-popup -->
-                  <q-card-actions align="right">
+                  <q-card-actions>
                     <q-btn flat label="Search" color="primary" v-close-popup />
                   </q-card-actions>
                 </q-card>
@@ -203,6 +203,12 @@
     </q-layout>
   </div>
 </template>
+
+<style lang="sass" scoped>
+.example-item
+  height: 450px
+  width: 390px
+</style>  
 
 <script>
 import { defineComponent, ref } from "vue";
