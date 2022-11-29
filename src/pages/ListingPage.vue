@@ -4,7 +4,13 @@
       <!--header-->
       <q-header elevated>
         <q-toolbar>
-          <q-avatar size="44px" style="margin-left: 150px">
+          <q-avatar
+            clickable
+            v-ripple
+            @click="$router.push('/')"
+            size="44px"
+            style="margin-left: 150px"
+          >
             <img src="../assets/images/logo.svg" />
           </q-avatar>
 
@@ -208,7 +214,7 @@
 .example-item
   height: 450px
   width: 390px
-</style>  
+</style>
 
 <script>
 import { defineComponent, ref } from "vue";

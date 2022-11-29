@@ -14,6 +14,14 @@ const routes = [
     path: "/ListingPage",
     component: () => import("pages/ListingPage.vue"),
   },
+  {
+    path: "/SignPage",
+    component: () => import("pages/SignPage.vue"),
+  },
+  {
+    path: "/LoginPage",
+    component: () => import("pages/LoginPage.vue"),
+  },
 ];
 
 export default routes;
