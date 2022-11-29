@@ -51,10 +51,10 @@
                 class="text-center poppins-bold"
                 style="font-size: 30px; margin-top: 25px; margin-bottom: 15px"
               >
-                Log In
+                Sign Up
               </div>
               <div class="text-center poppins-medium" style="font-size: 18px">
-                Good To See You Again
+                Welcome To Nusantara
               </div>
             </q-card-section>
 
@@ -74,9 +74,9 @@
                       width: 400px;
                       height: 60px;
                     "
-                    placeholder="Email"
                     filled
                     v-model="Email"
+                    placeholder="Email"
                     lazy-rules
                   >
                     <template v-slot:prepend>
@@ -153,13 +153,13 @@
           </q-card>
           <div>
             <h6 class="text-center" style="color: #000000">
-              Dont have an account yet ?
+              Already a user ?
               <span
                 clickable
                 v-ripple
-                @click="$router.push('/SignPage')"
+                @click="$router.push('/LoginPage')"
                 style="color: #0c8ce9"
-                >Sign Up</span
+                >Log In</span
               >
             </h6>
           </div>

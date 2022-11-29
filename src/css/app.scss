@@ -18,6 +18,16 @@
   src: url(../fonts/Poppins-Light.ttf);
 }
 
+@font-face {
+  font-family: Poppins-Medium;
+  src: url(../fonts/Poppins-Medium.ttf);
+}
+
+@font-face {
+  font-family: Poppins-Regular;
+  src: url(../fonts/Poppins-Regular.ttf);
+}
+
 .poppins-semibold {
   font-family: Poppins-Semibold;
 }
@@ -28,6 +38,14 @@
 
 .poppins-light {
   font-family: Poppins-Light;
+}
+
+.poppins-medium {
+  font-family: Poppins-Medium;
+}
+
+.poppins-regular {
+  font-family: Poppins-Regular;
 }
 
 .title-section {
