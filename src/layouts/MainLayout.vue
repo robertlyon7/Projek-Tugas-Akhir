@@ -3,10 +3,10 @@
   <q-layout view="lHh lpr lFf" container style="height: 999px">
     <q-header style="height: 50px">
       <q-toolbar>
-        <q-avatar>
+        <q-avatar style="margin-left: 20px; margin-top: 5px;">
           <img src="../assets/images/logo.svg" />
         </q-avatar>
-        <q-toolbar-title class="poppins-semibold">Nusantara</q-toolbar-title>
+        <q-toolbar-title style="margin-top: 10px;" class="poppins-semibold">Nusantara</q-toolbar-title>
       </q-toolbar>
     </q-header>
 
@@ -288,7 +288,9 @@
             style="margin-top: 30px; margin-left: 15px"
           >
             <q-btn
-              clickable v-ripple @click="$router.push('/ListingPage')"
+              clickable
+              v-ripple
+              @click="$router.push('/ListingPage')"
               style="
                 background: #0c8ce9;
                 color: white;
@@ -329,7 +331,9 @@
             style="margin-top: 30px; margin-left: 300px"
           >
             <q-btn
-              :ripple="{ center: true }"
+              clickable
+              v-ripple
+              @click="$router.push('/BAHPage')"
               style="
                 margin-bottom: 150px;
                 background: #0c8ce9;
@@ -572,5 +576,3 @@ export default {
   },
 };
 </script>
-
-
