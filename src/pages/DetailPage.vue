@@ -92,7 +92,7 @@
         <q-page-container>
           <div>
             <q-banner>
-              <div class="column" style="height: 55px">
+              <div class="column" style="height: 55px; margin-top: -125px">
                 <div class="col-4 col-md-6">
                   <h6 class="poppins-semibold" style="margin-left: 140px">
                     <q-btn
@@ -118,7 +118,7 @@
                       checked-icon="favorite"
                       unchecked-icon="favorite_border"
                       indeterminate-icon="help"
-                      style="margin-right: 150px"
+                      style="margin-right: 150px; margin-top: 15px"
                     ></q-checkbox>
                   </div>
                 </div>
@@ -128,7 +128,7 @@
             <q-card-section>
               <div
                 class="column"
-                style="height: 150px; margin-left: 50px; margin-top: 7px"
+                style="height: 150px; margin-left: 50px; margin-top: -78px"
               >
                 <div class="col poppins-semibold">
                   <q-icon
@@ -182,7 +182,7 @@
         <q-card-section>
           <div
             class="row"
-            style="margin-top: -200px; margin-left: 150px; margin-right: 300px"
+            style="margin-top: -230px; margin-left: 150px; margin-right: 300px"
           >
             <div class="col" style="padding-right: 300px">
               <q-img
@@ -262,8 +262,60 @@
                   />
                 </q-avatar>
               </div>
+              <div
+                class="row poppins-regular"
+                style="margin-top: -100px; width: 45%"
+              >
+                <div class="col" style="margin-right: 20px">7 Guests</div>
+                <div
+                  class="col"
+                  style="margin-right: 20px; padding-right: 20px"
+                >
+                  3 Bedrooms
+                </div>
+                <div class="col" style="margin-right: 20px">4 Beds</div>
+                <div class="col" style="margin-right: 20px">3 Baths</div>
+              </div>
             </div>
-            <div class="text-h1">halo dunia</div>
+            <q-separator
+              color="black"
+              inset
+              style="margin-right: 577px; margin-left: -3px; margin-top: -60px"
+            />
+            <div
+              class="column items-start"
+              style="height: 150px; margin-right: 400px; height: 999px"
+            >
+              <div
+                class="col poppins-medium"
+                style="font-size: 25px; margin-top: 30px"
+              >
+                Entire villa hosted by
+                <div
+                  class="poppins-regular"
+                  style="font-size: 22px; margin-top: 30px"
+                >
+                  Villa L'espoir II - Open on 20th Feb. 2020, our 2nd villa
+                  which is just about 40m away from Villa L'espoir I. Again
+                  luxury PANORAMIC view villa in tranquil northern Bali. It is
+                  at where the green vineyards and rice fields meet the ocean.
+                  You will have a dream vacation at Villa L’espoir II can meet
+                  all your expectation and beyond… There is quite much useful
+                  information list below and they shall answer most of the
+                  questions about transportation, meals, entertainment, etc.
+                  Enjoy your stay...
+                </div>
+              </div>
+              <div
+                class="col poppins-medium"
+                style="font-size: 25px; margin-top: -250px"
+              >
+                What this place offers
+                <div>
+                  <h1>jjj</h1>
+                </div>
+              </div>
+            </div>
           </div>
         </q-card-section>
       </q-page>
