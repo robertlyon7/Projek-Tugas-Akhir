@@ -13,7 +13,7 @@ const routes = [
   },
 
   { path: "/ListingPage", component: () => import("pages/ListingPage.vue") },
-  
+
   { path: "/BAHPage", component: () => import("pages/BAHPage.vue") },
   {
     path: "/HostRegister1",
@@ -26,6 +26,10 @@ const routes = [
   {
     path: "/LoginPage",
     component: () => import("pages/LoginPage.vue"),
+  },
+  {
+    path: "/HostRegister2",
+    component: () => import("pages/HostRegister2.vue"),
   },
 ];
 
