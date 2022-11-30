@@ -17,7 +17,7 @@
       <div class="row q-mb-xl">
         <div
           class="col-6 text-white"
-          style="background-color: #050d21; height: 825px"
+          style="background-color: #050d21; height: 850px"
         >
           <div
             class="poppins-bold"

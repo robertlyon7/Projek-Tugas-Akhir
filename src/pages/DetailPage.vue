@@ -86,6 +86,9 @@
               <div class="col-4 col-md-6">
                 <h6 class="poppins-semibold" style="margin-left: 140px">
                   <q-btn
+                    clickable
+                    v-ripple
+                    @click="$router.push('/ListingPage')"
                     icon="chevron_left"
                     style="color: black"
                     v-close-popup
@@ -105,7 +108,7 @@
                     checked-icon="favorite"
                     unchecked-icon="favorite_border"
                     indeterminate-icon="help"
-                    style="margin-right: 150px; margin-top: 20px"
+                    style="margin-right: 150px"
                   ></q-checkbox>
                 </div>
               </div>
@@ -166,6 +169,92 @@
           /></q-avatar>
         </q-toolbar>
       </q-footer>
+      <q-card-section>
+        <div
+          class="row"
+          style="margin-top: -200px; margin-left: 150px; margin-right: 300px"
+        >
+          <div class="col" style="padding-right: 300px">
+            <q-img
+              src="../assets/images/detailimage.png"
+              style="
+                height: 570px;
+                width: 550px;
+                border-top-left-radius: 20px;
+                border-bottom-left-radius: 20px;
+              "
+              :ratio="1"
+            />
+          </div>
+          <div class="col" style="padding-right: 100px">
+            <q-img
+              src="../assets/images/detailimage2.png"
+              style="height: 275px; width: 350px; margin-bottom: 20px"
+              :ratio="16 / 9"
+            /><q-img
+              src="../assets/images/detailimage3.png"
+              style="height: 275px; width: 350px"
+              :ratio="16 / 9"
+            />
+          </div>
+          <div class="col">
+            <q-img
+              src="../assets/images/detailimage4.png"
+              style="
+                height: 275px;
+                width: 400px;
+                margin-bottom: 20px;
+                border-top-right-radius: 20px;
+              "
+              :ratio="16 / 9"
+            /><q-img
+              src="../assets/images/detailimage5.png"
+              style="
+                height: 275px;
+                width: 400px;
+                border-bottom-right-radius: 20px;
+              "
+              :ratio="16 / 9"
+            />
+            <q-btn
+              class="poppins-semibold"
+              label="Show all photos"
+              no-caps
+              style="
+                background-color: #0c8ce9;
+                color: white;
+                border-radius: 10px;
+                margin-left: 180px;
+                margin-top: -110px;
+                width: 200px;
+                height: 50px;
+              "
+            />
+          </div>
+        </div>
+
+        <div class="column items-end">
+          <div class="col poppins-medium" style="margin-right: 170px">
+            Rp 1.300.000,00/night
+          </div>
+        </div>
+        <div style="margin-left: 150px">
+          <div
+            class="column items-start"
+            style="height: 150px; margin-right: 400px"
+          >
+            <div class="col poppins-medium" style="font-size: 25px">
+              Entire villa hosted by
+              <q-avatar class="items-center" style="margin-left: 600px">
+                <img
+                  src="../assets/images/person.svg"
+                  style="width: 33px; height: 33px"
+                />
+              </q-avatar>
+            </div>
+          </div>
+        </div>
+      </q-card-section>
     </q-layout>
   </div>
 </template>
