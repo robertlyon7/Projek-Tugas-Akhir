@@ -3,20 +3,25 @@
   <q-layout view="lHh lpr lFf" container style="height: 999px">
     <q-header style="height: 50px">
       <q-toolbar>
-        <q-avatar style="margin-left: 20px; margin-top: 5px;">
+        <q-avatar style="margin-left: 20px; margin-top: 5px">
           <img src="../assets/images/logo.svg" />
         </q-avatar>
-        <q-toolbar-title style="margin-top: 10px;" class="poppins-semibold">Nusantara</q-toolbar-title>
+        <q-toolbar-title style="margin-top: 10px" class="poppins-semibold"
+          >Nusantara</q-toolbar-title
+        >
       </q-toolbar>
     </q-header>
 
     <!-- landing page -->
     <q-page-container>
       <div class="row q-mb-xl">
-        <div class="col-8 text-white" style="background-color: #050d21; height: 850px;">
+        <div
+          class="col-8 text-white"
+          style="background-color: #050d21; height: 850px"
+        >
           <div
             class="poppins-bold"
-            style="margin-left: 175px; margin-top: 130px; font-size: 65px;"
+            style="margin-left: 175px; margin-top: 130px; font-size: 65px"
           >
             Find Your <br />Place to Stay <br />in Nusantara
           </div>
@@ -564,7 +569,6 @@
     </q-footer>
   </q-layout>
 </template>
-
 
 <script>
 import { ref } from "vue";
