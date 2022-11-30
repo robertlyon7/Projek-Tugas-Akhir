@@ -126,53 +126,181 @@
                 @click="dialog = true"
               />
               <q-dialog v-model="dialog" persistent>
-                <q-card>
-                  <q-card-section class="row items-center">
-                    <q-btn icon="close" color="primary" v-close-popup />
+                <q-card
+                  class="my-card"
+                  style="border-radius: 50px; height: 780px"
+                >
+                  <q-card-section
+                    class="row items-center"
+                    style="background-color: #050d21"
+                  >
+                    <q-btn icon="close" style="color: white" v-close-popup />
                     <q-card-section>
-                      <div class="text-h6 poppins-semibold">Filters</div>
+                      <div
+                        class="text-h6 poppins-semibold"
+                        style="color: white"
+                      >
+                        Filters
+                      </div>
                     </q-card-section>
                   </q-card-section>
 
-                  <q-separator />
-
                   <q-card-section
-                    style="max-height: 60vh"
+                    style="max-height: 60vh; margin-top: 44px"
                     class="row items-center poppins-semibold"
                   >
-                    <p v-for="n in 1" :key="n">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Rerum repellendus sit voluptate voluptas eveniet porro.
-                      Rerum blanditiis perferendis totam, ea at omnis vel
-                      numquam exercitationem aut, natus minima, porro labore.
-                    </p>
+                    <div style="margin-left: 44px; margin-bottom: 20px">
+                      <p
+                        class="poppins-semiblod"
+                        style="margin-bottom: 20px; font-size: 24px"
+                      >
+                        Where Are You Going ?
+                      </p>
 
-                    <p>Where Are You Going ?</p>
+                      <q-input
+                        rounded
+                        outlined
+                        bottom-slots
+                        v-model="text"
+                        placeholder="Search for a location"
+                        style="margin-bottom: 25px; margin-right: 290px"
+                      >
+                        <template v-slot:prepend>
+                          <q-icon name="search" />
+                        </template>
+                      </q-input>
 
-                    <q-input
-                      rounded
-                      outlined
-                      bottom-slots
-                      v-model="text"
-                      label="Search for a location"
-                    >
-                      <template v-slot:prepend>
-                        <q-icon name="search" />
-                      </template>
-                    </q-input>
+                      <div>
+                        <p
+                          class="poppins-semiblod"
+                          style="margin-bottom: 20px; font-size: 24px"
+                        >
+                          Type Of Place
+                        </p>
+                        <q-btn
+                          style="
+                            height: 130px;
+                            width: 163px;
+                            margin-right: 15px;
+                            margin-bottom: 25px;
+                            border-radius: 15px;
+                            font-size: 14px;
+                            padding-left: 10px;
+                            padding-right: 10px;
+                          "
+                          class="q-px-xl q-py-xs"
+                          outline
+                          color="#000000"
+                          label="House, Villas, Apatment, etc"
+                          icon="apartment"
+                        />
+                        <q-btn
+                          style="
+                            height: 130px;
+                            width: 163px;
+                            margin-right: 15px;
+                            margin-bottom: 25px;
+                            border-radius: 15px;
+                            font-size: 14px;
+                            padding-left: 10px;
+                            padding-right: 10px;
+                          "
+                          class="q-px-xl q-py-xs"
+                          outline
+                          color="#000000"
+                          label="Meeting Rooms"
+                          icon="meeting_room"
+                        >
+                        </q-btn>
+                        <q-btn
+                          style="
+                            height: 130px;
+                            width: 163px;
+                            margin-bottom: 25px;
+                            border-radius: 15px;
+                            font-size: 14px;
+                            padding-left: 20px;
+                            padding-right: 20px;
+                          "
+                          class="q-px-xl q-py-xs"
+                          outline
+                          color="#000000"
+                          label="Experiences"
+                          icon="language"
+                        />
+                      </div>
 
-                    <p>Type Of Place</p>
+                      <!-- button place -->
 
-                    <!-- button place -->
+                      <p
+                        class="poppins-semiblod"
+                        style="margin-bottom: 20px; font-size: 24px"
+                      >
+                        Price Range
+                      </p>
 
-                    <p>Price Range</p>
+                      <div class="column" style="height: 150px">
+                        <div class="row">
+                          <q-input
+                            style="
+                              height: 80px;
+                              width: 300px;
+                              border-radius: 10px;
+                            "
+                            color="black"
+                            outlined
+                            v-model="text"
+                            label="min. price"
+                            stack-label
+                            :dense="dense"
+                          />
+                          <q-icon
+                            name="remove"
+                            style="
+                              margin-left: 10px;
+                              margin-right: 10px;
+                              margin-top: 23px;
+                            "
+                          />
+                          <q-input
+                            style="
+                              height: 80px;
+                              width: 300px;
+                              border-radius: 10px;
+                            "
+                            color="black"
+                            outlined
+                            v-model="text"
+                            label="max. price"
+                            stack-label
+                            :dense="dense"
+                          />
+                        </div>
+                      </div>
 
-                    <!-- range harga search -->
+                      <!-- range harga search -->
+                    </div>
                   </q-card-section>
 
                   <!-- Notice v-close-popup -->
                   <q-card-actions>
-                    <q-btn flat label="Search" color="primary" v-close-popup />
+                    <div>
+                      <q-btn
+                        flat
+                        no-caps
+                        label="Search"
+                        color="white"
+                        v-close-popup
+                        style="
+                          font-size: 24px;
+                          background-color: #0c8ce9;
+                          border-radius: 20px;
+                          height: 40px;
+                          width: 220px;
+                          margin-left: 575px;
+                        "
+                      />
+                    </div>
                   </q-card-actions>
                 </q-card>
               </q-dialog>
@@ -191,12 +319,19 @@
               transition="scale"
               class="example-item"
             >
-              <q-card class="q-ma-sm" style="border-radius: 25px">
+              <q-card
+                class="q-ma-sm"
+                style="border-radius: 25px"
+                clickable
+                v-ripple
+                @click="$router.push('/DetailPage')"
+              >
                 <img src="https://cdn.quasar.dev/img/mountains.jpg" />
 
                 <div id="q-app" style="height: 1vh; margin-left: 290px">
                   <div class="q-pa-md">
                     <q-checkbox
+                      color="red"
                       size="50px"
                       style="margin-top: -490px"
                       v-model="val"
@@ -252,6 +387,12 @@
 .example-item
   height: 450px
   width: 390px
+</style>
+
+<style lang="sass" scoped>
+.my-card
+  width: 100%
+  max-width: 850px
 </style>
 
 <script>
