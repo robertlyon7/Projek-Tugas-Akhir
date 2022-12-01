@@ -1,6 +1,6 @@
 <template>
   <div class="navbar navbar_open">
-    <q-layout view="lHh lpr lFf" container style="height: 999px">
+    <q-layout view="lHh lpr lFfd" container style="height: 999px">
       <!--header-->
       <q-header elevated>
         <q-toolbar>
@@ -67,6 +67,10 @@
                   </q-item-section>
                 </q-item>
 
+                <q-separator
+                  style="margin-left: 10px; margin-right: 10px; color: black"
+                />
+
                 <q-item clickable v-ripple @click="$router.push('/BAHPage')">
                   <q-item-section>
                     <q-item-label>Become A Host</q-item-label>
@@ -78,34 +82,6 @@
         </q-toolbar>
       </q-header>
       <!--header-->
-
-      <!--footer-->
-      <q-footer reveal style="height: 100px">
-        <q-toolbar style="padding-top: 40px; padding-left: 40px">
-          <q-avatar size="25px">
-            <img src="../assets/images/copyright.png" />
-          </q-avatar>
-          <q-toolbar-title class="poppins-semibold" style="font-size: 17px"
-            >Nusantara Inc.</q-toolbar-title
-          >
-          <q-avatar size="20px" class="q-mr-sm"
-            ><q-img
-              src="../assets/images/facebook.svg
-              "
-          /></q-avatar>
-          <q-avatar size="20px" class="q-mr-sm q-ml-sm"
-            ><img
-              src="../assets/images/twitter.svg
-            "
-          /></q-avatar>
-          <q-avatar size="20px" class="q-ml-sm" style="padding-right: 40px"
-            ><img
-              src="../assets/images/instagram.svg
-            "
-          /></q-avatar>
-        </q-toolbar>
-      </q-footer>
-      <!--footer-->
 
       <!--page c-->
       <q-page-container style="padding-bottom: 1px">
@@ -127,7 +103,7 @@
               />
               <q-dialog v-model="dialog" persistent>
                 <q-card
-                  class="my-card"
+                  class="my-card hide-scrollbar"
                   style="border-radius: 50px; height: 780px"
                 >
                   <q-card-section
@@ -163,7 +139,7 @@
                         bottom-slots
                         v-model="text"
                         placeholder="Search for a location"
-                        style="margin-bottom: 25px; margin-right: 290px"
+                        style="margin-bottom: 25px; margin-right: 400px"
                       >
                         <template v-slot:prepend>
                           <q-icon name="search" />
@@ -278,30 +254,505 @@
                         </div>
                       </div>
 
-                      <!-- range harga search -->
+                      <p
+                        class="poppins-semiblod"
+                        style="margin-bottom: 20px; font-size: 24px"
+                      >
+                        Rooms and beds
+                      </p>
+                      <p
+                        class="poppins-medium"
+                        style="margin-bottom: 20px; font-size: 20px"
+                      >
+                        Bedrooms
+                      </p>
+                      <div
+                        class="q-pa-lg flex-center"
+                        style="margin-top: -22px; margin-left: -22px"
+                      >
+                        <q-btn
+                          label="Any"
+                          outline
+                          no-caps
+                          style="
+                            border-radius: 50px;
+                            background-color: white;
+                            width: 70px;
+                            height: 50px;
+                            margin-right: 22px;
+                          "
+                        />
+                        <q-btn
+                          label="1"
+                          outline
+                          no-caps
+                          style="
+                            border-radius: 50px;
+                            background-color: white;
+                            width: 70px;
+                            height: 50px;
+                            margin-right: 22px;
+                          "
+                        />
+                        <q-btn
+                          label="2"
+                          outline
+                          no-caps
+                          style="
+                            border-radius: 50px;
+                            background-color: white;
+                            width: 70px;
+                            height: 50px;
+                            margin-right: 22px;
+                          "
+                        />
+                        <q-btn
+                          label="3"
+                          outline
+                          no-caps
+                          style="
+                            border-radius: 50px;
+                            background-color: white;
+                            width: 70px;
+                            height: 50px;
+                            margin-right: 22px;
+                          "
+                        />
+                        <q-btn
+                          label="4"
+                          outline
+                          no-caps
+                          style="
+                            border-radius: 50px;
+                            background-color: white;
+                            width: 70px;
+                            height: 50px;
+                            margin-right: 22px;
+                          "
+                        />
+                        <q-btn
+                          label="5+"
+                          outline
+                          no-caps
+                          style="
+                            border-radius: 50px;
+                            background-color: white;
+                            width: 70px;
+                            height: 50px;
+                            margin-right: 22px;
+                          "
+                        />
+                      </div>
+                      <p
+                        class="poppins-medium"
+                        style="margin-bottom: 20px; font-size: 20px"
+                      >
+                        Beds
+                      </p>
+                      <div
+                        class="q-pa-lg flex-center"
+                        style="margin-top: -22px; margin-left: -22px"
+                      >
+                        <q-btn
+                          label="Any"
+                          outline
+                          no-caps
+                          style="
+                            border-radius: 50px;
+                            background-color: white;
+                            width: 70px;
+                            height: 50px;
+                            margin-right: 22px;
+                          "
+                        />
+                        <q-btn
+                          label="1"
+                          outline
+                          no-caps
+                          style="
+                            border-radius: 50px;
+                            background-color: white;
+                            width: 70px;
+                            height: 50px;
+                            margin-right: 22px;
+                          "
+                        />
+                        <q-btn
+                          label="2"
+                          outline
+                          no-caps
+                          style="
+                            border-radius: 50px;
+                            background-color: white;
+                            width: 70px;
+                            height: 50px;
+                            margin-right: 22px;
+                          "
+                        />
+                        <q-btn
+                          label="3"
+                          outline
+                          no-caps
+                          style="
+                            border-radius: 50px;
+                            background-color: white;
+                            width: 70px;
+                            height: 50px;
+                            margin-right: 22px;
+                          "
+                        />
+                        <q-btn
+                          label="4"
+                          outline
+                          no-caps
+                          style="
+                            border-radius: 50px;
+                            background-color: white;
+                            width: 70px;
+                            height: 50px;
+                            margin-right: 22px;
+                          "
+                        />
+                        <q-btn
+                          label="5+"
+                          outline
+                          no-caps
+                          style="
+                            border-radius: 50px;
+                            background-color: white;
+                            width: 70px;
+                            height: 50px;
+                            margin-right: 22px;
+                          "
+                        />
+                      </div>
+                      <p
+                        class="poppins-medium"
+                        style="margin-bottom: 20px; font-size: 20px"
+                      >
+                        Bathrooms
+                      </p>
+                      <div
+                        class="q-pa-lg flex-center"
+                        style="margin-top: -22px; margin-left: -22px"
+                      >
+                        <q-btn
+                          label="Any"
+                          outline
+                          no-caps
+                          style="
+                            border-radius: 50px;
+                            background-color: white;
+                            width: 70px;
+                            height: 50px;
+                            margin-right: 22px;
+                          "
+                        />
+                        <q-btn
+                          label="1"
+                          outline
+                          no-caps
+                          style="
+                            border-radius: 50px;
+                            background-color: white;
+                            width: 70px;
+                            height: 50px;
+                            margin-right: 22px;
+                          "
+                        />
+                        <q-btn
+                          label="2"
+                          outline
+                          no-caps
+                          style="
+                            border-radius: 50px;
+                            background-color: white;
+                            width: 70px;
+                            height: 50px;
+                            margin-right: 22px;
+                          "
+                        />
+                        <q-btn
+                          label="3"
+                          outline
+                          no-caps
+                          style="
+                            border-radius: 50px;
+                            background-color: white;
+                            width: 70px;
+                            height: 50px;
+                            margin-right: 22px;
+                          "
+                        />
+                        <q-btn
+                          label="4"
+                          outline
+                          no-caps
+                          style="
+                            border-radius: 50px;
+                            background-color: white;
+                            width: 70px;
+                            height: 50px;
+                            margin-right: 22px;
+                          "
+                        />
+                        <q-btn
+                          label="5+"
+                          outline
+                          no-caps
+                          style="
+                            border-radius: 50px;
+                            background-color: white;
+                            width: 70px;
+                            height: 50px;
+                            margin-right: 22px;
+                          "
+                        />
+                      </div>
+                      <p
+                        class="poppins-semiblod"
+                        style="
+                          margin-bottom: 20px;
+                          font-size: 24px;
+                          margin-top: 22px;
+                        "
+                      >
+                        Guests
+                      </p>
+                      <p
+                        class="poppins-medium"
+                        style="margin-bottom: 20px; font-size: 20px"
+                      >
+                        Adults
+                      </p>
+                      <div
+                        class="q-pa-lg flex-center"
+                        style="margin-top: -22px; margin-left: -22px"
+                      >
+                        <q-btn
+                          label="Any"
+                          outline
+                          no-caps
+                          style="
+                            border-radius: 50px;
+                            background-color: white;
+                            width: 70px;
+                            height: 50px;
+                            margin-right: 22px;
+                          "
+                        />
+                        <q-btn
+                          label="1"
+                          outline
+                          no-caps
+                          style="
+                            border-radius: 50px;
+                            background-color: white;
+                            width: 70px;
+                            height: 50px;
+                            margin-right: 22px;
+                          "
+                        />
+                        <q-btn
+                          label="2"
+                          outline
+                          no-caps
+                          style="
+                            border-radius: 50px;
+                            background-color: white;
+                            width: 70px;
+                            height: 50px;
+                            margin-right: 22px;
+                          "
+                        />
+                        <q-btn
+                          label="3"
+                          outline
+                          no-caps
+                          style="
+                            border-radius: 50px;
+                            background-color: white;
+                            width: 70px;
+                            height: 50px;
+                            margin-right: 22px;
+                          "
+                        />
+                        <q-btn
+                          label="4"
+                          outline
+                          no-caps
+                          style="
+                            border-radius: 50px;
+                            background-color: white;
+                            width: 70px;
+                            height: 50px;
+                            margin-right: 22px;
+                          "
+                        />
+                        <q-btn
+                          label="5+"
+                          outline
+                          no-caps
+                          style="
+                            border-radius: 50px;
+                            background-color: white;
+                            width: 70px;
+                            height: 50px;
+                            margin-right: 22px;
+                          "
+                        />
+                      </div>
+                      <p
+                        class="poppins-medium"
+                        style="margin-bottom: 20px; font-size: 20px"
+                      >
+                        Children
+                      </p>
+                      <div
+                        class="q-pa-lg flex-center"
+                        style="margin-top: -22px; margin-left: -22px"
+                      >
+                        <q-btn
+                          label="Any"
+                          outline
+                          no-caps
+                          style="
+                            border-radius: 50px;
+                            background-color: white;
+                            width: 70px;
+                            height: 50px;
+                            margin-right: 22px;
+                          "
+                        />
+                        <q-btn
+                          label="1"
+                          outline
+                          no-caps
+                          style="
+                            border-radius: 50px;
+                            background-color: white;
+                            width: 70px;
+                            height: 50px;
+                            margin-right: 22px;
+                          "
+                        />
+                        <q-btn
+                          label="2"
+                          outline
+                          no-caps
+                          style="
+                            border-radius: 50px;
+                            background-color: white;
+                            width: 70px;
+                            height: 50px;
+                            margin-right: 22px;
+                          "
+                        />
+                        <q-btn
+                          label="3"
+                          outline
+                          no-caps
+                          style="
+                            border-radius: 50px;
+                            background-color: white;
+                            width: 70px;
+                            height: 50px;
+                            margin-right: 22px;
+                          "
+                        />
+                        <q-btn
+                          label="4"
+                          outline
+                          no-caps
+                          style="
+                            border-radius: 50px;
+                            background-color: white;
+                            width: 70px;
+                            height: 50px;
+                            margin-right: 22px;
+                          "
+                        />
+                        <q-btn
+                          label="5+"
+                          outline
+                          no-caps
+                          style="
+                            border-radius: 50px;
+                            background-color: white;
+                            width: 70px;
+                            height: 50px;
+                            margin-right: 22px;
+                          "
+                        />
+                      </div>
+
+                      <p
+                        class="poppins-semiblod"
+                        style="margin-bottom: 20px; font-size: 24px"
+                      >
+                        Amenities
+                      </p>
+                      <div>
+                        <div class="q-gutter-sm" style="margin-bottom: 20px">
+                          <q-checkbox
+                            v-model="wifi"
+                            label="Wifi"
+                            color="blue"
+                            style="margin-right: 120px"
+                          />
+                          <q-checkbox
+                            v-model="kitchen"
+                            label="Kitchen"
+                            color="blue"
+                          />
+                          <br />
+                          <q-checkbox
+                            v-model="washer"
+                            label="Washer"
+                            color="blue"
+                            style="margin-right: 92px"
+                          />
+
+                          <q-checkbox
+                            v-model="dryer"
+                            label="Dryer"
+                            color="blue"
+                          />
+                          <br />
+                          <q-checkbox
+                            v-model="Air_Conditioning"
+                            label="Air Conditioning"
+                            color="blue"
+                            style="margin-right: 33px"
+                          />
+                          <q-checkbox
+                            v-model="heating"
+                            label="Heating"
+                            color="blue"
+                          />
+                        </div>
+                      </div>
+                      <div>
+                        <!-- Notice v-close-popup -->
+                        <q-btn
+                          flat
+                          no-caps
+                          label="Search"
+                          color="white"
+                          v-close-popup
+                          style="
+                            font-size: 24px;
+                            background-color: #0c8ce9;
+                            border-radius: 20px;
+                            height: 40px;
+                            width: 220px;
+                            margin-left: 525px;
+                            margin-bottom: 30px;
+                          "
+                        />
+                      </div>
                     </div>
                   </q-card-section>
-
-                  <!-- Notice v-close-popup -->
-                  <q-card-actions>
-                    <div>
-                      <q-btn
-                        flat
-                        no-caps
-                        label="Search"
-                        color="white"
-                        v-close-popup
-                        style="
-                          font-size: 24px;
-                          background-color: #0c8ce9;
-                          border-radius: 20px;
-                          height: 40px;
-                          width: 220px;
-                          margin-left: 575px;
-                        "
-                      />
-                    </div>
-                  </q-card-actions>
                 </q-card>
               </q-dialog>
             </template>
@@ -378,7 +829,33 @@
           </div>
         </div>
       </q-page-container>
-      <!--page list-->
+      <!--footer-->
+      <q-footer reveal style="height: 100px">
+        <q-toolbar style="padding-top: 40px; padding-left: 40px">
+          <q-avatar size="25px">
+            <img src="../assets/images/copyright.png" />
+          </q-avatar>
+          <q-toolbar-title class="poppins-semibold" style="font-size: 17px"
+            >Nusantara Inc.</q-toolbar-title
+          >
+          <q-avatar size="20px" class="q-mr-sm"
+            ><q-img
+              src="../assets/images/facebook.svg
+              "
+          /></q-avatar>
+          <q-avatar size="20px" class="q-mr-sm q-ml-sm"
+            ><img
+              src="../assets/images/twitter.svg
+            "
+          /></q-avatar>
+          <q-avatar size="20px" class="q-ml-sm" style="padding-right: 40px"
+            ><img
+              src="../assets/images/instagram.svg
+            "
+          /></q-avatar>
+        </q-toolbar>
+      </q-footer>
+      <!--footer-->
     </q-layout>
   </div>
 </template>
@@ -452,6 +929,13 @@ export default defineComponent({
     const leftDrawerOpen = ref(false);
 
     return {
+      current: ref(3),
+      wifi: ref(true),
+      kitchen: ref(false),
+      washer: ref(false),
+      dryer: ref(true),
+      Air_Conditioning: ref(true),
+      heating: ref(false),
       val: ref(true),
       basic: ref(false),
       fixed: ref(false),
