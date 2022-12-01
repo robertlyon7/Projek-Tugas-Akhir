@@ -22,66 +22,81 @@
             you host ?
           </div>
         </div>
-        <div class="col-6 column items-center">
-          <q-btn
-            outline
-            rounded
-            color="primary"
-            class="poppins-semibold"
-            label="Apartment"
-            no-caps
-            icon-right="apartment"
-            style="
-              padding: 15px;
-              width: 500px;
-              margin-top: 30px;
-              margin-bottom: 30px;
-            "
-          />
-          <q-btn
-            outline
-            rounded
-            color="primary"
-            class="poppins-semibold"
-            label="House"
-            no-caps
-            icon-right="house"
-            style="
-              padding: 15px;
-              width: 500px;
-              margin-bottom: 30px;
-            "
-          />
-          <q-btn
-            outline
-            rounded
-            color="primary"
-            class="poppins-semibold"
-            label="Meeting Room"
-            no-caps
-            icon-right="meeting_room"
-            style="
-              padding: 15px;
-              width: 500px;
-              margin-top: ;
-              margin-bottom: 30px;
-            "
-          />
-          <q-btn
-            outline
-            rounded
-            color="primary"
-            class="poppins-semibold"
-            label="Recretional Space"
-            no-caps
-            icon-right="map"
-            style="
-              padding: 15px;
-              width: 500px;
-              margin-top: ;
-              margin-bottom: 30px;
-            "
-          />
+        <div class="col-6 self-center">
+          <div class="column items-center">
+            <q-btn
+              outline
+              rounded
+              color="primary"
+              class="poppins-semibold"
+              label="Apartment"
+              no-caps
+              icon-right="apartment"
+              style="
+                padding: 15px;
+                width: 500px;
+                margin-top: 30px;
+                margin-bottom: 30px;
+              "
+            />
+            <q-btn
+              outline
+              rounded
+              color="primary"
+              class="poppins-semibold"
+              label="House"
+              no-caps
+              icon-right="house"
+              style="padding: 15px; width: 500px; margin-bottom: 30px"
+            />
+            <q-btn
+              outline
+              rounded
+              color="primary"
+              class="poppins-semibold"
+              label="Meeting Room"
+              no-caps
+              icon-right="meeting_room"
+              style="
+                padding: 15px;
+                width: 500px;
+                margin-top: ;
+                margin-bottom: 30px;
+              "
+            />
+            <q-btn
+              outline
+              rounded
+              color="primary"
+              class="poppins-semibold"
+              label="Recretional Space"
+              no-caps
+              icon-right="map"
+              style="
+                padding: 15px;
+                width: 500px;
+                margin-top: ;
+                margin-bottom: 30px;
+              "
+            />
+          </div>
+          <div class="poppins-semibold" style="margin-left: 600px">
+            <q-btn
+              clickable
+              v-ripple
+              @click="$router.push('/HostRegister2')"
+              no-caps
+              label="Next"
+              style="
+                margin-top: 50px;
+                background: #0c8ce9;
+                color: white;
+                height: 50px;
+                width: 100px;
+                border-radius: 10px;
+              "
+            />
+          </div>
         </div>
       </div>
     </q-page-container>
