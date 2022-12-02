@@ -28,6 +28,12 @@ const routes = [
     component: () => import("pages/LoginPage.vue"),
   },
   {
+
+    path: "/DataPhoto",
+    component: () => import("pages/DataPhoto.vue"),
+  },
+  {
+
     path: "/HostRegister2",
     component: () => import("pages/HostRegister2.vue"),
   },
@@ -36,6 +42,7 @@ const routes = [
     component: () => import("pages/DetailPage.vue"),
   },
   {
+
     path: "/HostRegister3",
     component: () => import("pages/HostRegister3.vue"),
   },
@@ -58,6 +65,14 @@ const routes = [
   {
     path: "/DashboardLayout",
     component: () => import("layouts/DashboardLayout.vue"),
+
+    path: "/PaymentPage",
+    component: () => import("pages/PaymentPage.vue"),
+  },
+  {
+    path: "/CompletedPage",
+    component: () => import("pages/CompletedPage.vue"),
+
   },
 ];
 
