@@ -18,47 +18,41 @@
             class="poppins-semibold"
             style="padding-top: 250px; padding-left: 100px; font-size: 40px"
           >
-            What kind of space will <br />guests have ?
+            Let’s see your beautiful<br />
+            property
           </div>
         </div>
         <div class="col-6 self-center">
           <div class="column items-center">
-            <q-btn
-              outline
-              rounded
-              color="primary"
-              class="poppins-semibold"
-              label="A private room"
-              no-caps
-              style="
-                padding: 15px;
-                width: 500px;
-                margin-top: 30px;
-                margin-bottom: 30px;
-              "
-            />
-            <q-btn
-              outline
-              rounded
-              color="primary"
-              class="poppins-semibold"
-              label="A shared room"
-              no-caps
-              style="padding: 15px; width: 500px; margin-bottom: 30px"
-            />
+            <q-file
+              color="#050d21"
+              style="max-width: 300px"
+              v-model="filesImages"
+              filled
+              multiple
+              use-chips
+              bordered
+              label="Place an image"
+              accept=".jpg, image/*"
+              @rejected="onRejected"
+            >
+              <template v-slot:prepend>
+                <q-icon name="image" />
+              </template>
+            </q-file>
           </div>
           <div class="row poppins-semibold">
             <div class="col-6">
               <q-btn
                 clickable
                 v-ripple
-                @click="$router.push('/HostRegister1')"
+                @click="$router.push('/HostRegister5')"
                 no-caps
                 label="Back"
                 style="
+                  margin-left: 100px;
                   margin-top: 150px;
                   margin-bottom: -150px;
-                  margin-left: 100px;
                   background: #0c8ce9;
                   color: white;
                   height: 50px;
@@ -71,7 +65,7 @@
               <q-btn
                 clickable
                 v-ripple
-                @click="$router.push('/HostRegister3')"
+                @click="$router.push('/HostRegisterSuccess')"
                 no-caps
                 label="Next"
                 style="
@@ -92,3 +86,28 @@
     </q-page-container>
   </q-layout>
 </template>
+
+<script>
+import { useQuasar } from "quasar";
+import { ref } from "vue";
+
+export default {
+  setup() {
+    const $q = useQuasar();
+
+    return {
+      filesImages: ref(null),
+      filesMaxSize: ref(null),
+      filesMaxTotalSize: ref(null),
+      filesMaxNumber: ref(null),
+
+      onRejected(rejectedEntries) {
+        $q.notify({
+          type: "negative",
+          message: `${rejectedEntries.length} file(s) did not pass validation constraints`,
+        });
+      },
+    };
+  },
+};
+</script>

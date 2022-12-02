@@ -18,7 +18,7 @@
             class="poppins-semibold"
             style="padding-top: 250px; padding-left: 100px; font-size: 40px"
           >
-            What kind of space will <br />guests have ?
+            What does your property <br />offers ?
           </div>
         </div>
         <div class="col-6 self-center">
@@ -28,21 +28,8 @@
               rounded
               color="primary"
               class="poppins-semibold"
-              label="A private room"
-              no-caps
-              style="
-                padding: 15px;
-                width: 500px;
-                margin-top: 30px;
-                margin-bottom: 30px;
-              "
-            />
-            <q-btn
-              outline
-              rounded
-              color="primary"
-              class="poppins-semibold"
-              label="A shared room"
+              icon="pool"
+              label="Pool"
               no-caps
               style="padding: 15px; width: 500px; margin-bottom: 30px"
             />
@@ -52,13 +39,13 @@
               <q-btn
                 clickable
                 v-ripple
-                @click="$router.push('/HostRegister1')"
+                @click="$router.push('/HostRegister4')"
                 no-caps
                 label="Back"
                 style="
+                  margin-left: 100px;
                   margin-top: 150px;
                   margin-bottom: -150px;
-                  margin-left: 100px;
                   background: #0c8ce9;
                   color: white;
                   height: 50px;
@@ -71,7 +58,7 @@
               <q-btn
                 clickable
                 v-ripple
-                @click="$router.push('/HostRegister3')"
+                @click="$router.push('/HostRegister6')"
                 no-caps
                 label="Next"
                 style="

@@ -88,7 +88,8 @@
               no-caps
               label="Next"
               style="
-                margin-top: 50px;
+                margin-top: 150px;
+                margin-bottom: -150px;
                 background: #0c8ce9;
                 color: white;
                 height: 50px;

@@ -67,6 +67,7 @@
                   style="margin-left: 20px; margin-right: 20px"
                 >
                   <q-input
+                  class="poppins-semibold"
                     style="
                       background-color: white;
                       border-radius: 20px;
@@ -85,6 +86,7 @@
                   </q-input>
 
                   <q-input
+                  class="poppins-semibold"
                     style="
                       background-color: white;
                       border-radius: 20px;
@@ -141,7 +143,10 @@
                         height: 50px;
                       "
                     >
-                      <q-avatar class="q-mr-sm" size="32px">
+                      <q-avatar
+                        style="margin-left: -60px; margin-right: 30px"
+                        size="32px"
+                      >
                         <q-img src="../assets/images/googlerounded.svg" />
                       </q-avatar>
                       <div>Continue With Google</div>
@@ -152,7 +157,7 @@
             </q-card-section>
           </q-card>
           <div>
-            <h6 class="text-center" style="color: #000000">
+            <h6 class="text-center poppins-semibold" style="color: #000000">
               Dont have an account yet ?
               <span
                 clickable

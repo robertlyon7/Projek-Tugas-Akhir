@@ -1,22 +1,23 @@
 <template>
-  <!-- header -->
   <q-layout view="lHh lpr lFf" container style="height: 999px">
-    <q-header style="height: 50px">
-      <q-toolbar>
-        <q-avatar style="margin-left: 20px; margin-top: 5px;">
-          <img src="../assets/images/logo.svg" />
-        </q-avatar>
-        <q-toolbar-title style="margin-top: 10px;" class="poppins-semibold">Nusantara</q-toolbar-title>
-      </q-toolbar>
-    </q-header>
-
     <!-- landing page -->
     <q-page-container>
-      <div class="row q-mb-xl">
+      <div class="row q-mb-xl" style="height: 850px">
         <div class="col-8 text-white" style="background-color: #050d21">
+          <div class="row">
+            <q-avatar style="margin-left: 30px; margin-top: 15px; size: 20px">
+              <img src="../assets/images/logo.svg" />
+            </q-avatar>
+            <div
+              class="poppins-semibold"
+              style="padding-top: 27px; padding-left: 10px; font-size: 18px"
+            >
+              Nusantara
+            </div>
+          </div>
           <div
             class="poppins-bold"
-            style="margin-left: 175px; margin-top: 130px; font-size: 65px"
+            style="margin-left: 175px; padding-top: 100px; font-size: 65px"
           >
             Find Your <br />Place to Stay <br />in Nusantara
           </div>
@@ -30,6 +31,7 @@
           <q-card
             class="row"
             style="
+              margin-right: -10px;
               margin-left: 175px;
               margin-top: 50px;
               height: 80px;
@@ -133,7 +135,7 @@
         </div>
         <div class="col-4">
           <q-img
-            style="width: 100%"
+            style="width: 100%; height: 860px"
             src="../assets/images/half-img.png"
             fit="fill"
           />
@@ -566,12 +568,18 @@
 </template>
 
 <script>
+import { text } from "body-parser";
 import { ref } from "vue";
 
 export default {
   setup() {
     return {
       slide: ref("style"),
+      selected: "A",
+      options: [
+        { text: "Lombok", value: "A" },
+        { text: "Bali", value: "B" },
+      ],
     };
   },
 };
