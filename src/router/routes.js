@@ -28,13 +28,24 @@ const routes = [
     component: () => import("pages/LoginPage.vue"),
   },
   {
-
+    path: "/DataPhoto",
+    component: () => import("pages/DataPhoto.vue"),
+  },
+  {
     path: "/HostRegister2",
     component: () => import("pages/HostRegister2.vue"),
-
+  },
+  {
     path: "/DetailPage",
     component: () => import("pages/DetailPage.vue"),
-
+  },
+  {
+    path: "/PaymentPage",
+    component: () => import("pages/PaymentPage.vue"),
+  },
+  {
+    path: "/CompletedPage",
+    component: () => import("pages/CompletedPage.vue"),
   },
 ];
 

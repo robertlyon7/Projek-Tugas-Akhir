@@ -205,6 +205,9 @@
                 :ratio="16 / 9"
               />
               <q-btn
+                clickable
+                v-ripple
+                @click="$router.push('/DataPhoto')"
                 class="poppins-semibold"
                 label="Show all photos"
                 no-caps
@@ -485,6 +488,9 @@
                       </div>
 
                       <q-btn
+                        clickable
+                        v-ripple
+                        @click="$router.push('/PaymentPage')"
                         no-caps
                         class="poppins-semibold text-center"
                         label="Book Now"
