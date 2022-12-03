@@ -28,12 +28,10 @@ const routes = [
     component: () => import("pages/LoginPage.vue"),
   },
   {
-
     path: "/DataPhoto",
     component: () => import("pages/DataPhoto.vue"),
   },
   {
-
     path: "/HostRegister2",
     component: () => import("pages/HostRegister2.vue"),
   },
@@ -42,7 +40,6 @@ const routes = [
     component: () => import("pages/DetailPage.vue"),
   },
   {
-
     path: "/HostRegister3",
     component: () => import("pages/HostRegister3.vue"),
   },
@@ -72,7 +69,18 @@ const routes = [
   {
     path: "/CompletedPage",
     component: () => import("pages/CompletedPage.vue"),
-
+  },
+  {
+    path: "/ListingLoggedIn",
+    component: () => import("pages/ListingLoggedIn.vue"),
+  },
+  {
+    path: "/FavoritePage",
+    component: () => import("pages/FavoritePage.vue"),
+  },
+  {
+    path: "/TripsPage",
+    component: () => import("pages/TripsPage.vue"),
   },
 ];
 

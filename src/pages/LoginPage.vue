@@ -67,7 +67,7 @@
                   style="margin-left: 20px; margin-right: 20px"
                 >
                   <q-input
-                  class="poppins-semibold"
+                    class="poppins-semibold"
                     style="
                       background-color: white;
                       border-radius: 20px;
@@ -86,7 +86,7 @@
                   </q-input>
 
                   <q-input
-                  class="poppins-semibold"
+                    class="poppins-semibold"
                     style="
                       background-color: white;
                       border-radius: 20px;
@@ -106,6 +106,9 @@
 
                   <div>
                     <q-btn
+                      clickable
+                      v-ripple
+                      @click="$router.push('/ListingLoggedIn')"
                       class="poppins-semibold"
                       label="Continue"
                       type="submit"
@@ -131,6 +134,9 @@
 
                   <div>
                     <q-btn
+                      clickable
+                      v-ripple
+                      @click="$router.push('/ListingLoggedIn')"
                       class="poppins-medium"
                       type="submit"
                       no-caps
