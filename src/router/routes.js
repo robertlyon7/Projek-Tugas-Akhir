@@ -70,6 +70,20 @@ const routes = [
   {
     path: "/CompletedPage",
     component: () => import("pages/CompletedPage.vue"),
+
+  },
+  {
+    path: "/ListingLoggedIn",
+    component: () => import("pages/ListingLoggedIn.vue"),
+  },
+  {
+    path: "/FavoritePage",
+    component: () => import("pages/FavoritePage.vue"),
+  },
+  {
+    path: "/TripsPage",
+    component: () => import("pages/TripsPage.vue"),
+
   },
 ];
 

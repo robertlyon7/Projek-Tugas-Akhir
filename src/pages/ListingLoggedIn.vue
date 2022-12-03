@@ -51,19 +51,23 @@
             <q-btn-dropdown
               color=""
               rounded
-              dropdown-icon="no_accounts"
+              dropdown-icon="face"
               style="margin-right: 150px"
             >
               <q-list class="poppins-semibold">
-                <q-item clickable v-ripple @click="$router.push('/SignPage')">
+                <q-item clickable v-ripple @click="$router.push('/TripsPage')">
                   <q-item-section>
-                    <q-item-section>Sign Up</q-item-section>
+                    <q-item-section>Trips</q-item-section>
                   </q-item-section>
                 </q-item>
 
-                <q-item clickable v-ripple @click="$router.push('/LoginPage')">
+                <q-item
+                  clickable
+                  v-ripple
+                  @click="$router.push('/FavoritePage')"
+                >
                   <q-item-section>
-                    <q-item-label>Login</q-item-label>
+                    <q-item-label>Favorites</q-item-label>
                   </q-item-section>
                 </q-item>
 
@@ -74,6 +78,20 @@
                 <q-item clickable v-ripple @click="$router.push('/BAHPage')">
                   <q-item-section>
                     <q-item-label>Become A Host</q-item-label>
+                  </q-item-section>
+                </q-item>
+
+                <q-separator
+                  style="margin-left: 10px; margin-right: 10px; color: black"
+                />
+
+                <q-item
+                  clickable
+                  v-ripple
+                  @click="$router.push('/ListingPage')"
+                >
+                  <q-item-section>
+                    <q-item-label>Log Out</q-item-label>
                   </q-item-section>
                 </q-item>
               </q-list>
