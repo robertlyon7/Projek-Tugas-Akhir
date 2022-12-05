@@ -82,6 +82,14 @@ const routes = [
     path: "/TripsPage",
     component: () => import("pages/TripsPage.vue"),
   },
+  {
+    path: "/TripsDetail",
+    component: () => import("pages/TripsDetail.vue"),
+  },
+  {
+    path: "/RatingTrips",
+    component: () => import("pages/RatingTrips.vue"),
+  },
 ];
 
 export default routes;

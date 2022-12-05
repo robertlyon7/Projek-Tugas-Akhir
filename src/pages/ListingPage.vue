@@ -51,7 +51,7 @@
             <q-btn-dropdown
               color=""
               rounded
-              dropdown-icon="no_accounts"
+              dropdown-icon="account_circle"
               style="margin-right: 150px"
             >
               <q-list class="poppins-semibold">

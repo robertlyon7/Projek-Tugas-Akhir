@@ -26,67 +26,8 @@
               >
                 <q-toolbar>
                   <q-space />
-
-                  <q-input
-                    rounded
-                    dark
-                    dense
-                    standout
-                    debounce="500"
-                    v-model="Search"
-                    input-class="text-left"
-                    class="q-ml-md"
-                    placeholder="Where Are You Going ?"
-                  >
-                    <template v-slot:append>
-                      <q-icon v-if="text === ''" name="search" />
-                      <q-icon
-                        v-else
-                        name="clear"
-                        class="cursor-pointer"
-                        @click="text = ''"
-                      />
-                    </template>
-                  </q-input>
                 </q-toolbar>
               </div>
-            </div>
-
-            <div class="q-pa-md">
-              <q-btn-dropdown
-                color=""
-                rounded
-                dropdown-icon="face"
-                style="margin-right: 150px"
-              >
-                <q-list class="poppins-semibold">
-                  <q-item clickable v-ripple @click="$router.push('/SignPage')">
-                    <q-item-section>
-                      <q-item-section>Sign Up</q-item-section>
-                    </q-item-section>
-                  </q-item>
-
-                  <q-item
-                    clickable
-                    v-ripple
-                    @click="$router.push('/LoginPage')"
-                  >
-                    <q-item-section>
-                      <q-item-label>Login</q-item-label>
-                    </q-item-section>
-                  </q-item>
-
-                  <q-separator
-                    style="margin-left: 10px; margin-right: 10px; color: black"
-                  />
-
-                  <q-item clickable v-ripple @click="$router.push('/BAHPage')">
-                    <q-item-section>
-                      <q-item-label>Become A Host</q-item-label>
-                    </q-item-section>
-                  </q-item>
-                </q-list>
-              </q-btn-dropdown>
             </div>
           </q-toolbar>
         </q-header>

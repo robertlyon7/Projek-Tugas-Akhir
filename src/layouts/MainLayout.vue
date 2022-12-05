@@ -6,7 +6,7 @@
       <div class="row q-mb-xl">
         <div
           class="col-8 text-white"
-          style="background-color: #050d21; height: 850px"
+          style="background-color: #050d21; height: 900px"
         >
           <div class="row">
             <q-avatar style="margin-left: 30px; margin-top: 15px; size: 20px">
@@ -139,7 +139,7 @@
         </div>
         <div class="col-4">
           <q-img
-            style="width: 100%; height: 860px"
+            style="width: 100%; height: 900px"
             src="../assets/images/half-img.png"
             fit="fill"
           />

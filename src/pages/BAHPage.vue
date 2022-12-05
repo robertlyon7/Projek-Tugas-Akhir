@@ -3,7 +3,12 @@
     <!-- header -->
     <q-header style="height: 50px">
       <q-toolbar>
-        <q-avatar style="margin-left: 20px; margin-top: 5px">
+        <q-avatar
+          clickable
+          v-ripple
+          @click="$router.push('/')"
+          style="margin-left: 20px; margin-top: 5px"
+        >
           <img src="../assets/images/logo.svg" />
         </q-avatar>
         <q-toolbar-title style="margin-top: 10px" class="poppins-semibold"
