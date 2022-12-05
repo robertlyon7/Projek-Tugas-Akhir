@@ -62,13 +62,15 @@ const routes = [
   {
     path: "/DashboardLayout",
     component: () => import("layouts/DashboardLayout.vue"),
-
+  },
+  {
     path: "/PaymentPage",
     component: () => import("pages/PaymentPage.vue"),
   },
   {
     path: "/CompletedPage",
     component: () => import("pages/CompletedPage.vue"),
+
   },
   {
     path: "/ListingLoggedIn",
@@ -81,6 +83,7 @@ const routes = [
   {
     path: "/TripsPage",
     component: () => import("pages/TripsPage.vue"),
+
   },
   {
     path: "/TripsDetail",

@@ -6,7 +6,7 @@
         <q-avatar class="q-pl-md">
           <q-img src="../assets/images/logo.svg" />
         </q-avatar>
-        <q-toolbar-title class="poppins-semibold q-pl-sm">
+        <q-toolbar-title class="poppins-semibold q-pl-lg">
           Nusantara
         </q-toolbar-title>
       </q-toolbar>

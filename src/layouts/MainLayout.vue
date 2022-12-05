@@ -7,7 +7,7 @@
         <div
           class="col-8 text-white"
           style="background-color: #050d21; height: 900px"
-        >
+        > 
           <div class="row">
             <q-avatar style="margin-left: 30px; margin-top: 15px; size: 20px">
               <img src="../assets/images/logo.svg" />
