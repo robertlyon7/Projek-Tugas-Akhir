@@ -26,28 +26,6 @@
               >
                 <q-toolbar>
                   <q-space />
-
-                  <q-input
-                    rounded
-                    dark
-                    dense
-                    standout
-                    debounce="500"
-                    v-model="search"
-                    input-class="text-left"
-                    class="q-ml-md"
-                    placeholder="Where Are You Going ?"
-                  >
-                    <template v-slot:append>
-                      <q-icon v-if="text === ''" name="search" />
-                      <q-icon
-                        v-else
-                        name="clear"
-                        class="cursor-pointer"
-                        @click="text = ''"
-                      />
-                    </template>
-                  </q-input>
                 </q-toolbar>
               </div>
             </div>
@@ -113,17 +91,126 @@
             <q-banner inline-actions class="bg-white text-black">
               <h6
                 class="poppins-semibold"
-                style="margin-left: 150px; margin-top: -50px"
+                style="margin-left: 150px; margin-top: -50px; font-size: 28px"
               >
                 Your Trips
               </h6>
             </q-banner>
           </div>
         </q-page-container>
+        <q-page-container>
+          <h6
+            class="poppins-semibold"
+            style="margin-left: 190px; margin-top: -110px; font-size: 20px"
+          >
+            Completed
+          </h6>
+          <q-card
+            class="my-card"
+            style="margin-left: 166px; border-radius: 20px"
+          >
+            <q-card-section
+              clickable
+              v-ripple
+              @click="$router.push('/TripsDetail')"
+              horizontal
+              style="width: 1100px; height: 300px; background-color: white"
+            >
+              <q-img
+                img
+                src="../assets/images/trip.png"
+                style="margin: 30px; width: 300px; border-radius: 30px"
+              />
+
+              <q-card-section>
+                <div
+                  class="poppins-semibold"
+                  style="font-size: 26px; margin-top: 20px"
+                >
+                  House in Lombok
+                </div>
+                <div
+                  class="poppins-regular"
+                  style="font-size: 26px; margin-top: 10px"
+                >
+                  Mayor Street 15
+                </div>
+                <div
+                  class="poppins-regular"
+                  style="font-size: 26px; margin-top: 10px"
+                >
+                  2 king bed, 3 queen bed
+                </div>
+                <div
+                  class="poppins-medium"
+                  style="font-size: 26px; margin-top: 10px"
+                >
+                  Rp 2.000.000,00 / night
+                </div>
+              </q-card-section>
+            </q-card-section>
+          </q-card>
+        </q-page-container>
+        <q-page-container>
+          <h6
+            class="poppins-semibold"
+            style="margin-left: 190px; margin-top: -20px; font-size: 20px"
+          >
+            Ongoing
+          </h6>
+          <q-card
+            class="my-card"
+            style="margin-left: 166px; border-radius: 20px"
+          >
+            <q-card-section
+              horizontal
+              style="width: 1100px; height: 300px; background-color: white"
+            >
+              <q-img
+                img
+                src="../assets/images/trip.png"
+                style="margin: 30px; width: 300px; border-radius: 30px"
+              />
+
+              <q-card-section>
+                <div
+                  class="poppins-semibold"
+                  style="font-size: 26px; margin-top: 20px"
+                >
+                  House in Lombok
+                </div>
+                <div
+                  class="poppins-regular"
+                  style="font-size: 26px; margin-top: 10px"
+                >
+                  Mayor Street 15
+                </div>
+                <div
+                  class="poppins-regular"
+                  style="font-size: 26px; margin-top: 10px"
+                >
+                  2 king bed, 3 queen bed
+                </div>
+                <div
+                  class="poppins-medium"
+                  style="font-size: 26px; margin-top: 10px"
+                >
+                  Rp 2.000.000,00 / night
+                </div>
+              </q-card-section>
+            </q-card-section>
+          </q-card>
+        </q-page-container>
       </q-page>
     </q-page-container>
   </q-layout>
 </template>
+
+<style lang="sass" scoped>
+.my-card
+  width: 100%
+  max-width: 300px
+</style>
 
 <script>
 import { defineComponent, ref } from "vue";

@@ -26,28 +26,6 @@
               >
                 <q-toolbar>
                   <q-space />
-
-                  <q-input
-                    rounded
-                    dark
-                    dense
-                    standout
-                    debounce="500"
-                    v-model="search"
-                    input-class="text-left"
-                    class="q-ml-md"
-                    placeholder="Where Are You Going ?"
-                  >
-                    <template v-slot:append>
-                      <q-icon v-if="text === ''" name="search" />
-                      <q-icon
-                        v-else
-                        name="clear"
-                        class="cursor-pointer"
-                        @click="text = ''"
-                      />
-                    </template>
-                  </q-input>
                 </q-toolbar>
               </div>
             </div>
@@ -113,7 +91,7 @@
             <q-banner inline-actions class="bg-white text-black">
               <h6
                 class="poppins-semibold"
-                style="margin-left: 150px; margin-top: -50px"
+                style="margin-left: 150px; margin-top: -50px; font-size: 28px"
               >
                 Your Favorites
               </h6>
@@ -156,6 +134,69 @@
                     >
                       Rp 700.000,00 / night
                     </h6>
+                    <div>
+                      <q-btn
+                        icon="delete_forever"
+                        flat
+                        size="22px"
+                        @click="confirm = true"
+                        style="margin-top: -50px; margin-left: -20px"
+                      />
+                      <q-dialog v-model="confirm" persistent>
+                        <q-card
+                          style="
+                            height: 261px;
+                            width: 526px;
+                            border-radius: 20px;
+                          "
+                        >
+                          <q-card-section class="row items-center">
+                            <h6
+                              class="poppins-semibold"
+                              style="font-size: 26px; margin-left: 120px"
+                            >
+                              Remove this item ?
+                            </h6>
+                          </q-card-section>
+
+                          <q-card-actions
+                            align="center"
+                            style="margin-top: -33px"
+                          >
+                            <q-btn
+                              class="poppins-semibold"
+                              outline
+                              color="blue"
+                              label="No"
+                              v-close-popup
+                              style="
+                                background-color: white;
+                                height: 20px;
+                                width: 100px;
+                                border-radius: 10px;
+                                font-size: 20px;
+                                margin-right: 27px;
+                              "
+                            />
+
+                            <q-btn
+                              class="poppins-semibold"
+                              label="Yes"
+                              v-close-popup
+                              style="
+                                font-size: 20px;
+                                background-color: #0c8ce9;
+                                color: white;
+                                border-radius: 10px;
+                                height: 20px;
+                                width: 100px;
+                                margin-left: 27px;
+                              "
+                            />
+                          </q-card-actions>
+                        </q-card>
+                      </q-dialog>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -236,6 +277,8 @@ export default defineComponent({
     const leftDrawerOpen = ref(false);
 
     return {
+      confirm: ref(false),
+      address: ref(""),
       current: ref(3),
       val: ref(true),
       basic: ref(false),
