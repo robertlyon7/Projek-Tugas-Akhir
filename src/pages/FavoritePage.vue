@@ -170,6 +170,7 @@
                   </div>
                 </div>
               </div>
+              <div><q-icon name="delete_forever" size="20px" /></div>
             </div>
           </div>
         </q-page-container>
