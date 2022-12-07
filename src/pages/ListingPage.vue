@@ -54,7 +54,7 @@
               dropdown-icon="account_circle"
               style="margin-right: 150px"
             >
-              <q-list class="poppins-semibold">
+              <q-list class="poppins-semibold">     
                 <q-item clickable v-ripple @click="$router.push('/SignPage')">
                   <q-item-section>
                     <q-item-section>Sign Up</q-item-section>

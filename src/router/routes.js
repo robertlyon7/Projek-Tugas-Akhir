@@ -70,7 +70,6 @@ const routes = [
   {
     path: "/CompletedPage",
     component: () => import("pages/CompletedPage.vue"),
-
   },
   {
     path: "/ListingLoggedIn",
@@ -83,7 +82,6 @@ const routes = [
   {
     path: "/TripsPage",
     component: () => import("pages/TripsPage.vue"),
-
   },
   {
     path: "/TripsDetail",
@@ -92,6 +90,14 @@ const routes = [
   {
     path: "/RatingTrips",
     component: () => import("pages/RatingTrips.vue"),
+  },
+  {
+    path: "/ForgotPassword",
+    component: () => import("pages/ForgotPassword.vue"),
+  },
+  {
+    path: "/NewPassword",
+    component: () => import("pages/NewPassword.vue"),
   },
 ];
 
