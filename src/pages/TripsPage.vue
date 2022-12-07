@@ -106,49 +106,47 @@
             Completed
           </h6>
           <q-card
-            class="my-card"
-            style="margin-left: 166px; border-radius: 20px"
+            clickable
+            v-ripple
+            @click="$router.push('/TripsDetail')"
+            class="q-ml-xl q-mt-md"
+            style="
+              height: 270px;
+              width: 900px;
+              border-radius: 15px;
+              margin-left: 150px;
+            "
           >
-            <q-card-section
-              clickable
-              v-ripple
-              @click="$router.push('/TripsDetail')"
-              horizontal
-              style="width: 1100px; height: 300px; background-color: white"
-            >
-              <q-img
-                img
-                src="../assets/images/trip.png"
-                style="margin: 30px; width: 300px; border-radius: 30px"
-              />
-
-              <q-card-section>
-                <div
-                  class="poppins-semibold"
-                  style="font-size: 26px; margin-top: 20px"
-                >
-                  House in Lombok
+            <div class="row">
+              <div class="col-4">
+                <q-img
+                  class="q-ml-xl"
+                  style="
+                    height: 200px;
+                    width: 200px;
+                    border-radius: 10px;
+                    margin-top: 35px;
+                  "
+                  src="../assets/images/detailimage.png"
+                />
+              </div>
+              <div class="col-8">
+                <div class="q-pl-md" style="padding-top: 70px">
+                  <div class="poppins-semibold" style="font-size: 20px">
+                    House in Lombok
+                  </div>
+                  <div class="poppins-medium" style="font-size: 16px">
+                    Mayor Street 15
+                  </div>
+                  <div class="poppins-medium" style="font-size: 16px">
+                    2 king bed, 3 queen bed
+                  </div>
+                  <div class="poppins-semibold" style="font-size: 16px">
+                    Rp 2.000.000,00 / night
+                  </div>
                 </div>
-                <div
-                  class="poppins-regular"
-                  style="font-size: 26px; margin-top: 10px"
-                >
-                  Mayor Street 15
-                </div>
-                <div
-                  class="poppins-regular"
-                  style="font-size: 26px; margin-top: 10px"
-                >
-                  2 king bed, 3 queen bed
-                </div>
-                <div
-                  class="poppins-medium"
-                  style="font-size: 26px; margin-top: 10px"
-                >
-                  Rp 2.000.000,00 / night
-                </div>
-              </q-card-section>
-            </q-card-section>
+              </div>
+            </div>
           </q-card>
         </q-page-container>
         <q-page-container>
@@ -159,46 +157,45 @@
             Ongoing
           </h6>
           <q-card
-            class="my-card"
-            style="margin-left: 166px; border-radius: 20px"
+            class="q-ml-xl q-mt-md"
+            style="
+              height: 270px;
+              width: 900px;
+              border-radius: 15px;
+              margin-left: 150px;
+              margin-bottom: 55px;
+            "
           >
-            <q-card-section
-              horizontal
-              style="width: 1100px; height: 300px; background-color: white"
-            >
-              <q-img
-                img
-                src="../assets/images/trip.png"
-                style="margin: 30px; width: 300px; border-radius: 30px"
-              />
-
-              <q-card-section>
-                <div
-                  class="poppins-semibold"
-                  style="font-size: 26px; margin-top: 20px"
-                >
-                  House in Lombok
+            <div class="row">
+              <div class="col-4">
+                <q-img
+                  class="q-ml-xl"
+                  style="
+                    height: 200px;
+                    width: 200px;
+                    border-radius: 10px;
+                    margin-top: 35px;
+                  "
+                  src="../assets/images/detailimage.png"
+                />
+              </div>
+              <div class="col-8">
+                <div class="q-pl-md" style="padding-top: 70px">
+                  <div class="poppins-semibold" style="font-size: 20px">
+                    House in Lombok
+                  </div>
+                  <div class="poppins-medium" style="font-size: 16px">
+                    Mayor Street 15
+                  </div>
+                  <div class="poppins-medium" style="font-size: 16px">
+                    2 king bed, 3 queen bed
+                  </div>
+                  <div class="poppins-semibold" style="font-size: 16px">
+                    Rp 2.000.000,00 / night
+                  </div>
                 </div>
-                <div
-                  class="poppins-regular"
-                  style="font-size: 26px; margin-top: 10px"
-                >
-                  Mayor Street 15
-                </div>
-                <div
-                  class="poppins-regular"
-                  style="font-size: 26px; margin-top: 10px"
-                >
-                  2 king bed, 3 queen bed
-                </div>
-                <div
-                  class="poppins-medium"
-                  style="font-size: 26px; margin-top: 10px"
-                >
-                  Rp 2.000.000,00 / night
-                </div>
-              </q-card-section>
-            </q-card-section>
+              </div>
+            </div>
           </q-card>
         </q-page-container>
       </q-page>
