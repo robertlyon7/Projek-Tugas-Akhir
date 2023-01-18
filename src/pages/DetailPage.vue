@@ -352,7 +352,7 @@
                     class="my-card row"
                     style="
                       height: 500px;
-                      width: 800px;
+                      width: 600px;
                       border-radius: 30px;
                       margin-top: 30px;
                     "
@@ -373,7 +373,7 @@
                           <div
                             class="q-pa-md col"
                             no-border-radius
-                            style="width: 400px"
+                            style="width: 300px"
                           >
                             <q-input
                               class="poppins-medium"
@@ -409,7 +409,7 @@
                         <div class="col">
                           <div
                             class="q-pa-md col"
-                            style="width: 400px; margin-left: -16px"
+                            style="width: 300px; margin-left: -16px"
                           >
                             <q-input
                               class="poppins-medium"
@@ -464,7 +464,7 @@
                             outlined
                             style="
                               font-size: 22px;
-                              width: 367px;
+                              width: 266px;
                               height: 78px;
                               margin-left: 15px;
                             "
@@ -479,7 +479,7 @@
                             outlined
                             style="
                               font-size: 22px;
-                              width: 367px;
+                              width: 266px;
                               height: 78px;
                               margin-left: -3px;
                             "
@@ -496,13 +496,14 @@
                         label="Book Now"
                         size="30px"
                         style="
-                          margin-left: 155px;
+                          font-size: 23px;
+                          margin-left: 150px;
                           margin-top: 50px;
                           background-color: #0a97fe;
                           color: white;
                           border-radius: 20px;
-                          width: 450px;
-                          height: 85px;
+                          width: 260px;
+                          height: 60px;
                         "
                       />
                     </q-card-section>

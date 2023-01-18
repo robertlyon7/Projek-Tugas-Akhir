@@ -129,3 +129,7 @@
     </q-footer>
   </q-layout>
 </template>
+
+<script>
+import Axios from "axios";
+</script>

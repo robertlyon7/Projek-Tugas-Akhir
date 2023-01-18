@@ -38,9 +38,9 @@
             class="my-card shadow box"
             style="
               background-color: #050d21;
-              height: 500px;
+              height: 470px;
               width: 500px;
-              margin-top: 35px;
+              margin-top: 88px;
               margin-left: 600px;
               margin-right: 600px;
               border-radius: 25px;
@@ -51,10 +51,10 @@
                 class="text-center poppins-bold"
                 style="font-size: 30px; margin-top: 25px; margin-bottom: 15px"
               >
-                Log In
+                New Password
               </div>
               <div class="text-center poppins-medium" style="font-size: 18px">
-                Good To See You Again
+                don't forget anymore
               </div>
             </q-card-section>
 
@@ -71,17 +71,17 @@
                     style="
                       background-color: white;
                       border-radius: 20px;
-                      margin-bottom: 35px;
                       width: 400px;
                       height: 60px;
+                      margin-bottom: 30px;
                     "
-                    placeholder="Email"
+                    v-model="password"
                     filled
-                    v-model="Email"
-                    lazy-rules
+                    placeholder="Insert Your New Password"
+                    :type="isPwd ? 'password' : 'text'"
                   >
                     <template v-slot:prepend>
-                      <q-icon name="mail" color="black" />
+                      <q-icon name="lock" color="black" />
                     </template>
                   </q-input>
 
@@ -92,11 +92,11 @@
                       border-radius: 20px;
                       width: 400px;
                       height: 60px;
-                      margin-bottom: 17px;
+                      margin-bottom: 55px;
                     "
                     v-model="password"
                     filled
-                    placeholder="Password"
+                    placeholder="Confirm Your New Password"
                     :type="isPwd ? 'password' : 'text'"
                   >
                     <template v-slot:prepend>
@@ -104,22 +104,13 @@
                     </template>
                   </q-input>
 
-                  <span
-                    clickable
-                    v-ripple
-                    @click="$router.push('/ForgotPassword')"
-                    class="text-center poppins-medium"
-                    style="color: white; font-size: 16px"
-                    >Forgot Password?</span
-                  >
-
                   <div>
                     <q-btn
                       clickable
                       v-ripple
-                      @click="$router.push('/ListingLoggedIn')"
+                      @click="$router.push('/LoginPage')"
                       class="poppins-semibold"
-                      label="Continue"
+                      label="Confirm"
                       type="submit"
                       no-caps
                       color="#0C8CE9"
@@ -129,8 +120,6 @@
                         border-radius: 20px;
                         width: 400px;
                         height: 50px;
-
-                        margin-bottom: 5px;
                       "
                     >
                     </q-btn>
@@ -139,21 +128,8 @@
               </div>
             </q-card-section>
           </q-card>
-          <div>
-            <h6 class="text-center poppins-semibold" style="color: #000000">
-              Dont have an account yet ?
-              <span
-                clickable
-                v-ripple
-                @click="$router.push('/SignPage')"
-                style="color: #0c8ce9"
-                >Sign Up</span
-              >
-            </h6>
-          </div>
-        </div>
-      </q-page></q-page-container
-    >
+        </div> </q-page
+    ></q-page-container>
   </q-layout>
 </template>
 
