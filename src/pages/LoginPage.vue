@@ -38,7 +38,7 @@
             class="my-card shadow box"
             style="
               background-color: #050d21;
-              height: 570px;
+              height: 500px;
               width: 500px;
               margin-top: 35px;
               margin-left: 600px;
@@ -120,42 +120,10 @@
                         border-radius: 20px;
                         width: 400px;
                         height: 50px;
+                        margin-top: 15px;
                         margin-bottom: 5px;
                       "
                     >
-                    </q-btn>
-                  </div>
-                  <div
-                    class="text-center poppins-regular"
-                    style="font-size: 18px; margin-bottom: 7px"
-                  >
-                    or
-                  </div>
-
-                  <div>
-                    <q-btn
-                      clickable
-                      v-ripple
-                      @click="$router.push('/ListingLoggedIn')"
-                      class="poppins-medium"
-                      type="submit"
-                      no-caps
-                      style="
-                        font-size: 18px;
-                        color: black;
-                        background-color: white;
-                        border-radius: 20px;
-                        width: 400px;
-                        height: 50px;
-                      "
-                    >
-                      <q-avatar
-                        style="margin-left: -60px; margin-right: 30px"
-                        size="32px"
-                      >
-                        <q-img src="../assets/images/googlerounded.svg" />
-                      </q-avatar>
-                      <div>Continue With Google</div>
                     </q-btn>
                   </div>
                 </q-form>

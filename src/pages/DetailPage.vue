@@ -27,7 +27,7 @@
               >
                 <q-toolbar>
                   <q-space />
- 
+
                   <q-input
                     rounded
                     dark

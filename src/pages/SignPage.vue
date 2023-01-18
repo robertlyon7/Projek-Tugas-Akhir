@@ -76,12 +76,36 @@
                       height: 60px;
                     "
                     filled
-                    v-model="Email"
-                    placeholder="Email"
+                    placeholder="Name"
                     lazy-rules
                   >
                     <template v-slot:prepend>
-                      <q-icon name="mail" color="black" />
+                      <q-icon
+                        style="padding-left: 10px"
+                        name="person"
+                        color="black"
+                      />
+                    </template>
+                  </q-input>
+
+                  <q-input
+                    class="poppins-semibold"
+                    style="
+                      background-color: white;
+                      border-radius: 20px;
+                      width: 400px;
+                      height: 60px;
+                      margin-bottom: 35px;
+                    "
+                    filled
+                    placeholder="Email"
+                  >
+                    <template v-slot:prepend>
+                      <q-icon
+                        style="padding-left: 10px"
+                        name="mail"
+                        color="black"
+                      />
                     </template>
                   </q-input>
 
@@ -100,7 +124,11 @@
                     :type="isPwd ? 'password' : 'text'"
                   >
                     <template v-slot:prepend>
-                      <q-icon name="lock" color="black" />
+                      <q-icon
+                        style="padding-left: 10px"
+                        name="lock"
+                        color="black"
+                      />
                     </template>
                   </q-input>
 
@@ -128,36 +156,7 @@
                   <div
                     class="text-center poppins-regular"
                     style="font-size: 18px; margin-bottom: 7px"
-                  >
-                    or
-                  </div>
-
-                  <div>
-                    <q-btn
-                      clickable
-                      v-ripple
-                      @click="$router.push('/LoginPage')"
-                      class="poppins-medium"
-                      type="submit"
-                      no-caps
-                      style="
-                        font-size: 18px;
-                        color: black;
-                        background-color: white;
-                        border-radius: 20px;
-                        width: 400px;
-                        height: 50px;
-                      "
-                    >
-                      <q-avatar
-                        style="margin-left: -60px; margin-right: 30px"
-                        size="32px"
-                      >
-                        <q-img src="../assets/images/googlerounded.svg" />
-                      </q-avatar>
-                      <div>Continue With Google</div>
-                    </q-btn>
-                  </div>
+                  ></div>
                 </q-form>
               </div>
             </q-card-section>
