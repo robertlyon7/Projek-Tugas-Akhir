@@ -13,7 +13,8 @@
   "dependencies": {
     "@quasar/extras": "^1.0.0",
     "async_hooks": "^1.0.0",
-    "axios": "^1.2.2",
+    "axios": "^1.2.4",
+    "babel-loader": "^9.1.2",
     "core-js": "^3.6.5",
     "fs": "^0.0.1-security",
     "path": "^0.12.7",

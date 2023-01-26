@@ -205,7 +205,8 @@
                 <h6 class="poppins-medium" size="30px">Pay with</h6>
 
                 <q-select
-                  label="Credit or debit card"
+                  class="poppins-medium"
+                  label="Payment Method"
                   outlined
                   v-model="model"
                   :options="options"
@@ -321,7 +322,7 @@
                     border-radius: 20px;
                     width: 370px;
                     height: 30px;
-                    font-size: 23px;
+                    font-size: 20px;
                     margin-top: 77px;
                   "
                 />
@@ -331,8 +332,8 @@
                 <q-card
                   class="my-card"
                   style="
-                    height: 600px;
-                    width: 600px;
+                    height: 510px;
+                    width: 500px;
                     margin-left: 30px;
                     border-radius: 30px;
                     margin-top: -90px;
@@ -343,8 +344,8 @@
                       src="../assets/images/detailimage.png"
                       alt=""
                       style="
-                        height: 150px;
-                        width: 160px;
+                        height: 110px;
+                        width: 120px;
                         margin-top: 20px;
                         margin-left: 20px;
                         border-radius: 20px;
@@ -376,15 +377,15 @@
                         style="height: 150px; margin-left: 40px"
                       >
                         <div class="col" style="margin-top: -18px">
-                          <h6 class="poppins-medium" style="font-size: 24px">
+                          <h6 class="poppins-medium" style="font-size: 18px">
                             Price details
                           </h6>
                         </div>
                         <div
                           class="col"
-                          style="margin-top: 60px; margin-bottom: 20px"
+                          style="margin-top: 60px; margin-bottom: 18px"
                         >
-                          <h6 class="poppins-regular" style="font-size: 24px">
+                          <h6 class="poppins-regular" style="font-size: 18px">
                             1.300.000 x 2 nights
                           </h6>
                         </div>
@@ -392,18 +393,18 @@
                           class="col"
                           style="margin-top: 25px; margin-bottom: 20px"
                         >
-                          <h6 class="poppins-regular" style="font-size: 24px">
+                          <h6 class="poppins-regular" style="font-size: 18px">
                             Service fee
                           </h6>
                         </div>
                         <div class="col" style="margin-top: 25px">
-                          <h6 class="poppins-regular" style="font-size: 24px">
+                          <h6 class="poppins-regular" style="font-size: 18px">
                             Promo
                           </h6>
                         </div>
                       </div>
                     </div>
-                    <div class="col" style="margin-top: 50px">
+                    <div class="col" style="margin-top: 30px">
                       <div
                         class="column"
                         style="
@@ -415,7 +416,7 @@
                         <div class="col">
                           <h6
                             class="poppins-regular"
-                            style="font-size: 24px; text-align: right"
+                            style="font-size: 18px; text-align: right"
                           >
                             2.600.000
                           </h6>
@@ -423,7 +424,7 @@
                         <div class="col">
                           <h6
                             class="poppins-regular"
-                            style="font-size: 24px; text-align: right"
+                            style="font-size: 18px; text-align: right"
                           >
                             400.000
                           </h6>
@@ -431,7 +432,7 @@
                         <div class="col">
                           <h6
                             class="poppins-regular"
-                            style="font-size: 24px; text-align: right"
+                            style="font-size: 18px; text-align: right"
                           >
                             -150.000
                           </h6>
@@ -446,7 +447,7 @@
                       style="
                         margin-left: 40px;
                         margin-top: 40px;
-                        font-size: 24px;
+                        font-size: 18px;
                       "
                     >
                       Total
@@ -454,7 +455,7 @@
                     <div
                       class="col poppins-regular"
                       style="
-                        font-size: 24px;
+                        font-size: 18px;
                         margin-right: 40px;
                         text-align: right;
                         margin-top: 40px;

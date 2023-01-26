@@ -30,10 +30,7 @@
 
                   <q-input
                     rounded
-                    dark
-                    dense
                     standout
-                    debounce="500"
                     v-model="Search"
                     input-class="text-left"
                     class="q-ml-md"
@@ -271,8 +268,13 @@
                 class="col poppins-medium"
                 style="font-size: 25px; margin-top: 30px"
               >
-                Entire villa hosted by
-                <div class="poppins-regular" style="font-size: 22px">
+                <div
+                  class="poppins-medium"
+                  style="font-size: 20px; margin-bottom: 20px"
+                >
+                  About the place
+                </div>
+                <div class="poppins-regular" style="font-size: 18px">
                   Villa L'espoir II - Open on 20th Feb. 2020, our 2nd villa
                   which is just about 40m away from Villa L'espoir I. Again
                   luxury PANORAMIC view villa in tranquil northern Bali. It is
@@ -286,7 +288,7 @@
               </div>
               <div
                 class="col poppins-medium"
-                style="font-size: 25px; margin-top: 30px"
+                style="font-size: 20px; margin-top: 30px"
               >
                 What this place offers
                 <div style="margin-top: 30px">
@@ -296,7 +298,7 @@
                     </q-item-section>
                     <q-item-section
                       class="poppins-regular"
-                      style="font-size: 22px"
+                      style="font-size: 18px"
                       >WiFi</q-item-section
                     >
                   </q-item>
@@ -306,7 +308,7 @@
                     </q-item-section>
                     <q-item-section
                       class="poppins-regular"
-                      style="font-size: 22px"
+                      style="font-size: 18px"
                       >Kitchen</q-item-section
                     >
                   </q-item>
@@ -316,7 +318,7 @@
                     </q-item-section>
                     <q-item-section
                       class="poppins-regular"
-                      style="font-size: 22px"
+                      style="font-size: 18px"
                       >Swimming pool</q-item-section
                     >
                   </q-item>
@@ -329,7 +331,7 @@
                     </q-item-section>
                     <q-item-section
                       class="poppins-regular"
-                      style="font-size: 22px"
+                      style="font-size: 18px"
                       >Laundry</q-item-section
                     >
                   </q-item>
@@ -339,13 +341,13 @@
                     </q-item-section>
                     <q-item-section
                       class="poppins-regular"
-                      style="font-size: 22px"
+                      style="font-size: 18px"
                       >Free car parking</q-item-section
                     >
                   </q-item>
                 </div>
               </div>
-              <div class="col poppins-medium" style="font-size: 30px">
+              <div class="col poppins-medium" style="font-size: 20px">
                 Book Now
                 <div>
                   <q-card
@@ -361,7 +363,8 @@
                       <div
                         class="col poppins-medium"
                         style="
-                          font-size: 28px;
+                          font-size: 20px;
+                          margin-top: 20px;
                           margin-left: 15px;
                           margin-bottom: 15px;
                         "
@@ -447,7 +450,7 @@
                       <div
                         class="col poppins-medium"
                         style="
-                          font-size: 30px;
+                          font-size: 20px;
                           margin-left: 15px;
                           margin-bottom: 15px;
                         "
@@ -511,7 +514,7 @@
                 </div>
                 <div
                   class="col poppins-medium"
-                  style="font-size: 30px; margin-top: 120px"
+                  style="font-size: 20px; margin-top: 120px"
                 >
                   Reviews
                   <div class="row" style="margin-top: 40px">
@@ -530,12 +533,12 @@
                           <q-item-section>
                             <q-item-label
                               class="poppins-medium"
-                              style="font-size: 22px"
+                              style="font-size: 18px"
                               >Bob</q-item-label
                             >
                             <q-item-label
                               class="poppins-regular"
-                              style="font-size: 22px"
+                              style="font-size: 18px"
                               caption
                             >
                               October 2022
@@ -546,7 +549,7 @@
                         <q-card-section vertical>
                           <q-card-section
                             class="col-4 poppins-regular"
-                            style="font-size: 22px"
+                            style="font-size: 18px"
                           >
                             Loved it! A nice bit of calk after a hectic week in
                             seminyak and canggu. Would recommend
@@ -569,12 +572,12 @@
                           <q-item-section>
                             <q-item-label
                               class="poppins-medium"
-                              style="font-size: 22px"
+                              style="font-size: 18px"
                               >Ron</q-item-label
                             >
                             <q-item-label
                               class="poppins-regular"
-                              style="font-size: 22px"
+                              style="font-size: 18px"
                               caption
                             >
                               September 2022
@@ -585,7 +588,7 @@
                         <q-card-section vertical>
                           <q-card-section
                             class="col-4 poppins-regular"
-                            style="font-size: 22px"
+                            style="font-size: 18px"
                           >
                             We enjoyed relaxing and getting away in this
                             beautiful space. Wish we had more time here. Very
@@ -611,12 +614,12 @@
                           <q-item-section>
                             <q-item-label
                               class="poppins-medium"
-                              style="font-size: 22px"
+                              style="font-size: 18px"
                               >Jess</q-item-label
                             >
                             <q-item-label
                               class="poppins-regular"
-                              style="font-size: 22px"
+                              style="font-size: 18px"
                               caption
                             >
                               September 2022
@@ -627,7 +630,7 @@
                         <q-card-section vertical>
                           <q-card-section
                             class="col-4 poppins-regular"
-                            style="font-size: 22px"
+                            style="font-size: 18px"
                           >
                             We had a great stay in Balian. Made’s flexibility
                             was really appreciated. The two places we stayed at
@@ -652,12 +655,12 @@
                           <q-item-section>
                             <q-item-label
                               class="poppins-medium"
-                              style="font-size: 22px"
+                              style="font-size: 18px"
                               >Ron</q-item-label
                             >
                             <q-item-label
                               class="poppins-regular"
-                              style="font-size: 22px"
+                              style="font-size: 18px"
                               caption
                             >
                               August 2022
@@ -668,7 +671,7 @@
                         <q-card-section vertical>
                           <q-card-section
                             class="col-4 poppins-regular"
-                            style="font-size: 22px"
+                            style="font-size: 18px"
                           >
                             The place is gorgeous, in a wonderful location, and
                             the host and Made are amazing! So incredibly kind
@@ -720,7 +723,7 @@ import { ref } from "vue";
 export default {
   setup() {
     return {
-      val: ref(true),
+      val: ref(false),
       date: ref("2019/02/01"),
       model: ref(null),
       options: ["q", "w", "e", "r", "t"],

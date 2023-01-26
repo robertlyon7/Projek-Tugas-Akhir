@@ -91,7 +91,7 @@
             <q-banner inline-actions class="bg-white text-black">
               <h6
                 class="poppins-semibold"
-                style="margin-left: 150px; margin-top: -50px; font-size: 28px"
+                style="margin-left: 150px; margin-top: -50px; font-size: 18px"
               >
                 Your Favorites
               </h6>
@@ -102,9 +102,9 @@
                   src="../assets/images/detailimage.png"
                   alt=""
                   style="
-                    height: 300px;
-                    width: 300px;
-                    margin-top: 20px;
+                    height: 250px;
+                    width: 250px;
+                    margin-top: 15px;
                     margin-left: 166px;
                     border-radius: 20px;
                   "
@@ -113,24 +113,24 @@
               <div class="col">
                 <div class="column" style="height: 150px; margin-left: -60px">
                   <div class="col" style="margin-top: -40px">
-                    <h6 class="col poppins-semibold" style="font-size: 28px">
+                    <h6 class="col poppins-semibold" style="font-size: 18px">
                       Resort in Lombok
                     </h6>
                     <h6
                       class="col poppins-regular"
-                      style="font-size: 26px; margin-top: -50px"
+                      style="font-size: 18px; margin-top: -50px"
                     >
                       City Beach
                     </h6>
                     <h6
                       class="col poppins-regular"
-                      style="font-size: 26px; margin-top: -50px"
+                      style="font-size: 18px; margin-top: -50px"
                     >
                       1 king bed
                     </h6>
                     <h6
                       class="col poppins-medium"
-                      style="font-size: 26px; margin-top: -50px"
+                      style="font-size: 18px; margin-top: -50px"
                     >
                       Rp 700.000,00 / night
                     </h6>
@@ -153,7 +153,7 @@
                           <q-card-section class="row items-center">
                             <h6
                               class="poppins-semibold"
-                              style="font-size: 26px; margin-left: 120px"
+                              style="margin-left: 120px"
                             >
                               Remove this item ?
                             </h6>
@@ -174,7 +174,7 @@
                                 height: 20px;
                                 width: 100px;
                                 border-radius: 10px;
-                                font-size: 20px;
+                                font-size: 18px;
                                 margin-right: 27px;
                               "
                             />
@@ -184,7 +184,7 @@
                               label="Yes"
                               v-close-popup
                               style="
-                                font-size: 20px;
+                                font-size: 18px;
                                 background-color: #0c8ce9;
                                 color: white;
                                 border-radius: 10px;

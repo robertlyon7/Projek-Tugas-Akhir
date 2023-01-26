@@ -184,8 +184,8 @@
                   class="my-card"
                   style="
                     border-color: black;
-                    height: 380px;
-                    width: 600px;
+                    height: 370px;
+                    width: 550px;
                     margin-left: 30px;
                     border-radius: 30px;
                     margin-top: -170px;
@@ -198,7 +198,7 @@
                         style="height: 150px; margin-left: 40px"
                       >
                         <div class="col" style="margin-top: -18px">
-                          <h6 class="poppins-medium" style="font-size: 24px">
+                          <h6 class="poppins-medium" style="font-size: 18px">
                             Price details
                           </h6>
                         </div>
@@ -206,7 +206,7 @@
                           class="col"
                           style="margin-top: 60px; margin-bottom: 20px"
                         >
-                          <h6 class="poppins-regular" style="font-size: 24px">
+                          <h6 class="poppins-regular" style="font-size: 18px">
                             500.000 x 6 nights
                           </h6>
                         </div>
@@ -214,12 +214,12 @@
                           class="col"
                           style="margin-top: 25px; margin-bottom: 20px"
                         >
-                          <h6 class="poppins-regular" style="font-size: 24px">
+                          <h6 class="poppins-regular" style="font-size: 18px">
                             Service fee
                           </h6>
                         </div>
                         <div class="col" style="margin-top: 25px">
-                          <h6 class="poppins-regular" style="font-size: 24px">
+                          <h6 class="poppins-regular" style="font-size: 18px">
                             Promo
                           </h6>
                         </div>
@@ -237,7 +237,7 @@
                         <div class="col">
                           <h6
                             class="poppins-regular"
-                            style="font-size: 24px; text-align: right"
+                            style="font-size: 18px; text-align: right"
                           >
                             3.000.000
                           </h6>
@@ -245,7 +245,7 @@
                         <div class="col">
                           <h6
                             class="poppins-regular"
-                            style="font-size: 24px; text-align: right"
+                            style="font-size: 18px; text-align: right"
                           >
                             400.000
                           </h6>
@@ -253,7 +253,7 @@
                         <div class="col">
                           <h6
                             class="poppins-regular"
-                            style="font-size: 24px; text-align: right"
+                            style="font-size: 18px; text-align: right"
                           >
                             -150.000
                           </h6>
@@ -268,7 +268,7 @@
                       style="
                         margin-left: 40px;
                         margin-top: 40px;
-                        font-size: 24px;
+                        font-size: 18px;
                       "
                     >
                       Total
@@ -276,7 +276,7 @@
                     <div
                       class="col poppins-regular"
                       style="
-                        font-size: 24px;
+                        font-size: 18px;
                         margin-right: 40px;
                         text-align: right;
                         margin-top: 40px;

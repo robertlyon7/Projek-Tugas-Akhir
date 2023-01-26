@@ -947,6 +947,7 @@ export default defineComponent({
     const leftDrawerOpen = ref(false);
 
     return {
+      text: ref(""),
       current: ref(3),
       wifi: ref(true),
       kitchen: ref(false),
@@ -954,7 +955,7 @@ export default defineComponent({
       dryer: ref(true),
       Air_Conditioning: ref(true),
       heating: ref(false),
-      val: ref(true),
+      val: ref(false),
       basic: ref(false),
       fixed: ref(false),
       dialog: ref(false),

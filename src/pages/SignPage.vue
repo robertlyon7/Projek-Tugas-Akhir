@@ -130,6 +130,14 @@
                         color="black"
                       />
                     </template>
+                    <template v-slot:append>
+                      <q-icon
+                        style="padding-right: 10px;"
+                        :name="isPwd ? 'visibility_off' : 'visibility'"
+                        class="cursor-pointer"
+                        @click="isPwd = !isPwd"
+                      />
+                    </template>
                   </q-input>
 
                   <div>
@@ -168,7 +176,7 @@
                 clickable
                 v-ripple
                 @click="$router.push('/LoginPage')"
-                style="color: #0c8ce9"
+                style="color: #0c8ce9; cursor: pointer;"
                 >Log In</span
               >
             </h6>
@@ -187,23 +195,17 @@ export default {
   setup() {
     const $q = useQuasar();
 
-    const name = ref(null);
-    const age = ref(null);
-    const accept = ref(false);
-
     return {
       password: ref(""),
       isPwd: ref(true),
 
       email: ref(""),
+      text: ref(""),
       search: ref(""),
       tel: ref(""),
       url: ref(""),
       time: ref(""),
       date: ref(""),
-      name,
-      age,
-      accept,
 
       onSubmit() {
         if (accept.value !== true) {

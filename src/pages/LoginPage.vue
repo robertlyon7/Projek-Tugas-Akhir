@@ -102,6 +102,14 @@
                     <template v-slot:prepend>
                       <q-icon name="lock" color="black" />
                     </template>
+                    <template v-slot:append>
+                      <q-icon
+                      style="padding-right: 10px;"
+                        :name="isPwd ? 'visibility_off' : 'visibility'"
+                        class="cursor-pointer"
+                        @click="isPwd = !isPwd"
+                      />
+                    </template>
                   </q-input>
 
                   <span
@@ -109,7 +117,7 @@
                     v-ripple
                     @click="$router.push('/ForgotPassword')"
                     class="text-center poppins-medium"
-                    style="color: white; font-size: 16px"
+                    style="color: white; font-size: 16px; cursor: pointer;"
                     >Forgot Password?</span
                   >
 
@@ -146,7 +154,7 @@
                 clickable
                 v-ripple
                 @click="$router.push('/SignPage')"
-                style="color: #0c8ce9"
+                style="color: #0c8ce9; cursor: pointer;"
                 >Sign Up</span
               >
             </h6>
