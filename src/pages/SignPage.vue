@@ -61,12 +61,11 @@
             <q-card-section>
               <div>
                 <q-form
-                  @submit="onSubmit"
-                  @reset="onReset"
                   class="q-gutter-md"
                   style="margin-left: 20px; margin-right: 20px"
                 >
                   <q-input
+                    type="text"
                     class="poppins-semibold"
                     style="
                       background-color: white;
@@ -77,7 +76,7 @@
                     "
                     filled
                     placeholder="Name"
-                    lazy-rules
+                    v-model="this.credential.name"
                   >
                     <template v-slot:prepend>
                       <q-icon
@@ -99,6 +98,7 @@
                     "
                     filled
                     placeholder="Email"
+                    v-model="this.credential.email"
                   >
                     <template v-slot:prepend>
                       <q-icon
@@ -118,10 +118,10 @@
                       height: 60px;
                       margin-bottom: 35px;
                     "
-                    v-model="password"
                     filled
                     placeholder="Password"
                     :type="isPwd ? 'password' : 'text'"
+                    v-model="this.credential.password"
                   >
                     <template v-slot:prepend>
                       <q-icon
@@ -132,7 +132,7 @@
                     </template>
                     <template v-slot:append>
                       <q-icon
-                        style="padding-right: 10px;"
+                        style="padding-right: 10px"
                         :name="isPwd ? 'visibility_off' : 'visibility'"
                         class="cursor-pointer"
                         @click="isPwd = !isPwd"
@@ -142,9 +142,8 @@
 
                   <div>
                     <q-btn
-                      clickable
+                      @click="register()"
                       v-ripple
-                      @click="$router.push('/LoginPage')"
                       class="poppins-semibold"
                       label="Continue"
                       type="submit"
@@ -176,7 +175,7 @@
                 clickable
                 v-ripple
                 @click="$router.push('/LoginPage')"
-                style="color: #0c8ce9; cursor: pointer;"
+                style="color: #0c8ce9; cursor: pointer"
                 >Log In</span
               >
             </h6>
@@ -189,9 +188,35 @@
 
 <script>
 import { useQuasar } from "quasar";
+import { vuex } from "vuex";
 import { ref } from "vue";
 
 export default {
+  data() {
+    return {
+      credential: {},
+    };
+  },
+
+  methods: {
+    handleSubmit(e) {
+      console.log("submitted");
+    },
+    register() {
+      console.log("store", this.$store);
+      // console.log("credential", this.credential);
+      this.$store
+        .dispatch("User/register", this.credential)
+        .then((res) => {
+          console.log(res);
+          this.$router.push("/ListingLoggedIn");
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+  },
+
   setup() {
     const $q = useQuasar();
 
@@ -206,24 +231,6 @@ export default {
       url: ref(""),
       time: ref(""),
       date: ref(""),
-
-      onSubmit() {
-        if (accept.value !== true) {
-          $q.notify({
-            color: "red-5",
-            textColor: "white",
-            icon: "warning",
-            message: "You need to accept the license and terms first",
-          });
-        } else {
-          $q.notify({
-            color: "green-4",
-            textColor: "white",
-            icon: "cloud_done",
-            message: "Submitted",
-          });
-        }
-      },
 
       onReset() {
         name.value = null;

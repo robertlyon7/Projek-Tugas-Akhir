@@ -77,8 +77,7 @@
                     "
                     placeholder="Email"
                     filled
-                    v-model="Email"
-                    lazy-rules
+                    v-model="this.credential.email"
                   >
                     <template v-slot:prepend>
                       <q-icon name="mail" color="black" />
@@ -94,17 +93,17 @@
                       height: 60px;
                       margin-bottom: 17px;
                     "
-                    v-model="password"
                     filled
                     placeholder="Password"
                     :type="isPwd ? 'password' : 'text'"
+                    v-model="this.credential.password"
                   >
                     <template v-slot:prepend>
                       <q-icon name="lock" color="black" />
                     </template>
                     <template v-slot:append>
                       <q-icon
-                      style="padding-right: 10px;"
+                        style="padding-right: 10px"
                         :name="isPwd ? 'visibility_off' : 'visibility'"
                         class="cursor-pointer"
                         @click="isPwd = !isPwd"
@@ -117,7 +116,7 @@
                     v-ripple
                     @click="$router.push('/ForgotPassword')"
                     class="text-center poppins-medium"
-                    style="color: white; font-size: 16px; cursor: pointer;"
+                    style="color: white; font-size: 16px; cursor: pointer"
                     >Forgot Password?</span
                   >
 
@@ -125,7 +124,6 @@
                     <q-btn
                       clickable
                       v-ripple
-                      @click="$router.push('/ListingLoggedIn')"
                       class="poppins-semibold"
                       label="Continue"
                       type="submit"
@@ -140,6 +138,7 @@
 
                         margin-bottom: 5px;
                       "
+                      @click="login()"
                     >
                     </q-btn>
                   </div>
@@ -154,7 +153,7 @@
                 clickable
                 v-ripple
                 @click="$router.push('/SignPage')"
-                style="color: #0c8ce9; cursor: pointer;"
+                style="color: #0c8ce9; cursor: pointer"
                 >Sign Up</span
               >
             </h6>
@@ -170,6 +169,28 @@ import { useQuasar } from "quasar";
 import { ref } from "vue";
 
 export default {
+  data() {
+    return {
+      credential: {},
+    };
+  },
+
+  methods: {
+    login() {
+      console.log("store", this.$store);
+      // console.log("credential", this.credential);
+      this.$store
+        .dispatch("User/login", this.credential)
+        .then((res) => {
+          console.log(res);
+          this.$router.push("/ListingLoggedIn");
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+  },
+
   setup() {
     const $q = useQuasar();
 
@@ -190,30 +211,6 @@ export default {
       name,
       age,
       accept,
-
-      onSubmit() {
-        if (accept.value !== true) {
-          $q.notify({
-            color: "red-5",
-            textColor: "white",
-            icon: "warning",
-            message: "You need to accept the license and terms first",
-          });
-        } else {
-          $q.notify({
-            color: "green-4",
-            textColor: "white",
-            icon: "cloud_done",
-            message: "Submitted",
-          });
-        }
-      },
-
-      onReset() {
-        name.value = null;
-        age.value = null;
-        accept.value = false;
-      },
     };
   },
 };
