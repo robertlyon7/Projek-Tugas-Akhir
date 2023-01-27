@@ -54,7 +54,7 @@
               dropdown-icon="account_circle"
               style="margin-right: 150px"
             >
-              <q-list class="poppins-semibold">     
+              <q-list class="poppins-semibold">
                 <q-item clickable v-ripple @click="$router.push('/SignPage')">
                   <q-item-section>
                     <q-item-section>Sign Up</q-item-section>
@@ -799,7 +799,7 @@
                       class="col-6 text-h6 poppins-semibold"
                       style="margin-bottom: 5px"
                     >
-                      Bali, Indonesia
+                      Villa Tabanan
                     </div>
                     <div class="col-6 poppins-semibold">
                       <q-icon
@@ -818,7 +818,7 @@
                     class="text-h9 poppins-semibold"
                     style="margin-bottom: 5px"
                   >
-                    530 km away
+                    Bali, Indonesia
                   </div>
                   <div class="text-h8 poppins-semibold">
                     Rp 1.500.000,00 / night
@@ -877,9 +877,7 @@ import { defineComponent, ref } from "vue";
 import EssentialLink from "components/EssentialLink.vue";
 import LoginPage from "src/pages/LoginPage.vue";
 
-const linksList = [
-
-];
+const linksList = [];
 
 export default defineComponent({
   name: "MainLayout",
