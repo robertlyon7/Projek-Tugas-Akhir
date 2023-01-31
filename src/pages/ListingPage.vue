@@ -818,7 +818,7 @@
                       class="col-6 text-h6 poppins-semibold"
                       style="margin-bottom: 5px"
                     >
-                      Bali, Indonesia
+                      Villa Tabanan
                     </div>
                     <div class="col-6 poppins-semibold">
                       <q-icon
@@ -837,7 +837,7 @@
                     class="text-h9 poppins-semibold"
                     style="margin-bottom: 5px"
                   >
-                    530 km away
+                    Bali, Indonesia
                   </div>
                   <div class="text-h8 poppins-semibold">
                     Rp 1.500.000,00 / night
