@@ -30,7 +30,8 @@
                   debounce="500"
                   v-model="search"
                   input-class="text-left"
-                  class="q-ml-md"
+                  class="q-ml-md poppins-regular"
+                  style="font-size: 12px;"
                   placeholder="Where Are You Going ?"
                 >
                   <template v-slot:append>
@@ -42,6 +43,24 @@
                       @click="text = ''"
                     />
                   </template>
+                  <!-- <q-btn-dropdown
+                    no-caps
+                    dark
+                    flat
+                    style="font-size: 12px"
+                    dropdown-icon="expand_more"
+                    class="poppins-regular text-white"
+                    color=""
+                    label="Province"
+                  >
+                    <q-list>
+                      <q-item clickable v-close-popup @click="onItemClick">
+                        <q-item-section>
+                          <q-item-label>Photos</q-item-label>
+                        </q-item-section>
+                      </q-item>
+                    </q-list> 
+                  </q-btn-dropdown> -->
                 </q-input>
               </q-toolbar>
             </div>
@@ -54,7 +73,7 @@
               dropdown-icon="account_circle"
               style="margin-right: 150px"
             >
-              <q-list class="poppins-semibold">     
+              <q-list class="poppins-semibold">
                 <q-item clickable v-ripple @click="$router.push('/SignPage')">
                   <q-item-section>
                     <q-item-section>Sign Up</q-item-section>
@@ -877,9 +896,7 @@ import { defineComponent, ref } from "vue";
 import EssentialLink from "components/EssentialLink.vue";
 import LoginPage from "src/pages/LoginPage.vue";
 
-const linksList = [
-
-];
+const linksList = [];
 
 export default defineComponent({
   name: "MainLayout",
@@ -888,6 +905,7 @@ export default defineComponent({
     const leftDrawerOpen = ref(false);
 
     return {
+      text: ref(""),
       current: ref(3),
       wifi: ref(true),
       kitchen: ref(false),

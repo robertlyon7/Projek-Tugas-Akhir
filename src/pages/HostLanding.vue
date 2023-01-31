@@ -6,7 +6,7 @@
         <q-avatar
           clickable
           v-ripple
-          @click="$router.push('/MainLayout.vue')"
+          @click="$router.push('/')"
           style="margin-left: 20px; margin-top: 5px"
         >
           <img src="../assets/images/logo.svg" />
@@ -54,7 +54,7 @@
         </div>
       </div>
 
-      <!-- section -->
+      <!-- hero section -->
       <div class="row" style="margin-top: 150px; margin-bottom: 200px">
         <div class="col-5">
           <div
@@ -130,29 +130,4 @@
   </q-layout>
 </template>
 
-<script>
-import { ref } from "vue";
 
-export default {
-  setup() {
-    return {
-      expanded: ref([
-        "Satisfied customers (with avatar)",
-        "Good food (with icon)",
-      ]),
-
-      simple: [
-        {
-          label: "Satisfied customers (with avatar)",
-          avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
-          children: [
-            {
-              label: "Good food (with icon)",
-            },
-          ],
-        },
-      ],
-    };
-  },
-};
-</script>
