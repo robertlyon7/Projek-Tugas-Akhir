@@ -75,6 +75,20 @@
                   style="margin-left: 10px; margin-right: 10px; color: black"
                 />
 
+                <q-item
+                  clickable
+                  v-ripple
+                  @click="$router.push('/AccountPage')"
+                >
+                  <q-item-section>
+                    <q-item-label>Account</q-item-label>
+                  </q-item-section>
+                </q-item>
+
+                <q-separator
+                  style="margin-left: 10px; margin-right: 10px; color: black"
+                />
+
                 <q-item clickable v-ripple @click="$router.push('/BAHPage')">
                   <q-item-section>
                     <q-item-label>Become A Host</q-item-label>
@@ -943,24 +957,18 @@ const linksList = [
 export default defineComponent({
   name: "MainLayout",
 
-  mounted() {
-    this.getList();
-  },
-
   methods: {
-    getList() {
-      // console.log("credential", this.credential);
-      this.$store
-        .dispatch("Property/getList", this.credential)
-        .then((res) => {
-          console.log(res);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+    // Log out with Userfront.logout()
+    handleLogout() {
+      Userfront.logout();
     },
   },
-
+  computed: {
+    // User is logged out if they don't have an access token
+    isLoggedOut() {
+      return !Userfront.tokens.accessToken;
+    },
+  },
   setup() {
     const leftDrawerOpen = ref(false);
 

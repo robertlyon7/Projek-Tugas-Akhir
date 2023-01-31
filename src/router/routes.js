@@ -15,6 +15,10 @@ const routes = [
   { path: "/ListingPage", component: () => import("pages/ListingPage.vue") },
 
   { path: "/BAHPage", component: () => import("pages/BAHPage.vue") },
+
+  {path: "/AccountPage", component: () => import("pages/AccountPage.vue")},
+
+  { path: "/HostLanding", component: () => import("pages/HostLanding.vue") },
   {
     path: "/HostRegister1",
     component: () => import("pages/HostRegister1.vue"),
