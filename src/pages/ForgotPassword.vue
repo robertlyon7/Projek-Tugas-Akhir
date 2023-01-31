@@ -59,8 +59,6 @@
             <q-card-section>
               <div>
                 <q-form
-                  @submit="onSubmit"
-                  @reset="onReset"
                   class="q-gutter-md"
                   style="margin-left: 20px; margin-right: 20px"
                 >

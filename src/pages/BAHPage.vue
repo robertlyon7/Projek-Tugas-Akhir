@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="lHh lpr lFf" container style="height: 999px">
+  <q-layout container style="height: 999px">
     <!-- header -->
     <q-header style="height: 50px">
       <q-toolbar>
@@ -129,7 +129,3 @@
     </q-footer>
   </q-layout>
 </template>
-
-<script>
-import Axios from "axios";
-</script>

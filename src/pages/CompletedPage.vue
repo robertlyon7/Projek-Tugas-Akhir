@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="lHh lpr lFf" container style="height: 915px">
+  <q-layout container style="height: 915px">
     <q-page-container>
       <q-page>
         <q-header elevated>

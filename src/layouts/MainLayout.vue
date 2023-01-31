@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="lHh lpr lFf" container style="height: 999px">
+  <q-layout container style="height: 999px">
     <q-page-container>
       <!-- landing page -->
 

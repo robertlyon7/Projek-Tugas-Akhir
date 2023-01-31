@@ -61,8 +61,6 @@
             <q-card-section>
               <div>
                 <q-form
-                  @submit="onSubmit"
-                  @reset="onReset"
                   class="q-gutter-md"
                   style="margin-left: 20px; margin-right: 20px"
                 >
@@ -182,7 +180,8 @@ export default {
       this.$store
         .dispatch("User/login", this.credential)
         .then((res) => {
-          console.log(res);
+          console.log("orang ini", res);
+
           this.$router.push("/ListingLoggedIn");
         })
         .catch((err) => {

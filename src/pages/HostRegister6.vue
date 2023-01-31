@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="lHh lpr lFf" container style="height: 857px">
+  <q-layout container style="height: 857px">
     <q-page-container
       ><div class="row" style="height: 857px">
         <div class="col-6 text-white" style="background-color: #050d21">

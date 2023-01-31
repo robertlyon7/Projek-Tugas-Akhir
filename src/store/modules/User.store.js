@@ -3,8 +3,8 @@ import { api } from "src/boot/axios";
 const state = {};
 
 const mutations = {
-  console(state) {
-    console.log("hao");
+  set_auth(state, payload) {
+    state.auth = payload.auth;
   },
 };
 
@@ -24,12 +24,18 @@ const actions = {
       api
         .post(`/api/login`, credential)
         .then((res) => {
+          commit("set_auth", {
+            auth: res.data,
+          });
+          api.defaults.headers.common.Accept = "application/json";
+          api.defaults.headers.common.Authorization =
+            "Bearer" + " " + state.auth.token ;
+          console.log("ini daya yang ada di auth", state.auth);
           resolve(res);
         })
         .catch((err) => reject(err));
     });
   },
-
 };
 
 const getters = {};

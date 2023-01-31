@@ -16,7 +16,6 @@
           <q-toolbar>
             <q-avatar
               clickable
-              v-ripple
               @click="$router.push('/')"
               style="margin-left: 150px"
             >
@@ -203,7 +202,6 @@ export default {
       console.log("submitted");
     },
     register() {
-      console.log("store", this.$store);
       // console.log("credential", this.credential);
       this.$store
         .dispatch("User/register", this.credential)

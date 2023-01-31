@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="lHh lpr lFfd" container style="height: 900px">
+  <q-layout container style="height: 900px">
     <q-page-container>
       <q-page>
         <q-header elevated>
@@ -104,7 +104,7 @@
                   style="
                     height: 250px;
                     width: 250px;
-                    margin-top: 15px;
+                    margin-top: 10px;
                     margin-left: 166px;
                     border-radius: 20px;
                   "
@@ -211,7 +211,6 @@
                   </div>
                 </div>
               </div>
-              <div><q-icon name="delete_forever" size="20px" /></div>
             </div>
           </div>
         </q-page-container>

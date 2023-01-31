@@ -1,6 +1,6 @@
 <template>
   <div class="navbar navbar_open">
-    <q-layout view="lHh lpr lFfd" container style="height: 999px">
+    <q-layout container style="height: 999px">
       <!--header-->
       <q-header elevated>
         <q-toolbar>
@@ -874,13 +874,29 @@
 
 <script>
 import { defineComponent, ref } from "vue";
-import EssentialLink from "components/EssentialLink.vue";
-import LoginPage from "src/pages/LoginPage.vue";
 
 const linksList = [];
 
 export default defineComponent({
   name: "MainLayout",
+
+  mounted() {
+    this.get_list_property();
+  },
+
+  methods: {
+    get_list_property() {
+      // console.log("credential", this.credential);
+      this.$store
+        .dispatch("Property/getList")
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+  },
 
   setup() {
     const leftDrawerOpen = ref(false);

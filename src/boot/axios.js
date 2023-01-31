@@ -5,7 +5,7 @@ import axios from "axios";
 
 const api = axios.create({ baseURL: "https://seele.my.id/" });
 
-export default boot(({ app }) => {
+export default boot(({ app, store }) => {
   // for use inside Vue files (Options API) through this.$axios and this.$api
 
   app.config.globalProperties.$axios = axios;
@@ -15,6 +15,12 @@ export default boot(({ app }) => {
   app.config.globalProperties.$api = api;
   // ^ ^ ^ this will allow you to use this.$api (for Vue Options API form)
   //       so you can easily perform requests against your app's API
+
+  const token = store.getters["Auth/auth"];
+  if (token != null) {
+    api.defaults.headers.common.Accept = "application/json";
+    api.defaults.headers.common.Authorization = `${token.data.token_type} ${token.data.access_token}`;
+  }
 });
 
-export { axios, api };
+export { api };
