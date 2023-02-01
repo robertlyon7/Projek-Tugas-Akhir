@@ -1,5 +1,6 @@
 <template>
   <q-layout container style="height: 999px">
+    <!--header-->
     <q-header elevated>
       <q-toolbar>
         <q-avatar
@@ -78,8 +79,6 @@
     </q-header>
     <q-page-container>
       <q-page>
-        <!--header-->
-
         <!--page-1-->
         <q-page-container>
           <div>
