@@ -93,7 +93,47 @@
             Account
           </h6>
         </q-banner>
+        <div class="text-center">
+          <div class="q-pa-md">
+            <q-avatar style="margin-top: 10px">
+              <img src="../assets/images/person.svg" />
+            </q-avatar>
+          </div>
+          <div
+            v-if="this.user != null"
+            class="poppins-semibold text-center"
+            style="font-size: 20px"
+          >
+            {{ user.user.name }}
+          </div>
+          <div
+            v-if="this.user != null"
+            class="poppins-semibold text-center q-mt-md"
+            style="font-size: 20px"
+          >
+            {{ user.user.email }}
+          </div>
+        </div>
       </q-page>
     </q-page-container>
   </q-layout>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      user: null,
+    };
+  },
+  mounted() {
+    this.check();
+  },
+  methods: {
+    check() {
+      console.log("Checking", this.$store.getters["User/auth"]);
+      this.user = this.$store.getters["User/auth"];
+    },
+  },
+};
+</script>

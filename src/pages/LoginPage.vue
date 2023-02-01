@@ -113,7 +113,7 @@
                     clickable
                     v-ripple
                     @click="$router.push('/ForgotPassword')"
-                    class="text-center poppins-medium"
+                    class="text-center poppins-semibold"
                     style="color: white; font-size: 16px; cursor: pointer"
                     >Forgot Password?</span
                   >
@@ -180,8 +180,6 @@ export default {
       this.$store
         .dispatch("User/login", this.credential)
         .then((res) => {
-          console.log("orang ini", res);
-
           this.$router.push("/ListingLoggedIn");
         })
         .catch((err) => {

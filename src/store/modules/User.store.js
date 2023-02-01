@@ -1,6 +1,8 @@
 import { api } from "src/boot/axios";
 
-const state = {};
+const state = {
+  auth: null,
+};
 
 const mutations = {
   set_auth(state, payload) {
@@ -29,7 +31,7 @@ const actions = {
           });
           api.defaults.headers.common.Accept = "application/json";
           api.defaults.headers.common.Authorization =
-            "Bearer" + " " + state.auth.token ;
+            "Bearer" + " " + state.auth.token;
           console.log("ini daya yang ada di auth", state.auth);
           resolve(res);
         })
@@ -38,7 +40,7 @@ const actions = {
   },
 };
 
-const getters = {};
+const getters = { auth: (state) => state.auth };
 
 export default {
   namespaced: true,

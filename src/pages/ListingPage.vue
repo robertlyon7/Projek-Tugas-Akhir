@@ -31,7 +31,7 @@
                   v-model="search"
                   input-class="text-left"
                   class="q-ml-md poppins-regular"
-                  style="font-size: 12px;"
+                  style="font-size: 12px"
                   placeholder="Where Are You Going ?"
                 >
                   <template v-slot:append>
@@ -59,7 +59,7 @@
                           <q-item-label>Photos</q-item-label>
                         </q-item-section>
                       </q-item>
-                    </q-list> 
+                    </q-list>
                   </q-btn-dropdown> -->
                 </q-input>
               </q-toolbar>
@@ -898,24 +898,6 @@ const linksList = [];
 
 export default defineComponent({
   name: "MainLayout",
-
-  mounted() {
-    this.get_list_property();
-  },
-
-  methods: {
-    get_list_property() {
-      // console.log("credential", this.credential);
-      this.$store
-        .dispatch("Property/getList")
-        .then((res) => {
-          console.log(res);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    },
-  },
 
   setup() {
     const leftDrawerOpen = ref(false);

@@ -16,7 +16,7 @@ const routes = [
 
   { path: "/BAHPage", component: () => import("pages/BAHPage.vue") },
 
-  {path: "/AccountPage", component: () => import("pages/AccountPage.vue")},
+  { path: "/AccountPage", component: () => import("pages/AccountPage.vue") },
 
   { path: "/HostLanding", component: () => import("pages/HostLanding.vue") },
   {
@@ -40,7 +40,8 @@ const routes = [
     component: () => import("pages/HostRegister2.vue"),
   },
   {
-    path: "/DetailPage",
+    path: "/DetailPage/:propertyid",
+    props: true,
     component: () => import("pages/DetailPage.vue"),
   },
   {

@@ -102,7 +102,7 @@
                 <q-item
                   clickable
                   v-ripple
-                  @click="$router.push('/ListingPage')"
+                  @click="this.$router.push(`DetailPage/${place.id}`)"
                 >
                   <q-item-section>
                     <q-item-label>Log Out</q-item-label>
@@ -119,7 +119,11 @@
       <q-page-container style="padding-bottom: 1px">
         <div class="navbar navbar_open">
           <q-banner inline-actions class="bg-white text-black">
-            <h6 class="poppins-semibold" style="margin-left: 150px">
+            <h6
+              @click="check()"
+              class="poppins-semibold"
+              style="margin-left: 150px"
+            >
               Places that you may like
             </h6>
 
@@ -794,71 +798,77 @@
 
       <!--page list-->
       <q-page-container style="padding-top: 1px; padding-bottom: 100px">
-        <div class="q-pa-md">
-          <div class="row justify-center q-gutter-sm">
-            <q-intersection
-              v-for="index in 20"
-              :key="index"
-              transition="scale"
-              class="example-item"
-            >
-              <q-card
-                class="q-ma-sm"
-                style="border-radius: 25px"
-                clickable
-                v-ripple
-                @click="$router.push('/DetailPage')"
+        <div class="q-pa-md" v-if="listState != null">
+          <q-infinite-scroll @load="ketikaOnLoad" :offset="250">
+            <div class="row" ref="scrollTargetketikaonloadRef">
+              <div
+                class="col-3 q-pa-md"
+                v-for="place in listState.data.data"
+                :key="place.id"
               >
-                <img src="https://cdn.quasar.dev/img/mountains.jpg" />
+                <q-card
+                  class="q-ma-sm"
+                  style="border-radius: 25px"
+                  clickable
+                  v-ripple
+                  @click="this.$router.push(`DetailPage/${place.id}`)"
+                >
+                  <q-img src="https://cdn.quasar.dev/img/mountains.jpg" />
 
-                <div id="q-app" style="height: 1vh; margin-left: 290px">
-                  <div class="q-pa-md">
-                    <q-checkbox
-                      color="red"
-                      size="50px"
-                      style="margin-top: -490px"
-                      v-model="val"
-                      checked-icon="favorite"
-                      unchecked-icon="favorite_border"
-                      indeterminate-icon="help"
-                    ></q-checkbox>
+                  <div id="q-app" style="height: 1vh; margin-left: 290px">
+                    <div class="q-pa-md">
+                      <q-checkbox
+                        color="red"
+                        size="50px"
+                        style="margin-top: -490px"
+                        v-model="val"
+                        checked-icon="favorite"
+                        unchecked-icon="favorite_border"
+                        indeterminate-icon="help"
+                      ></q-checkbox>
+                    </div>
                   </div>
-                </div>
 
-                <q-card-section>
-                  <div class="row">
+                  <q-card-section>
+                    <div class="row">
+                      <div
+                        class="col-6 text-h6 poppins-semibold"
+                        style="margin-bottom: 5px"
+                      >
+                        {{ place.name_property }}
+                      </div>
+                      <div class="col-6 poppins-semibold">
+                        <q-icon
+                          name="star"
+                          size="20px"
+                          style="
+                            padding-left: 110px;
+                            padding-bottom: 3px;
+                            padding-right: 4px;
+                          "
+                        />
+                        4.9
+                      </div>
+                    </div>
                     <div
-                      class="col-6 text-h6 poppins-semibold"
+                      class="text-h9 poppins-semibold"
                       style="margin-bottom: 5px"
                     >
-                      VIlla Tabanan
+                      {{ place.location }}
                     </div>
-                    <div class="col-6 poppins-semibold">
-                      <q-icon
-                        name="star"
-                        size="20px"
-                        style="
-                          padding-left: 110px;
-                          padding-bottom: 3px;
-                          padding-right: 4px;
-                        "
-                      />
-                      4.9
+                    <div class="text-h8 poppins-semibold">
+                      Rp {{ place.price }} / night
                     </div>
-                  </div>
-                  <div
-                    class="text-h9 poppins-semibold"
-                    style="margin-bottom: 5px"
-                  >
-                    Bali, Indonesia
-                  </div>
-                  <div class="text-h8 poppins-semibold">
-                    Rp 1.500.000,00 / night
-                  </div>
-                </q-card-section>
-              </q-card>
-            </q-intersection>
-          </div>
+                  </q-card-section>
+                </q-card>
+              </div>
+            </div>
+            <template v-slot:loading>
+              <div class="row justify-center q-my-md">
+                <q-spinner-dots color="primary" size="40px" />
+              </div>
+            </template>
+          </q-infinite-scroll>
         </div>
       </q-page-container>
       <!--footer-->
@@ -906,6 +916,7 @@
 
 <script>
 import { defineComponent, ref } from "vue";
+import { mapState } from "vuex";
 import EssentialLink from "components/EssentialLink.vue";
 import LoginPage from "src/pages/LoginPage.vue";
 
@@ -957,10 +968,54 @@ const linksList = [
 export default defineComponent({
   name: "MainLayout",
 
+  mounted() {
+    this.get_list_property();
+  },
+
+  computed: {
+    // ...mapState(["User"]),
+  },
+
+  data() {
+    return {
+      listState: null,
+      orang: null,
+    };
+  },
+
   methods: {
+    check() {
+      console.log("Checking", this.$store.getters["User/auth"]);
+    },
     // Log out with Userfront.logout()
     handleLogout() {
       Userfront.logout();
+    },
+
+    get_list_property() {
+      this.$store
+        .dispatch("Property/getList")
+        .then((res) => {
+          this.listState = res.data;
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+
+    ketikaOnLoad(index, done) {
+      if (this.listState.data.next_page_url) {
+        this.$store.dispatch("Property/next").then((res) => {
+          this.listState = {
+            ...res.data,
+            data: [...this.listState.data, ...res.data.data],
+          };
+
+          done();
+        });
+      } else {
+        done();
+      }
     },
   },
   computed: {

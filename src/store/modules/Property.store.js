@@ -1,20 +1,51 @@
 import { api } from "src/boot/axios";
 
-const state = {};
+const state = {
+  listData: {},
+};
 
-const mutations = {};
+const mutations = {
+  set_list(state, payload) {
+    state.listData = payload.data;
+  },
+};
 
 const actions = {
+  getListById({ commit }, credential) {
+    return new Promise((resolve, reject) => {
+      api
+        .get(`/api/list-property/detail/${credential}`)
+        .then((res) => {
+          resolve(res);
+        })
+        .catch((err) => reject(err));
+    });
+  },
   getList({ commit }, credential) {
     return new Promise((resolve, reject) => {
       api
         .get(`/api/list-property`)
         .then((res) => {
-          console.log("babi", res.data);
+          commit("set_list", { data: res.data.data });
 
           resolve(res);
         })
         .catch((err) => reject(err));
+    });
+  },
+  next({ commit, state }) {
+    return new Promise((resolve, reject) => {
+      api
+        .get(`${state.listData.next_page_url}`)
+        .then((res) => {
+          commit("next", {
+            data: res.data,
+          });
+          resolve(res);
+        })
+        .catch((err) => {
+          reject(err);
+        });
     });
   },
 };
