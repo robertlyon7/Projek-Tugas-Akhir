@@ -95,21 +95,21 @@
         </q-banner>
         <div class="text-center">
           <div class="q-pa-md">
-            <q-avatar style="margin-top: 10px">
-              <img src="../assets/images/person.svg" />
+            <q-avatar style="margin-top: 10px; height: 140px; width: 140px">
+              <img src="../assets/images/account.svg" />
             </q-avatar>
           </div>
           <div
             v-if="this.user != null"
             class="poppins-semibold text-center"
-            style="font-size: 20px"
+            style="font-size: 22px; margin-top: 25px"
           >
             {{ user.user.name }}
           </div>
           <div
             v-if="this.user != null"
             class="poppins-semibold text-center q-mt-md"
-            style="font-size: 20px"
+            style="font-size: 22px"
           >
             {{ user.user.email }}
           </div>
