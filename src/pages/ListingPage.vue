@@ -18,50 +18,88 @@
 
           <div class="q-pa-md">
             <div class="mx-auto" style="height: 60px"></div>
-            <div class="absolute-center" style="width: 300px; max-width: 100%">
+            <div class="absolute-center" style="width: 550px; max-width: 100%">
               <q-toolbar>
                 <q-space />
 
-                <q-input
-                  rounded
-                  dark
-                  dense
-                  standout
-                  debounce="500"
-                  v-model="search"
-                  input-class="text-left"
-                  class="q-ml-md poppins-regular"
-                  style="font-size: 12px"
-                  placeholder="Where Are You Going ?"
+                <q-card
+                  class="row"
+                  style="
+                    background: #151c2c;
+                    height: 55px;
+                    width: 700px;
+                    border-radius: 40px;
+                  "
                 >
-                  <template v-slot:append>
-                    <q-icon v-if="text === ''" name="search" />
-                    <q-icon
-                      v-else
-                      name="clear"
-                      class="cursor-pointer"
-                      @click="text = ''"
+                  <q-card-section class="q-ml-md"
+                    ><label class="poppins-medium">Where are you going?</label>
+                  </q-card-section>
+
+                  <q-card-section class="q-mb-sm q-ml-md q-pt-sm">
+                    <q-btn-dropdown
+                      no-caps
+                      flat
+                      style="font-size: 15px; margin-left: -20px"
+                      dropdown-icon="expand_more"
+                      class="poppins-medium text-white"
+                      label="Province"
+                    >
+                      <q-list>
+                        <q-item clickable v-close-popup>
+                          <q-item-section class="poppins-medium">
+                            <q-item-label>Jawa Tengah</q-item-label>
+                          </q-item-section>
+                        </q-item>
+
+                        <q-item clickable v-close-popup>
+                          <q-item-section class="poppins-medium">
+                            <q-item-label>Jawa Timur</q-item-label>
+                          </q-item-section>
+                        </q-item>
+                      </q-list>
+                    </q-btn-dropdown>
+                  </q-card-section>
+
+                  <q-card-section class="q-pt-sm">
+                    <q-btn-dropdown
+                      no-caps
+                      flat
+                      style="font-size: 15px; margin-left: -30px"
+                      class="poppins-medium text-white"
+                      label="City"
+                    >
+                      <q-list>
+                        <q-item clickable v-close-popup>
+                          <q-item-section class="poppins-medium">
+                            <q-item-label>Semarang</q-item-label>
+                          </q-item-section>
+                        </q-item>
+
+                        <q-item clickable v-close-popup>
+                          <q-item-section class="poppins-medium">
+                            <q-item-label>Surabaya</q-item-label>
+                          </q-item-section>
+                        </q-item>
+                      </q-list>
+                    </q-btn-dropdown>
+                  </q-card-section>
+
+                  <q-card-section>
+                    <q-btn
+                      clickable
+                      v-ripple
+                      @click="$router.push('/ListingPage')"
+                      icon="search"
+                      :ripple="{ center: true }"
+                      style="
+                        color: white;
+                        margin-left: -30px;
+                        font-size: 15px;
+                        margin-top: -8px;
+                      "
                     />
-                  </template>
-                  <!-- <q-btn-dropdown
-                    no-caps
-                    dark
-                    flat
-                    style="font-size: 12px"
-                    dropdown-icon="expand_more"
-                    class="poppins-regular text-white"
-                    color=""
-                    label="Province"
-                  >
-                    <q-list>
-                      <q-item clickable v-close-popup @click="onItemClick">
-                        <q-item-section>
-                          <q-item-label>Photos</q-item-label>
-                        </q-item-section>
-                      </q-item>
-                    </q-list>
-                  </q-btn-dropdown> -->
-                </q-input>
+                  </q-card-section>
+                </q-card>
               </q-toolbar>
             </div>
           </div>

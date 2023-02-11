@@ -1,96 +1,143 @@
 <template>
   <q-layout container style="height: 1000px">
-    <q-page-container>
-      <q-page>
-        <q-header elevated>
-          <q-toolbar>
-            <q-avatar
-              clickable
-              v-ripple
-              @click="$router.push('/')"
-              size="44px"
-              style="margin-left: 150px"
-            >
-              <img src="../assets/images/logo.svg" />
-            </q-avatar>
+    <q-header elevated>
+      <q-toolbar>
+        <q-avatar
+          clickable
+          v-ripple
+          @click="$router.push('/')"
+          size="44px"
+          style="margin-left: 150px"
+        >
+          <img src="../assets/images/logo.svg" />
+        </q-avatar>
 
-            <q-toolbar-title class="poppins-semibold"
-              >Nusantara</q-toolbar-title
-            >
+        <q-toolbar-title class="poppins-semibold">Nusantara</q-toolbar-title>
 
-            <div class="q-pa-md">
-              <div class="mx-auto" style="height: 60px"></div>
-              <div
-                class="absolute-center"
-                style="width: 300px; max-width: 100%"
+        <div class="q-pa-md">
+          <div class="mx-auto" style="height: 60px"></div>
+          <div class="absolute-center" style="width: 550px; max-width: 100%">
+            <q-toolbar>
+              <q-space />
+
+              <q-card
+                class="row"
+                style="
+                  background: #151c2c;
+                  height: 55px;
+                  width: 700px;
+                  border-radius: 40px;
+                "
               >
-                <q-toolbar>
-                  <q-space />
+                <q-card-section class="q-ml-md"
+                  ><label class="poppins-medium">Where are you going?</label>
+                </q-card-section>
 
-                  <q-input
-                    rounded
-                    dark
-                    dense
-                    standout
-                    debounce="500"
-                    v-model="Search"
-                    input-class="text-left"
-                    class="q-ml-md"
-                    placeholder="Where Are You Going ?"
+                <q-card-section class="q-mb-sm q-ml-md q-pt-sm">
+                  <q-btn-dropdown
+                    no-caps
+                    flat
+                    style="font-size: 15px; margin-left: -20px"
+                    dropdown-icon="expand_more"
+                    class="poppins-medium text-white"
+                    label="Province"
                   >
-                    <template v-slot:append>
-                      <q-icon v-if="text === ''" name="search" />
-                      <q-icon
-                        v-else
-                        name="clear"
-                        class="cursor-pointer"
-                        @click="text = ''"
-                      />
-                    </template>
-                  </q-input>
-                </q-toolbar>
-              </div>
-            </div>
+                    <q-list>
+                      <q-item clickable v-close-popup>
+                        <q-item-section class="poppins-medium">
+                          <q-item-label>Jawa Tengah</q-item-label>
+                        </q-item-section>
+                      </q-item>
 
-            <div class="q-pa-md">
-              <q-btn-dropdown
-                color=""
-                rounded
-                dropdown-icon="face"
-                style="margin-right: 150px"
-              >
-                <q-list class="poppins-semibold">
-                  <q-item clickable v-ripple @click="$router.push('/SignPage')">
-                    <q-item-section>
-                      <q-item-section>Sign Up</q-item-section>
-                    </q-item-section>
-                  </q-item>
+                      <q-item clickable v-close-popup>
+                        <q-item-section class="poppins-medium">
+                          <q-item-label>Jawa Timur</q-item-label>
+                        </q-item-section>
+                      </q-item>
+                    </q-list>
+                  </q-btn-dropdown>
+                </q-card-section>
 
-                  <q-item
+                <q-card-section class="q-pt-sm">
+                  <q-btn-dropdown
+                    no-caps
+                    flat
+                    style="font-size: 15px; margin-left: -30px"
+                    class="poppins-medium text-white"
+                    label="City"
+                  >
+                    <q-list>
+                      <q-item clickable v-close-popup>
+                        <q-item-section class="poppins-medium">
+                          <q-item-label>Semarang</q-item-label>
+                        </q-item-section>
+                      </q-item>
+
+                      <q-item clickable v-close-popup>
+                        <q-item-section class="poppins-medium">
+                          <q-item-label>Surabaya</q-item-label>
+                        </q-item-section>
+                      </q-item>
+                    </q-list>
+                  </q-btn-dropdown>
+                </q-card-section>
+
+                <q-card-section>
+                  <q-btn
                     clickable
                     v-ripple
-                    @click="$router.push('/LoginPage')"
-                  >
-                    <q-item-section>
-                      <q-item-label>Login</q-item-label>
-                    </q-item-section>
-                  </q-item>
-
-                  <q-separator
-                    style="margin-left: 10px; margin-right: 10px; color: black"
+                    @click="$router.push('/ListingLoggedIn')"
+                    icon="search"
+                    :ripple="{ center: true }"
+                    style="
+                      color: white;
+                      margin-left: -30px;
+                      font-size: 15px;
+                      margin-top: -8px;
+                    "
                   />
+                </q-card-section>
+              </q-card>
+            </q-toolbar>
+          </div>
+        </div>
 
-                  <q-item clickable v-ripple @click="$router.push('/BAHPage')">
-                    <q-item-section>
-                      <q-item-label>Become A Host</q-item-label>
-                    </q-item-section>
-                  </q-item>
-                </q-list>
-              </q-btn-dropdown>
-            </div>
-          </q-toolbar>
-        </q-header>
+        <div class="q-pa-md">
+          <q-btn-dropdown
+            color=""
+            rounded
+            dropdown-icon="face"
+            style="margin-right: 150px"
+          >
+            <q-list class="poppins-semibold">
+              <q-item clickable v-ripple @click="$router.push('/SignPage')">
+                <q-item-section>
+                  <q-item-section>Sign Up</q-item-section>
+                </q-item-section>
+              </q-item>
 
+              <q-item clickable v-ripple @click="$router.push('/LoginPage')">
+                <q-item-section>
+                  <q-item-label>Login</q-item-label>
+                </q-item-section>
+              </q-item>
+
+              <q-separator
+                style="margin-left: 10px; margin-right: 10px; color: black"
+              />
+
+              <q-item clickable v-ripple @click="$router.push('/BAHPage')">
+                <q-item-section>
+                  <q-item-label>Become A Host</q-item-label>
+                </q-item-section>
+              </q-item>
+            </q-list>
+          </q-btn-dropdown>
+        </div>
+      </q-toolbar>
+    </q-header>
+    <q-page-container>
+      <q-page>
         <q-page-container>
           <div>
             <q-banner>

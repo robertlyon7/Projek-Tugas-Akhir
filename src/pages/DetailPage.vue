@@ -194,7 +194,7 @@
               <q-btn
                 clickable
                 v-ripple
-                @click="this.check()"
+                @click="$router.push('/DataPhoto')"
                 class="poppins-semibold"
                 label="Show all photos"
                 no-caps

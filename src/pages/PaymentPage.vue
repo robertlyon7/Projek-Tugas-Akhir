@@ -19,6 +19,7 @@
           <div class="absolute-center" style="width: 300px; max-width: 100%">
             <q-toolbar>
               <q-space />
+<<<<<<< HEAD
 
               <q-input
                 rounded
@@ -41,6 +42,8 @@
                   />
                 </template>
               </q-input>
+=======
+>>>>>>> 29d48d6d195e62d07455ffd1cd8ec56656197595
             </q-toolbar>
           </div>
         </div>
@@ -103,7 +106,7 @@
               </div>
             </q-banner>
             <div class="row">
-              <!--kanan-->
+              <!--kiri-->
               <div class="col" style="margin-left: 220px; margin-top: -50px">
                 <h6 class="poppins-medium" size="30px">Your Booking</h6>
                 <h6
@@ -192,6 +195,18 @@
                   type="number"
                   style="font-size: 22px; width: 367px; height: 78px"
                 />
+
+                <h6 class="poppins-medium" size="30px">Extra Features</h6>
+                <div>
+                  <div class="q-gutter-sm" style="margin-bottom: 20px">
+                    <q-checkbox v-model="chef" label="Chef" color="blue" />
+                    <br />
+                    <q-checkbox v-model="maid" label="Maid" color="blue" />
+                    <br />
+                    <q-checkbox v-model="beds" label="Beds" color="blue" />
+                  </div>
+                </div>
+
                 <h6 class="poppins-medium" size="30px">Pay with</h6>
 
                 <q-select
@@ -317,7 +332,7 @@
                   "
                 />
               </div>
-              <!--kiri-->
+              <!--kanan-->
               <div class="col" style="margin-left: 50px">
                 <q-card
                   class="my-card"
@@ -470,6 +485,9 @@ import { ref } from "vue";
 export default {
   setup() {
     return {
+      chef: ref(true),
+      maid: ref(true),
+      beds: ref(false),
       text: ref(""),
       card_number: ref(""),
       exp: ref(""),

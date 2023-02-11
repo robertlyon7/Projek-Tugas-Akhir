@@ -7,7 +7,11 @@
           v-ripple
           @click="$router.push('/')"
           size="44px"
+<<<<<<< HEAD
           style="margin-left: 150px"
+=======
+          style="margin-left: 70px"
+>>>>>>> 29d48d6d195e62d07455ffd1cd8ec56656197595
         >
           <img src="../assets/images/logo.svg" />
         </q-avatar>
@@ -64,7 +68,7 @@
         </div>
         <q-footer reveal style="height: 100px">
           <q-toolbar style="padding-top: 40px; padding-left: 40px">
-            <q-avatar size="25px">
+            <q-avatar size="25px" style="margin-left: 50px">
               <img src="../assets/images/copyright.png" />
             </q-avatar>
             <q-toolbar-title class="poppins-semibold" style="font-size: 17px"
@@ -80,7 +84,7 @@
                 src="../assets/images/twitter.svg
             "
             /></q-avatar>
-            <q-avatar size="20px" class="q-ml-sm" style="padding-right: 40px"
+            <q-avatar size="20px" class="q-ml-sm" style="padding-right: 70px"
               ><img
                 src="../assets/images/instagram.svg
             "
