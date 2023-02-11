@@ -1,37 +1,31 @@
 <template>
   <q-layout container style="height: 915px">
+    <q-header elevated>
+      <q-toolbar>
+        <q-avatar
+          clickable
+          v-ripple
+          @click="$router.push('/')"
+          size="44px"
+          style="margin-left: 150px"
+        >
+          <img src="../assets/images/logo.svg" />
+        </q-avatar>
+
+        <q-toolbar-title class="poppins-semibold">Nusantara</q-toolbar-title>
+
+        <div class="q-pa-md">
+          <div class="mx-auto" style="height: 60px"></div>
+          <div class="absolute-center" style="width: 300px; max-width: 100%">
+            <q-toolbar>
+              <q-space />
+            </q-toolbar>
+          </div>
+        </div>
+      </q-toolbar>
+    </q-header>
     <q-page-container>
       <q-page>
-        <q-header elevated>
-          <q-toolbar>
-            <q-avatar
-              clickable
-              v-ripple
-              @click="$router.push('/')"
-              size="44px"
-              style="margin-left: 150px"
-            >
-              <img src="../assets/images/logo.svg" />
-            </q-avatar>
-
-            <q-toolbar-title class="poppins-semibold"
-              >Nusantara</q-toolbar-title
-            >
-
-            <div class="q-pa-md">
-              <div class="mx-auto" style="height: 60px"></div>
-              <div
-                class="absolute-center"
-                style="width: 300px; max-width: 100%"
-              >
-                <q-toolbar>
-                  <q-space />
-                </q-toolbar>
-              </div>
-            </div>
-          </q-toolbar>
-        </q-header>
-
         <div class="row">
           <div class="col" style="margin-left: 200px; margin-top: 100px">
             <h3 class="poppins-bold" style="font-size: 50px">

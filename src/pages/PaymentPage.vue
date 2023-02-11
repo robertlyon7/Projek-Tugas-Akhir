@@ -1,96 +1,86 @@
 <template>
   <q-layout container style="height: 1800px">
+    <q-header elevated>
+      <q-toolbar>
+        <q-avatar
+          clickable
+          v-ripple
+          @click="$router.push('/')"
+          size="44px"
+          style="margin-left: 150px"
+        >
+          <img src="../assets/images/logo.svg" />
+        </q-avatar>
+
+        <q-toolbar-title class="poppins-semibold">Nusantara</q-toolbar-title>
+
+        <div class="q-pa-md">
+          <div class="mx-auto" style="height: 60px"></div>
+          <div class="absolute-center" style="width: 300px; max-width: 100%">
+            <q-toolbar>
+              <q-space />
+
+              <q-input
+                rounded
+                dark
+                dense
+                standout
+                debounce="500"
+                v-model="Search"
+                input-class="text-left"
+                class="q-ml-md"
+                placeholder="Where Are You Going ?"
+              >
+                <template v-slot:append>
+                  <q-icon v-if="text === ''" name="search" />
+                  <q-icon
+                    v-else
+                    name="clear"
+                    class="cursor-pointer"
+                    @click="text = ''"
+                  />
+                </template>
+              </q-input>
+            </q-toolbar>
+          </div>
+        </div>
+
+        <div class="q-pa-md">
+          <q-btn-dropdown
+            color=""
+            rounded
+            dropdown-icon="face"
+            style="margin-right: 150px"
+          >
+            <q-list class="poppins-semibold">
+              <q-item clickable v-ripple @click="$router.push('/SignPage')">
+                <q-item-section>
+                  <q-item-section>Sign Up</q-item-section>
+                </q-item-section>
+              </q-item>
+
+              <q-item clickable v-ripple @click="$router.push('/LoginPage')">
+                <q-item-section>
+                  <q-item-label>Login</q-item-label>
+                </q-item-section>
+              </q-item>
+
+              <q-separator
+                style="margin-left: 10px; margin-right: 10px; color: black"
+              />
+
+              <q-item clickable v-ripple @click="$router.push('/BAHPage')">
+                <q-item-section>
+                  <q-item-label>Become A Host</q-item-label>
+                </q-item-section>
+              </q-item>
+            </q-list>
+          </q-btn-dropdown>
+        </div>
+      </q-toolbar>
+    </q-header>
     <q-page-container>
       <q-page>
-        <q-header elevated>
-          <q-toolbar>
-            <q-avatar
-              clickable
-              v-ripple
-              @click="$router.push('/')"
-              size="44px"
-              style="margin-left: 150px"
-            >
-              <img src="../assets/images/logo.svg" />
-            </q-avatar>
-
-            <q-toolbar-title class="poppins-semibold"
-              >Nusantara</q-toolbar-title
-            >
-
-            <div class="q-pa-md">
-              <div class="mx-auto" style="height: 60px"></div>
-              <div
-                class="absolute-center"
-                style="width: 300px; max-width: 100%"
-              >
-                <q-toolbar>
-                  <q-space />
-
-                  <q-input
-                    rounded
-                    dark
-                    dense
-                    standout
-                    debounce="500"
-                    v-model="Search"
-                    input-class="text-left"
-                    class="q-ml-md"
-                    placeholder="Where Are You Going ?"
-                  >
-                    <template v-slot:append>
-                      <q-icon v-if="text === ''" name="search" />
-                      <q-icon
-                        v-else
-                        name="clear"
-                        class="cursor-pointer"
-                        @click="text = ''"
-                      />
-                    </template>
-                  </q-input>
-                </q-toolbar>
-              </div>
-            </div>
-
-            <div class="q-pa-md">
-              <q-btn-dropdown
-                color=""
-                rounded
-                dropdown-icon="face"
-                style="margin-right: 150px"
-              >
-                <q-list class="poppins-semibold">
-                  <q-item clickable v-ripple @click="$router.push('/SignPage')">
-                    <q-item-section>
-                      <q-item-section>Sign Up</q-item-section>
-                    </q-item-section>
-                  </q-item>
-
-                  <q-item
-                    clickable
-                    v-ripple
-                    @click="$router.push('/LoginPage')"
-                  >
-                    <q-item-section>
-                      <q-item-label>Login</q-item-label>
-                    </q-item-section>
-                  </q-item>
-
-                  <q-separator
-                    style="margin-left: 10px; margin-right: 10px; color: black"
-                  />
-
-                  <q-item clickable v-ripple @click="$router.push('/BAHPage')">
-                    <q-item-section>
-                      <q-item-label>Become A Host</q-item-label>
-                    </q-item-section>
-                  </q-item>
-                </q-list>
-              </q-btn-dropdown>
-            </div>
-          </q-toolbar>
-        </q-header>
-
         <q-page-container>
           <div>
             <q-banner>

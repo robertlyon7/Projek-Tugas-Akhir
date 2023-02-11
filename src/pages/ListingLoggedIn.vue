@@ -166,7 +166,7 @@
                         class="poppins-semiblod"
                         style="margin-bottom: 20px; font-size: 24px"
                       >
-                        Where Are You Going ?
+                        Where Are You Goin ?
                       </p>
 
                       <q-input
@@ -897,7 +897,6 @@
           /></q-avatar>
         </q-toolbar>
       </q-footer>
-      <!--footer-->
     </q-layout>
   </div>
 </template>
