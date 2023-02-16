@@ -393,7 +393,7 @@
                   v-ripple
                   @click="this.$router.push(`DetailPage/${place.id}`)"
                 >
-                  <q-img src="https://cdn.quasar.dev/img/mountains.jpg" />
+                  <q-img src="https://cdn.quasar.dev/img/mountains.jpg " />
 
                   <div id="q-app" style="height: 1vh; margin-left: 290px">
                     <div class="q-pa-md">
@@ -560,6 +560,7 @@ export default defineComponent({
     return {
       listState: null,
       orang: null,
+      // imageLink: "http://api.seele.my.id//public/images/",
     };
   },
 
@@ -577,6 +578,7 @@ export default defineComponent({
         .dispatch("Property/getList")
         .then((res) => {
           this.listState = res.data;
+          console.log("res", res.data);
         })
         .catch((err) => {
           console.log(err);

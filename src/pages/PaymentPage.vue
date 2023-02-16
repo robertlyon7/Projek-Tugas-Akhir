@@ -1,5 +1,5 @@
 <template>
-  <q-layout container style="height: 1800px">
+  <q-layout container style="height: 2100px">
     <q-header elevated>
       <q-toolbar>
         <q-avatar

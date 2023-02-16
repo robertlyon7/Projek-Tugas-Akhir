@@ -1,5 +1,5 @@
 <template>
-  <q-layout container style="height: 999px">
+  <q-layout container style="height: 3000px">
     <!--header-->
     <q-header elevated>
       <q-toolbar>
@@ -20,25 +20,6 @@
           <div class="absolute-center" style="width: 300px; max-width: 100%">
             <q-toolbar>
               <q-space />
-
-              <q-input
-                rounded
-                standout
-                v-model="Search"
-                input-class="text-left"
-                class="q-ml-md"
-                placeholder="Where Are You Going ?"
-              >
-                <template v-slot:append>
-                  <q-icon v-if="text === ''" name="search" />
-                  <q-icon
-                    v-else
-                    name="clear"
-                    class="cursor-pointer"
-                    @click="text = ''"
-                  />
-                </template>
-              </q-input>
             </q-toolbar>
           </div>
         </div>
@@ -102,6 +83,8 @@
                 <div class="col-4 col-md-6 column items-end" id="q-app">
                   <div class="q-pa-md">
                     <q-checkbox
+                      class="isFavorite ? 'fas fa-heart' : 'far fa-heart'"
+                      @click="toggleFavorite"
                       size="50px"
                       v-model="val"
                       color="red"
@@ -722,9 +705,22 @@ export default {
   data() {
     return {
       property: null,
+      isFavorite: false,
     };
   },
   methods: {
+    toggleFavorite() {
+      const itemId = 1; // Replace with the ID of the item
+      if (this.isFavorite) {
+        axios.delete(`/api/items/${itemId}/favorite`).then((response) => {
+          this.isFavorite = false;
+        });
+      } else {
+        axios.post(`/api/items/${itemId}/favorite`).then((response) => {
+          this.isFavorite = true;
+        });
+      }
+    },
     check() {
       console.log("propertyid", this.propertyid);
     },
