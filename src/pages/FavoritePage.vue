@@ -125,7 +125,7 @@
                         size="22px"
                         @click="confirm = true"
                         @click.stop="deleteTask(index)"
-                        style="margin-top: -50px; margin-left: -20px"
+                        style="margin-top: -50px; margin-left: -13px"
                       />
                       <q-dialog v-model="confirm" persistent>
                         <q-card
