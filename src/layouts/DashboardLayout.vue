@@ -17,7 +17,7 @@
           class="poppins-semibold q-pl-lg"
           style="margin-top: 13px"
         >
-          Nusantara
+          Nusantara Host
         </q-toolbar-title>
       </q-toolbar>
     </q-header>

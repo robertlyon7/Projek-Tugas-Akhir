@@ -4,7 +4,10 @@
       ><div class="row" style="height: 857px">
         <div class="col-6 text-white" style="background-color: #050d21">
           <div class="row" style="padding-top: 70px; padding-left: 100px">
-            <q-avatar size="40px" @click="$router.push('/ListingLoggedIn')" style="cursor: pointer;"
+            <q-avatar
+              size="40px"
+              @click="$router.push('/ListingLoggedIn')"
+              style="cursor: pointer"
               ><q-img src="../assets/images/logo.svg"
             /></q-avatar>
             <div
@@ -24,32 +27,31 @@
         </div>
         <div class="col-6 self-center">
           <div class="column items-center">
-            <q-btn
-              outline
-              rounded
-              color="primary"
-              class="poppins-semibold"
-              label="Guests"
-              no-caps
-              style="padding: 15px; width: 500px; margin-bottom: 30px"
+            <q-input
+              label="adult"
+              class="row poppins-semibold"
+              v-model.number="modelAdult"
+              type="number"
+              outlined
+              style="
+                font-size: 22px;
+                width: 266px;
+                height: 78px;
+                margin-left: 15px;
+              "
             />
-            <q-btn
-              outline
-              rounded
-              color="primary"
-              class="poppins-semibold"
-              label="Beds"
-              no-caps
-              style="padding: 15px; width: 500px; margin-bottom: 30px"
-            />
-            <q-btn
-              outline
-              rounded
-              color="primary"
-              class="poppins-semibold"
-              label="Bathrooms"
-              no-caps
-              style="padding: 15px; width: 500px; margin-bottom: 30px"
+            <q-input
+              label="kids"
+              class="row poppins-semibold"
+              v-model.number="modelKids"
+              type="number"
+              outlined
+              style="
+                font-size: 22px;
+                width: 266px;
+                height: 78px;
+                margin-left: 15px;
+              "
             />
           </div>
           <div class="row poppins-semibold">
@@ -97,3 +99,43 @@
     </q-page-container>
   </q-layout>
 </template>
+
+<script>
+import { ref } from "vue";
+
+export default {
+  props: ["propertyid"],
+  mounted() {
+    this.get_list_property_by_id();
+  },
+  data() {
+    return {
+      property: null,
+    };
+  },
+  methods: {
+    check() {
+      console.log("propertyid", this.propertyid);
+    },
+    get_list_property_by_id() {
+      this.$store
+        .dispatch("Property/getListById", this.propertyid)
+        .then((res) => {
+          this.property = res.data;
+          console.log("halo", this.property);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+  },
+  setup() {
+    return {
+      val: ref(false),
+      date: ref("2019/02/01"),
+      model: ref(null),
+      options: ["q", "w", "e", "r", "t"],
+    };
+  },
+};
+</script>

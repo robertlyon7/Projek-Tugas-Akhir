@@ -19,31 +19,6 @@
           <div class="absolute-center" style="width: 300px; max-width: 100%">
             <q-toolbar>
               <q-space />
-<<<<<<< HEAD
-
-              <q-input
-                rounded
-                dark
-                dense
-                standout
-                debounce="500"
-                v-model="Search"
-                input-class="text-left"
-                class="q-ml-md"
-                placeholder="Where Are You Going ?"
-              >
-                <template v-slot:append>
-                  <q-icon v-if="text === ''" name="search" />
-                  <q-icon
-                    v-else
-                    name="clear"
-                    class="cursor-pointer"
-                    @click="text = ''"
-                  />
-                </template>
-              </q-input>
-=======
->>>>>>> 29d48d6d195e62d07455ffd1cd8ec56656197595
             </q-toolbar>
           </div>
         </div>

@@ -393,7 +393,9 @@
                   v-ripple
                   @click="this.$router.push(`DetailPage/${place.id}`)"
                 >
-                  <q-img src="https://cdn.quasar.dev/img/mountains.jpg" />
+                  <q-img>
+                    {{ place.image }}
+                  </q-img>
 
                   <div id="q-app" style="height: 1vh; margin-left: 290px">
                     <div class="q-pa-md">

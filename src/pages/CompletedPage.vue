@@ -7,11 +7,7 @@
           v-ripple
           @click="$router.push('/')"
           size="44px"
-<<<<<<< HEAD
           style="margin-left: 150px"
-=======
-          style="margin-left: 70px"
->>>>>>> 29d48d6d195e62d07455ffd1cd8ec56656197595
         >
           <img src="../assets/images/logo.svg" />
         </q-avatar>

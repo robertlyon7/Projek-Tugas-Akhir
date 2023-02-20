@@ -104,7 +104,7 @@ export default {
       onRejected(rejectedEntries) {
         $q.notify({
           type: "negative",
-          message: `${rejectedEntries.length} file(s) did not pass validation constraints`,
+          message: `${rejectedEntries.length} file(s) too large`,
         });
       },
     };

@@ -1,15 +1,10 @@
-import { text } from 'body-parser';
-
 <template>
   <q-layout container style="height: 857px">
     <q-page-container
       ><div class="row" style="height: 857px">
         <div class="col-6 text-white" style="background-color: #050d21">
           <div class="row" style="padding-top: 70px; padding-left: 100px">
-            <q-avatar
-              size="40px"
-              @click="$router.push('/ListingLoggedIn')"
-              style="cursor: pointer"
+            <q-avatar size="40px" @click="$router.push('/ListingLoggedIn')" style="cursor: pointer;"
               ><q-img src="../assets/images/logo.svg"
             /></q-avatar>
             <div
@@ -23,23 +18,35 @@ import { text } from 'body-parser';
             class="poppins-semibold"
             style="padding-top: 250px; padding-left: 100px; font-size: 40px"
           >
-            Where’s your place <br />located ?
+            Let’s see your beautiful<br />
+            property
           </div>
         </div>
         <div class="col-6 self-center">
           <div class="column items-center">
-            <q-input class="poppins-semibold" rounded outlined v-model="text" label="Address">
+            <q-file
+              color="#050d21"
+              style="max-width: 300px"
+              v-model="filesImages"
+              filled
+              multiple
+              use-chips
+              bordered
+              label="Place an image"
+              accept=".jpg, image/*"
+              @rejected="onRejected"
+            >
               <template v-slot:prepend>
-                <q-icon name="location_on" />
+                <q-icon name="image" />
               </template>
-            </q-input>
+            </q-file>
           </div>
           <div class="row poppins-semibold">
             <div class="col-6">
               <q-btn
                 clickable
                 v-ripple
-                @click="$router.push('/HostRegister2')"
+                @click="$router.push('/HostRegister5')"
                 no-caps
                 label="Back"
                 style="
@@ -58,7 +65,7 @@ import { text } from 'body-parser';
               <q-btn
                 clickable
                 v-ripple
-                @click="$router.push('/HostRegister4')"
+                @click="$router.push('/HostRegisterSuccess')"
                 no-caps
                 label="Next"
                 style="
@@ -81,12 +88,25 @@ import { text } from 'body-parser';
 </template>
 
 <script>
+import { useQuasar } from "quasar";
 import { ref } from "vue";
 
 export default {
   setup() {
+    const $q = useQuasar();
+
     return {
-      text: ref(""),
+      filesImages: ref(null),
+      filesMaxSize: ref(null),
+      filesMaxTotalSize: ref(null),
+      filesMaxNumber: ref(null),
+
+      onRejected(rejectedEntries) {
+        $q.notify({
+          type: "negative",
+          message: `${rejectedEntries.length} file(s) did not pass validation constraints`,
+        });
+      },
     };
   },
 };
