@@ -1,7 +1,7 @@
 <template>
-  <q-layout container style="height: 857px">
+  <q-layout container style="height: 915px">
     <q-page-container
-      ><div class="row" style="height: 857px">
+      ><div class="row" style="height: 915px">
         <div class="col-6 text-white" style="background-color: #050d21">
           <div class="row" style="padding-top: 70px; padding-left: 100px">
             <q-avatar

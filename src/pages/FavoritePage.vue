@@ -79,7 +79,7 @@
                 Your Favorites
               </h6>
             </q-banner>
-            <div class="row">
+            <q-item >
               <div class="col">
                 <img
                   src="../assets/images/detailimage.png"
@@ -121,9 +121,11 @@
                       <q-btn
                         icon="delete_forever"
                         flat
+                        dense
                         size="22px"
                         @click="confirm = true"
-                        style="margin-top: -50px; margin-left: -20px"
+                        @click.stop="deleteTask(index)"
+                        style="margin-top: -50px; margin-left: -13px"
                       />
                       <q-dialog v-model="confirm" persistent>
                         <q-card
@@ -194,7 +196,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </q-item>
           </div>
         </q-page-container>
       </q-page>
