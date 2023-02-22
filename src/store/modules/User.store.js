@@ -38,6 +38,17 @@ const actions = {
         .catch((err) => reject(err));
     });
   },
+
+  create_property({ commit }, credential) {
+    return new Promise((resolve, reject) => {
+      api
+        .post(`/api/list-property/create`, credential)
+        .then((res) => {
+          resolve(res);
+        })
+        .catch((err) => reject(err));
+    });
+  },
 };
 
 const getters = { auth: (state) => state.auth };

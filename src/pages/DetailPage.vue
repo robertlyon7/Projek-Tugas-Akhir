@@ -213,7 +213,7 @@
                 style="font-size: 25px"
                 v-if="this.property != null"
               >
-                Entire villa hosted by  
+                Entire villa hosted by
                 <q-avatar class="items-center" style="margin-left: 600px">
                   <img
                     src="../assets/images/person.svg"

@@ -343,7 +343,85 @@
       </q-page-container>
 
       <!--page list-->
+
       <q-page-container style="padding-top: 1px; padding-bottom: 100px">
+        <div class="q-pa-md" v-if="listState != null">
+          <q-infinite-scroll @load="ketikaOnLoad" :offset="250">
+            <div class="row" ref="scrollTargetketikaonloadRef">
+              <div
+                class="col-3 q-pa-md"
+                v-for="place in listState.data.data"
+                :key="place"
+              >
+                <q-card
+                  class="q-ma-sm"
+                  style="border-radius: 25px"
+                  clickable
+                  v-ripple
+                  @click="this.$router.push(`DetailPage/${place.id}`)"
+                >
+                  <q-img
+                    :src="`http://api.seele.my.id/images/${place.images[0].image}`"
+                  />
+
+                  <div id="q-app" style="height: 1vh; margin-left: 290px">
+                    <div class="q-pa-md">
+                      <q-checkbox
+                        color="red"
+                        size="50px"
+                        style="margin-top: -490px"
+                        v-model="val"
+                        checked-icon="favorite"
+                        unchecked-icon="favorite_border"
+                        indeterminate-icon="help"
+                      ></q-checkbox>
+                    </div>
+                  </div>
+
+                  <q-card-section>
+                    <div class="row">
+                      <div
+                        class="col-6 text-h6 poppins-semibold"
+                        style="margin-bottom: 5px"
+                      >
+                        {{ place.name_property }}
+                      </div>
+                      <div class="col-6 poppins-semibold">
+                        <q-icon
+                          name="star"
+                          size="20px"
+                          style="
+                            padding-left: 110px;
+                            padding-bottom: 3px;
+                            padding-right: 4px;
+                          "
+                        />
+                        4.9
+                      </div>
+                    </div>
+                    <div
+                      class="text-h9 poppins-semibold"
+                      style="margin-bottom: 5px"
+                    >
+                      {{ place.location }}
+                    </div>
+                    <div class="text-h8 poppins-semibold">
+                      Rp {{ place.price }} / night
+                    </div>
+                  </q-card-section>
+                </q-card>
+              </div>
+            </div>
+            <template v-slot:loading>
+              <div class="row justify-center q-my-md">
+                <q-spinner-dots color="primary" size="40px" />
+              </div>
+            </template>
+          </q-infinite-scroll>
+        </div>
+      </q-page-container>
+
+      <!-- <q-page-container style="padding-top: 1px; padding-bottom: 100px">
         <div class="q-pa-md">
           <div class="row justify-center q-gutter-sm">
             <q-intersection
@@ -410,7 +488,7 @@
             </q-intersection>
           </div>
         </div>
-      </q-page-container>
+      </q-page-container> -->
       <!--footer-->
       <q-footer reveal style="height: 100px">
         <q-toolbar style="padding-top: 40px; padding-left: 40px">
@@ -456,11 +534,74 @@
 
 <script>
 import { defineComponent, ref } from "vue";
+import { mapState } from "vuex";
+import EssentialLink from "components/EssentialLink.vue";
+import LoginPage from "src/pages/LoginPage.vue";
 
 const linksList = [];
 
 export default defineComponent({
   name: "MainLayout",
+
+  mounted() {
+    this.get_list_property();
+  },
+
+  computed: {
+    // ...mapState(["User"]),
+  },
+
+  data() {
+    return {
+      listState: null,
+      orang: null,
+      // imageLink: "http://api.seele.my.id//public/images/",
+    };
+  },
+
+  methods: {
+    check() {
+      console.log("Checking", this.$store.getters["User/auth"]);
+    },
+    // Log out with Userfront.logout()
+    handleLogout() {
+      Userfront.logout();
+    },
+
+    get_list_property() {
+      this.$store
+        .dispatch("Property/getList")
+        .then((res) => {
+          this.listState = res.data;
+          console.log("res", res.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+
+    ketikaOnLoad(index, done) {
+      if (this.listState.data.next_page_url) {
+        this.$store.dispatch("Property/next").then((res) => {
+          this.listState = {
+            ...res.data,
+            data: [...this.listState.data, ...res.data.data],
+          };
+
+          done();
+        });
+      } else {
+        done();
+      }
+    },
+  },
+
+  computed: {
+    // User is logged out if they don't have an access token
+    isLoggedOut() {
+      return !Userfront.tokens.accessToken;
+    },
+  },
 
   setup() {
     const leftDrawerOpen = ref(false);

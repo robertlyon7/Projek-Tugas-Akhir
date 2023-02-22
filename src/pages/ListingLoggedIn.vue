@@ -393,7 +393,9 @@
                   v-ripple
                   @click="this.$router.push(`DetailPage/${place.id}`)"
                 >
-                  <q-img src="https://cdn.quasar.dev/img/mountains.jpg " />
+                  <q-img
+                    :src="`http://api.seele.my.id/images/${place.images[0].image}`"
+                  />
 
                   <div id="q-app" style="height: 1vh; margin-left: 290px">
                     <div class="q-pa-md">
@@ -412,8 +414,8 @@
                   <q-card-section>
                     <div class="row">
                       <div
-                        class="col-6 text-h6 poppins-semibold"
-                        style="margin-bottom: 5px"
+                        class="col-6 poppins-semibold"
+                        style="margin-bottom: 5px; font-size: 16px;"
                       >
                         {{ place.name_property }}
                       </div>

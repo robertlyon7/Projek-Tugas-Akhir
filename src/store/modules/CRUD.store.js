@@ -14,7 +14,7 @@ const actions = {
   create({ commit }, credential) {
     return new Promise((resolve, reject) => {
       api
-        .post(`/list-property/create`, credential)
+        .post(`/api/list-property/create`, credential)
         .then((res) => {
           resolve(res);
         })

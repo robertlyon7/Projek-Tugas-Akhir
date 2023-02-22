@@ -21,67 +21,40 @@
             class="poppins-semibold"
             style="padding-top: 250px; padding-left: 100px; font-size: 40px"
           >
-            What kind of place will <br />
-            you host ?
+            What are you going to <br />
+            call this place ?
           </div>
         </div>
         <div class="col-6 self-center">
           <div class="column items-center">
-            <q-btn
-              outline
-              rounded
-              color="primary"
-              class="poppins-semibold"
-              label="Apartment"
-              no-caps
-              icon-right="apartment"
-              style="
-                padding: 15px;
-                width: 500px;
-                margin-top: 30px;
-                margin-bottom: 30px;
-              "
-            />
-            <q-btn
-              outline
-              rounded
-              color="primary"
-              class="poppins-semibold"
-              label="House"
-              no-caps
-              icon-right="house"
-              style="padding: 15px; width: 500px; margin-bottom: 30px"
-            />
-            <q-btn
-              outline
-              rounded
-              color="primary"
-              class="poppins-semibold"
-              label="Meeting Room"
-              no-caps
-              icon-right="meeting_room"
-              style="
-                padding: 15px;
-                width: 500px;
-                margin-top: ;
-                margin-bottom: 30px;
-              "
-            />
-            <q-btn
-              outline
-              rounded
-              color="primary"
-              class="poppins-semibold"
-              label="Recretional Space"
-              no-caps
-              icon-right="map"
-              style="
-                padding: 15px;
-                width: 500px;
-                margin-top: ;
-                margin-bottom: 30px;
-              "
-            />
+            <q-form>
+              <q-input
+                class="poppins-semibold"
+                style="
+                  background-color: white;
+                  border-radius: 20px;
+                  margin-bottom: 35px;
+                  width: 400px;
+                  height: 60px;
+                "
+                outlined
+                v-model="text"
+                label="Property Name"
+              />
+              <q-input
+                class="poppins-semibold"
+                style="
+                  background-color: white;
+                  border-radius: 20px;
+                  margin-bottom: 35px;
+                  width: 400px;
+                  height: 60px;
+                "
+                outlined
+                v-model="text"
+                label="Property Description"
+              />
+            </q-form>
           </div>
           <div class="poppins-semibold" style="margin-left: 600px">
             <q-btn
@@ -106,3 +79,17 @@
     </q-page-container>
   </q-layout>
 </template>
+
+<script>
+import { ref } from "vue";
+
+export default {
+  setup() {
+    return {
+      text: ref(""),
+      ph: ref(""),
+      dense: ref(false),
+    };
+  },
+};
+</script>
