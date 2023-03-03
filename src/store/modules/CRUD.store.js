@@ -11,6 +11,16 @@ const mutations = {
 };
 
 const actions = {
+  readAll({ commit }, credential) {
+    return new Promise((resolve, reject) => {
+      api
+        .get(`/api/list-property`, credential)
+        .then((res) => {
+          resolve(res);
+        })
+        .catch((err) => reject(err));
+    });
+  },
   create({ commit }, credential) {
     return new Promise((resolve, reject) => {
       api

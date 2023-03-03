@@ -104,6 +104,10 @@ const routes = [
     path: "/NewPassword",
     component: () => import("pages/NewPassword.vue"),
   },
+  {
+    path: "/HostRegister",
+    component: () => import("pages/HostRegister.vue"),
+  },
 ];
 
 export default routes;
