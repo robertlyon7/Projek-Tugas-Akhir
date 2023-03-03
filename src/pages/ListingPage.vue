@@ -128,7 +128,11 @@
                   style="margin-left: 10px; margin-right: 10px; color: black"
                 />
 
-                <q-item clickable v-ripple @click="$router.push('/BAHPage')">
+                <q-item
+                  clickable
+                  v-ripple
+                  @click="$router.push('/DashboardLayout')"
+                >
                   <q-item-section>
                     <q-item-label>Become A Host</q-item-label>
                   </q-item-section>
@@ -361,6 +365,7 @@
                   @click="this.$router.push(`DetailPage/${place.id}`)"
                 >
                   <q-img
+                    style="width: 365px; height: 250px"
                     :src="`http://api.seele.my.id/images/${place.images[0].image}`"
                   />
 
@@ -378,11 +383,11 @@
                     </div>
                   </div>
 
-                  <q-card-section>
+                  <q-card-section style="height: 150px">
                     <div class="row">
                       <div
-                        class="col-6 text-h6 poppins-semibold"
-                        style="margin-bottom: 5px"
+                        class="col-6 poppins-semibold"
+                        style="margin-bottom: 5px; font-size: 20px"
                       >
                         {{ place.name_property }}
                       </div>

@@ -12,13 +12,16 @@ const mutations = {
 
 const actions = {
   register({ commit }, credential) {
+    console.log("ini api", api);
     return new Promise((resolve, reject) => {
       api
-        .post(`/api/register`, credential)
+        .post("/api/register", credential)
         .then((res) => {
           resolve(res);
         })
-        .catch((err) => reject(err));
+        .catch((err) => {
+          reject(err);
+        });
     });
   },
   login({ commit }, credential) {
@@ -26,6 +29,7 @@ const actions = {
       api
         .post(`/api/login`, credential)
         .then((res) => {
+          localStorage.setItem("user_id", res.data.user.id);
           commit("set_auth", {
             auth: res.data,
           });

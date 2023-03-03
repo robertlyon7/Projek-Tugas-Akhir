@@ -202,15 +202,13 @@ export default {
       console.log("submitted");
     },
     register() {
-      // console.log("credential", this.credential);
       this.$store
         .dispatch("User/register", this.credential)
         .then((res) => {
-          console.log(res);
-          this.$router.push("/ListingLoggedIn");
+          console.log("data Register", res);
         })
         .catch((err) => {
-          console.log(err);
+          console.log("error Register", err);
         });
     },
   },

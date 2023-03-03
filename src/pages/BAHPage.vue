@@ -78,7 +78,7 @@
           <q-btn
             clickable
             v-ripple
-            @click="$router.push('/HostRegister1')"
+            @click="$router.push('/DashboardLayout')"
             class="poppins-semibold"
             label="Become A Host"
             no-caps
@@ -130,7 +130,6 @@
   </q-layout>
 </template>
 
-
 <script>
 import { ref } from "vue";
 
@@ -157,4 +156,3 @@ export default {
   },
 };
 </script>
-

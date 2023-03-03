@@ -198,7 +198,6 @@ export default {
     return {
       password: ref(""),
       isPwd: ref(true),
-
       email: ref(""),
       search: ref(""),
       tel: ref(""),
