@@ -39,7 +39,7 @@
                     border-radius: 10px;
                     margin-top: 35px;
                   "
-                  src="../assets/images/house1.png"
+                  :src="`http://localhost:8000/images/${place.images[0].image}`"
                 />
               </div>
               <div class="col-8">

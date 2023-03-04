@@ -366,7 +366,7 @@
                 >
                   <q-img
                     style="width: 365px; height: 250px"
-                    :src="`http://api.seele.my.id/images/${place.images[0].image}`"
+                    :src="`http://localhost:8000/images/${place.images[0].image}`"
                   />
 
                   <div id="q-app" style="height: 1vh; margin-left: 290px">
