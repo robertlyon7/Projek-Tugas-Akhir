@@ -237,7 +237,7 @@
                 clickable
                 v-ripple
                 class="poppins-semibold"
-                @click="createProperty"
+                @click="$router.push('/DashboardLayout'), createProperty"
                 no-caps
                 style="
                   margin-top: 50px;
