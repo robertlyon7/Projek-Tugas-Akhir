@@ -20,10 +20,6 @@ const routes = [
 
   { path: "/HostLanding", component: () => import("pages/HostLanding.vue") },
   {
-    path: "/HostRegister1",
-    component: () => import("pages/HostRegister1.vue"),
-  },
-  {
     path: "/SignPage",
     component: () => import("pages/SignPage.vue"),
   },
@@ -35,31 +31,13 @@ const routes = [
     path: "/DataPhoto",
     component: () => import("pages/DataPhoto.vue"),
   },
-  {
-    path: "/HostRegister2",
-    component: () => import("pages/HostRegister2.vue"),
-  },
+
   {
     path: "/DetailPage/:propertyid",
     props: true,
     component: () => import("pages/DetailPage.vue"),
   },
-  {
-    path: "/HostRegister3",
-    component: () => import("pages/HostRegister3.vue"),
-  },
-  {
-    path: "/HostRegister4",
-    component: () => import("pages/HostRegister4.vue"),
-  },
-  {
-    path: "/HostRegister5",
-    component: () => import("pages/HostRegister5.vue"),
-  },
-  {
-    path: "/HostRegister6",
-    component: () => import("pages/HostRegister6.vue"),
-  },
+
   {
     path: "/HostRegisterSuccess",
     component: () => import("pages/HostRegisterSuccess.vue"),

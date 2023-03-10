@@ -237,7 +237,7 @@
                 clickable
                 v-ripple
                 class="poppins-semibold"
-                @click="$router.push('/DashboardLayout'), createProperty"
+                @click="createProperty"
                 no-caps
                 style="
                   margin-top: 50px;
@@ -334,43 +334,11 @@ export default {
         const res = await this.$store.dispatch("CRUD/create", formData);
 
         console.log(res);
-        // const res = await axios.api({
-        //   method: "post",
-        //   url: `${this.$api}/list-property/create`,
-        //   data: formData,
-        //   headers: {
-        //     "Content-Type": `multipart/form-data;`,
-        //   },
-        // });
-        // const res = await axios.post(
-        //   `${this.$api}/list-property/create`,
-        //   formData,
-        //   {
-        //     headers: {
-        //       "Content-Type": `multipart/form-data;`,
-        //     },
-        //   }
-        // );
-
-        //   const res = await axios({
-        //     method: "post",
-        //     url: `${this.$api}/add-pet`,
-        //     data: formData,
-        //     headers: {
-        //       "Content-Type": `multipart/form-data;`,
-        //     },
-        //   });
-        //   console.log(res.data);
-        //   if (res.status == 200) {
-        //     this.$router.push({ name: "pet-list" });
-        //   }
-        // } catch (error) {
-        //   console.log(error);
-        // }
 
         console.log(res.data);
         if (res.status == 200) {
-          this.$router.push({ name: "Property-list" });
+          // this.$router.push({ name: "Property-list" });
+          this.$router.push("/DashboardLayout");
         }
       } catch (error) {
         console.log(error);
@@ -402,7 +370,7 @@ export default {
           value: 2,
         },
         {
-          label: "PLayground",
+          label: "Experiences",
           value: 3,
         },
       ],

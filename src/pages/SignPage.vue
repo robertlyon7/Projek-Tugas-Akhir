@@ -205,6 +205,7 @@ export default {
       this.$store
         .dispatch("User/register", this.credential)
         .then((res) => {
+          this.$router.push("/ListingLoggedIn");
           console.log("data Register", res);
         })
         .catch((err) => {
