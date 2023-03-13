@@ -39,7 +39,7 @@
                     border-radius: 10px;
                     margin-top: 35px;
                   "
-                  :src="`http://localhost:8000/images/${place.images[0].image}`"
+                  :src="`http://api.seele.my.id/images/${place.images[0].image}`"
                 />
               </div>
               <div class="col-8">
@@ -57,7 +57,7 @@
                     class="poppins-medium"
                     style="font-size: 16px; margin-top: 7px"
                   >
-                    {{ place.type_property.type_name }}
+                    {{ place.type_property?.type_name }}
                   </div>
                   <div
                     class="poppins-semibold"
@@ -106,7 +106,7 @@ export default {
       data: [],
     };
   },
-  created() {
+  mounted() {
     console.log("hai");
     this.$store
       .dispatch("CRUD/readAll")
@@ -130,6 +130,11 @@ export default {
           console.log(err);
         });
     },
+
+    updateProperty(id) {
+
+    },
+
     deleteItem(id) {
       axios
         .delete(`/list-property/destroy/{id}`)

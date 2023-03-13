@@ -67,6 +67,10 @@
             <q-form
               enctype="multipart/form-data"
               ref="element"
+              autocorrect="off"
+              autocapitalize="off"
+              autocomplete="off"
+              spellcheck="false"
               style="margin-left: 150px"
             >
               <h6
@@ -81,6 +85,7 @@
                 Property Name
               </h6>
               <q-input
+                clearable
                 name="name_property"
                 class="poppins-semibold"
                 style="
@@ -105,17 +110,19 @@
                 Property Description
               </h6>
               <q-input
+                clearable
                 name="description"
                 class="poppins-semibold"
                 style="
                   background-color: white;
                   border-radius: 10px;
-                  margin-bottom: 35px;
+                  margin-bottom: 130px;
                   width: 700px;
                   height: 60px;
                 "
                 outlined
                 v-model="PropertyDesc"
+                type="textarea"
               />
               <div class="q-gutter-md">
                 <h6
@@ -132,6 +139,7 @@
                 <q-input
                   name="price"
                   outlined
+                  clearable
                   v-model="Price"
                   mask="###.###.###.###"
                   type="number"
@@ -237,7 +245,7 @@
                 clickable
                 v-ripple
                 class="poppins-semibold"
-                @click="$router.push('/DashboardLayout'), createProperty"
+                @click="createProperty"
                 no-caps
                 style="
                   margin-top: 50px;
@@ -370,7 +378,8 @@ export default {
 
         console.log(res.data);
         if (res.status == 200) {
-          this.$router.push({ name: "Property-list" });
+          // this.$router.push({ name: "Property-list" });
+          this.$router.push("/DashboardLayout");
         }
       } catch (error) {
         console.log(error);
@@ -402,7 +411,7 @@ export default {
           value: 2,
         },
         {
-          label: "PLayground",
+          label: "Playground",
           value: 3,
         },
       ],

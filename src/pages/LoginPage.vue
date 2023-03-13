@@ -75,6 +75,11 @@
                     "
                     placeholder="Email"
                     filled
+                    lazy-rules
+                    :rules="[
+                      (val) =>
+                        (val && val.length > 0) || 'Please input your email address',
+                    ]"
                     v-model="this.credential.email"
                   >
                     <template v-slot:prepend>
@@ -85,6 +90,7 @@
                   <q-input
                     class="poppins-semibold"
                     style="
+                      border: none;
                       background-color: white;
                       border-radius: 20px;
                       width: 400px;
@@ -92,8 +98,13 @@
                       margin-bottom: 17px;
                     "
                     filled
+                    lazy-rules
                     placeholder="Password"
                     :type="isPwd ? 'password' : 'text'"
+                    :rules="[
+                      (val) =>
+                        (val && val.length > 0) || 'Please input your password',
+                    ]"
                     v-model="this.credential.password"
                   >
                     <template v-slot:prepend>
@@ -174,15 +185,33 @@ export default {
   },
 
   methods: {
+    onReset() {
+      email.value = null;
+      password.values = null;
+      accept.value = false;
+    },
+
     login() {
       console.log("store", this.$store);
       // console.log("credential", this.credential);
       this.$store
         .dispatch("User/login", this.credential)
         .then((res) => {
+          this.$q.notify({
+            color: "green-4",
+            textColor: "white",
+            icon: "verified",
+            message: "Login successful",
+          });
           this.$router.push("/ListingLoggedIn");
         })
         .catch((err) => {
+          this.$q.notify({
+            color: "red-5",
+            textColor: "white",
+            icon: "warning",
+            message: "Login failed. Your credentials did not match",
+          });
           console.log(err);
         });
     },

@@ -213,7 +213,7 @@
                 style="font-size: 25px"
                 v-if="this.property != null"
               >
-                Entire villa hosted by
+                Hosted by
                 <q-avatar class="items-center" style="margin-left: 600px">
                   <img
                     src="../assets/images/person.svg"
@@ -260,7 +260,7 @@
                   style="font-size: 18px"
                   v-if="this.property != null"
                 >
-                  {{ property.data.description }}
+                  {{ place.description }}
                 </div>
               </div>
               <div

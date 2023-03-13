@@ -205,9 +205,22 @@ export default {
       this.$store
         .dispatch("User/register", this.credential)
         .then((res) => {
+          this.$q.notify({
+            color: "green-4",
+            textColor: "white",
+            icon: "cloud_done",
+            message: "Sign up successful",
+          });
+          this.$router.push("/ListingLoggedIn");
           console.log("data Register", res);
         })
         .catch((err) => {
+          this.$q.notify({
+            color: "green-4",
+            textColor: "white",
+            icon: "cloud_done",
+            message: "Sign up failed",
+          });
           console.log("error Register", err);
         });
     },
