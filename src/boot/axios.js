@@ -26,3 +26,6 @@ export default boot(({ app, store }) => {
 });
 
 export { api };
+
+// api.seele.my.id
+// http://localhost:8000

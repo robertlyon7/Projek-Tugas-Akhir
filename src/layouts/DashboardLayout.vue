@@ -58,16 +58,6 @@
             <q-item-section> Home </q-item-section>
           </q-item>
 
-          <q-item clickable v-ripple @click="page = 2">
-            <q-item-section avatar>
-              <q-avatar round :class="page == 2 ? 'active' : 'inactive'">
-                <q-icon name="chat" />
-              </q-avatar>
-            </q-item-section>
-
-            <q-item-section> Chat </q-item-section>
-          </q-item>
-
           <q-item clickable v-ripple @click="page = 3">
             <q-item-section avatar>
               <q-avatar round :class="page == 3 ? 'active' : 'inactive'">
@@ -102,7 +92,7 @@
 
 <script>
 import componentHome from "../pages/DashboardHome.vue";
-import componentChat from "../pages/DashboardChat.vue";
+
 import componentOrder from "../pages/DashboardOrder.vue";
 import componentAccount from "../pages/DashboardAccount.vue";
 
@@ -118,7 +108,7 @@ export default {
   },
   components: {
     "component-home": componentHome,
-    "component-chat": componentChat,
+
     "component-order": componentOrder,
     "component-account": componentAccount,
   },

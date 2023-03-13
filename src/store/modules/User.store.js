@@ -11,6 +11,15 @@ const mutations = {
 };
 
 const actions = {
+  init({ commit }, credential) {
+    return new Promise((resolve, reject) => {
+      commit("set_auth", {
+        auth: localStorage.getItem("auth"),
+      });
+      api.defaults.headers.common.Authorization =
+        "Bearer" + " " + localStorage.getItem("auth");
+    });
+  },
   register({ commit }, credential) {
     console.log("ini api", api);
     return new Promise((resolve, reject) => {
@@ -33,6 +42,7 @@ const actions = {
           commit("set_auth", {
             auth: res.data,
           });
+          localStorage.setItem("auth", state.auth.token);
           api.defaults.headers.common.Accept = "application/json";
           api.defaults.headers.common.Authorization =
             "Bearer" + " " + state.auth.token;

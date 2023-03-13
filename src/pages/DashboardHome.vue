@@ -18,7 +18,7 @@
         </div>
       </div>
 
-      <div class="column">
+      <div class="column" style="margin-bottom: 20px">
         <div class="col-3" v-for="place in data" :key="place.id">
           <q-card
             class="q-ml-xl q-mt-md"
@@ -45,6 +45,7 @@
               <div class="col-8">
                 <div class="q-pl-md" style="padding-top: 70px">
                   <div class="poppins-semibold" style="font-size: 20px">
+                    <!-- {{ place.id }} -->
                     {{ place.name_property }}
                   </div>
                   <div
@@ -69,9 +70,11 @@
               </div>
               <div class="col">
                 <q-btn
+                  color="primary"
+                  @click="openDialog(data[place.id].id)"
+                  v-model="reff"
                   flat
                   round
-                  color="primary"
                   icon="edit"
                   style="margin-left: -130px; margin-top: 30px"
                 />
@@ -82,7 +85,7 @@
                   round
                   color="primary"
                   icon="delete"
-                  @click="deleteItem(place.id)"
+                  @click.prevent="postDelete(post.id)"
                   style="margin-left: -80px; margin-top: 30px"
                 />
               </div>
@@ -90,13 +93,68 @@
           </q-card>
         </div>
       </div>
+
+      <q-dialog v-model="alert">
+        <q-card class="my-card poppins-semibold">
+          <q-card-section>
+            <div class="text-h6">Edit Data</div>
+          </q-card-section>
+
+          <div v-for="(data, i) in formData" :key="i">
+            <p class="q-pt-md no-margin">{{ data.label }}</p>
+            <q-input
+              v-if="data.type == 'text'"
+              v-model="models[data.name]"
+              outlined
+              style="margin-top: 10px"
+            />
+
+            <q-select
+              v-if="data.type == 'select'"
+              v-model="models[data.name]"
+              outlined
+              style="margin-top: 10px"
+            />
+
+            <q-file
+              outlined
+              v-if="data.type == 'file'"
+              v-model="models[data.name]"
+              style="margin-top: 10px"
+            />
+          </div>
+
+          <!-- <q-card-section class="q-pt-none">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
+            repellendus sit voluptate voluptas eveniet porro. Rerum blanditiis
+            perferendis totam, ea at omnis vel numquam exercitationem aut, natus
+            minima, porro labore.
+          </q-card-section> -->
+
+          <q-card-actions align="right">
+            <q-btn
+              flat
+              label="SAVE"
+              color="#0C8CE9"
+              style="background-color: #0c8ce9; color: white"
+              v-close-popup
+            />
+          </q-card-actions>
+        </q-card>
+      </q-dialog>
     </q-page>
   </q-page-container>
 </template>
 <script>
 import axios from "axios";
-
+import { ref } from "vue";
 export default {
+  setup() {
+    return {
+      alert: ref(false),
+      address: ref(""),
+    };
+  },
   data() {
     return {
       intl: new Intl.NumberFormat("id-ID", {
@@ -104,9 +162,49 @@ export default {
         currency: "IDR",
       }),
       data: [],
+      models: {},
+      formData: [
+        {
+          label: "Nama properti",
+          name: "name_property",
+          type: "text",
+        },
+        {
+          label: "Deskripsi",
+          name: "description",
+          type: "text",
+        },
+        {
+          label: "Harga",
+          name: "price",
+          type: "text",
+        },
+        {
+          label: "Tipe Properti",
+          name: "type_property",
+          type: "text",
+        },
+        {
+          label: "Provinsi",
+          type: "select",
+          options: [],
+        },
+        {
+          label: "Kota",
+          name: "id_kota",
+          type: "select",
+          options: [],
+        },
+        {
+          label: "Foto properti",
+          name: "images",
+          type: "file",
+        },
+      ],
     };
   },
-  mounted() {
+  created() {
+    console.log(this.prompt);
     console.log("hai");
     this.$store
       .dispatch("CRUD/readAll")
@@ -118,7 +216,22 @@ export default {
         console.log("nice");
       });
   },
+
+  mounted() {
+    this.get_list_property_by_id();
+  },
+
   methods: {
+    async openDialog(dataById) {
+      this.alert = true;
+      try {
+        const res = await axios.get("http://localhost:8000/api/list-property");
+        console.log(res);
+      } catch (error) {
+        console.log(error);
+      }
+    },
+
     createProperty() {
       this.$store
         .dispatch("CRUD/create")
@@ -130,22 +243,56 @@ export default {
           console.log(err);
         });
     },
-
-    updateProperty(id) {
-
-    },
-
-    deleteItem(id) {
-      axios
-        .delete(`/list-property/destroy/{id}`)
-        .then((response) => {
-          // tindakan yang harus diambil jika berhasil
+    get_list_property_by_id() {
+      this.$store
+        .dispatch("Property/getListById", this.propertyid)
+        .then((res) => {
+          this.property = res.data;
+          // console.log("ini detail", this.property);
         })
-        .catch((error) => {
-          // tindakan yang harus diambil jika gagal
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+    // updateProperty(id) {
+    //   let formData = jsonToFormData(this.credential);
+    //   this.$store
+    //     .dispatch("CRUD/update", formData)
+    //     .then((res) => {
+    //       this.$q.notify({
+    //         type: "positive",
+    //         position: "top",
+    //         message: "Edit success",
+    //       });
+    //       this.valueSetter("componentMenu");
+    //     })
+    //     .catch((err) => {
+    //       this.$q.notify({
+    //         type: "negative",
+    //         position: "top",
+    //         message: "Edit failed",
+    //       });
+    //     });
+    // },
+
+    deleteProperty() {
+      this.$store
+        .dispatch("CRUD/delete")
+        .then((res) => {
+          console.log("success");
+        })
+        .catch((err) => {
+          console.log("failed");
+          console.log(err);
         });
     },
   },
 };
 </script>
-<style lang=""></style>
+<style>
+.my-card {
+  width: 100%;
+  max-width: 250px;
+  padding: 0 2rem;
+}
+</style>
