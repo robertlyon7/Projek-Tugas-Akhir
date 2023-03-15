@@ -275,7 +275,7 @@ export default {
   PropertyDesc: "",
   Price: "",
   Place: "",
-  filesImages: "",
+  filesImages: [],
   id_user: "",
   id_kota: "",
   models: {},
@@ -336,6 +336,10 @@ export default {
     async createProperty() {
       try {
         const formData = new FormData(this.$refs.element.$el);
+        formData.delete("images");
+        formData.set("images[]", ...this.filesImages);
+
+        console.log(formData);
 
         formData.append("id_user", localStorage.getItem("user_id"));
 

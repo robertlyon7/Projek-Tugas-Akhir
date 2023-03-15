@@ -76,7 +76,7 @@
                       v-close-popup
                       flat
                     />
-                    title
+                    Detail Property
                   </h6>
                 </div>
 
@@ -104,22 +104,12 @@
                 style="height: 150px; margin-left: 50px; margin-top: -78px"
               >
                 <div class="col poppins-semibold">
-                  <q-icon
-                    name="star"
-                    size="20px"
-                    style="
-                      padding-left: 110px;
-                      padding-bottom: 3px;
-                      padding-right: 4px;
-                    "
-                  />
-                  4.9
                   <p
                     class="poppins-medium"
                     style="margin-left: 170px; margin-top: -23px"
                     v-if="this.property != null"
                   >
-                    {{ property.data.location }}
+                    {{ place.data.location }}
                   </p>
                 </div>
               </div>
@@ -174,7 +164,7 @@
                 "
                 :ratio="16 / 9"
               />
-              <q-btn
+              <!-- <q-btn
                 clickable
                 v-ripple
                 @click="$router.push('/DataPhoto')"
@@ -190,7 +180,7 @@
                   width: 200px;
                   height: 50px;
                 "
-              />
+              /> -->
             </div>
           </div>
 
@@ -200,7 +190,7 @@
               style="margin-right: 170px"
               v-if="this.property"
             >
-              Rp {{ property.data.price }}/night
+              Rp {{ place.data.price }}/night
             </div>
           </div>
           <div style="margin-left: 150px">
@@ -213,7 +203,7 @@
                 style="font-size: 25px"
                 v-if="this.property != null"
               >
-                Hosted by
+                Hosted by {{ property.data.user.name }}
                 <q-avatar class="items-center" style="margin-left: 600px">
                   <img
                     src="../assets/images/person.svg"
@@ -263,67 +253,7 @@
                   {{ place.description }}
                 </div>
               </div>
-              <div
-                class="col poppins-medium"
-                style="font-size: 20px; margin-top: 30px"
-              >
-                What this place offers
-                <div style="margin-top: 30px">
-                  <q-item>
-                    <q-item-section avatar>
-                      <q-avatar text-color="black" icon="wifi" />
-                    </q-item-section>
-                    <q-item-section
-                      class="poppins-regular"
-                      style="font-size: 18px"
-                      >WiFi</q-item-section
-                    >
-                  </q-item>
-                  <q-item>
-                    <q-item-section avatar>
-                      <q-avatar text-color="black" icon="restaurant" />
-                    </q-item-section>
-                    <q-item-section
-                      class="poppins-regular"
-                      style="font-size: 18px"
-                      >Kitchen</q-item-section
-                    >
-                  </q-item>
-                  <q-item>
-                    <q-item-section avatar>
-                      <q-avatar text-color="black" icon="pool" />
-                    </q-item-section>
-                    <q-item-section
-                      class="poppins-regular"
-                      style="font-size: 18px"
-                      >Swimming pool</q-item-section
-                    >
-                  </q-item>
-                  <q-item style="margin-left: 300px; margin-top: -175px">
-                    <q-item-section avatar>
-                      <q-avatar
-                        text-color="black"
-                        icon="local_laundry_service"
-                      />
-                    </q-item-section>
-                    <q-item-section
-                      class="poppins-regular"
-                      style="font-size: 18px"
-                      >Laundry</q-item-section
-                    >
-                  </q-item>
-                  <q-item style="margin-left: 300px">
-                    <q-item-section avatar>
-                      <q-avatar text-color="black" icon="directions_car" />
-                    </q-item-section>
-                    <q-item-section
-                      class="poppins-regular"
-                      style="font-size: 18px"
-                      >Free car parking</q-item-section
-                    >
-                  </q-item>
-                </div>
-              </div>
+
               <div class="col poppins-medium" style="font-size: 20px">
                 Book Now
                 <div>

@@ -36,7 +36,7 @@
     >
       <q-scroll-area class="fit" :horizontal-thumb-style="{ opacity: 10 }">
         <q-list padding>
-          <q-item clickable v-ripple @click="page = 4">
+          <!-- <q-item clickable v-ripple @click="page = 4">
             <q-item-section avatar>
               <q-avatar round :class="page == 4 ? 'active' : 'inactive'">
                 <q-icon name="account_circle" />
@@ -44,7 +44,7 @@
             </q-item-section>
 
             <q-item-section> Account </q-item-section>
-          </q-item>
+          </q-item> -->
 
           <q-separator />
 

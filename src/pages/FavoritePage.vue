@@ -5,7 +5,7 @@
         <q-avatar
           clickable
           v-ripple
-          @click="$router.push('/')"
+          @click="$router.push('/ListingLoggedIn')"
           size="44px"
           style="margin-left: 150px"
         >
@@ -79,10 +79,10 @@
                 Your Favorites
               </h6>
             </q-banner>
-            <q-item >
+            <q-item>
               <div class="col">
                 <img
-                  src="../assets/images/detailimage.png"
+                  src="../assets/images/hotel-la-villa-tosca.jpg"
                   alt=""
                   style="
                     height: 250px;
@@ -97,25 +97,19 @@
                 <div class="column" style="height: 150px; margin-left: -60px">
                   <div class="col" style="margin-top: -40px">
                     <h6 class="col poppins-semibold" style="font-size: 18px">
-                      Resort in Lombok
+                      Tosca Room Cherak
                     </h6>
                     <h6
                       class="col poppins-regular"
                       style="font-size: 18px; margin-top: -50px"
                     >
-                      City Beach
-                    </h6>
-                    <h6
-                      class="col poppins-regular"
-                      style="font-size: 18px; margin-top: -50px"
-                    >
-                      1 king bed
+                      Semarang
                     </h6>
                     <h6
                       class="col poppins-medium"
                       style="font-size: 18px; margin-top: -50px"
                     >
-                      Rp 700.000,00 / night
+                      Rp 485.000,00 / night
                     </h6>
                     <div>
                       <q-btn
@@ -167,6 +161,7 @@
                             <q-btn
                               class="poppins-semibold"
                               label="Yes"
+                              @click="$router.push('/DeleteFavorite')"
                               v-close-popup
                               style="
                                 font-size: 18px;

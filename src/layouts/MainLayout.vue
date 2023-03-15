@@ -32,7 +32,48 @@
             Discover entire homes and private rooms<br />
             perfect for any trip.
           </div>
-          <q-card
+          <div
+            class="row poppins-semibold"
+            style="margin-top: 30px; margin-left: 15px"
+          >
+            <div class="col-4">
+              <q-btn
+                clickable
+                v-ripple
+                @click="$router.push('/SignPage')"
+                style="
+                  background: #0c8ce9;
+                  color: white;
+                  height: 50px;
+                  width: 150px;
+                  margin-left: 170px;
+                  font-size: 15px;
+                  border-radius: 20px;
+                "
+                label="Sign Up"
+                no-caps
+              />
+            </div>
+            <div class="col-8">
+              <q-btn
+                outline
+                clickable
+                v-ripple
+                @click="$router.push('/LoginPage')"
+                style="
+                  background: #0c8ce9;
+                  color: white;
+                  height: 50px;
+                  width: 170px;
+                  font-size: 18px;
+                  border-radius: 20px;
+                "
+                label="Log In"
+                no-caps
+              />
+            </div>
+          </div>
+          <!-- <q-card
             class="row"
             style="
               margin-right: -10px;
@@ -138,7 +179,7 @@
                 no-caps
               />
             </q-card-section>
-          </q-card>
+          </q-card> -->
         </div>
         <div class="col-4">
           <q-img

@@ -227,7 +227,7 @@
                         class="poppins-semiblod"
                         style="margin-bottom: 20px; font-size: 24px"
                       >
-                        Where Are You Goin ?
+                        Where Are You Going ?
                       </p>
 
                       <q-input
@@ -410,7 +410,7 @@
                         color="red"
                         size="50px"
                         style="margin-top: -490px"
-                        v-model="val"
+                        v-model="val[0][place.id]"
                         checked-icon="favorite"
                         unchecked-icon="favorite_border"
                         indeterminate-icon="help"
@@ -422,11 +422,11 @@
                     <div class="row">
                       <div
                         class="col-6 poppins-semibold"
-                        style="margin-bottom: 5px; font-size: 20px"
+                        style="margin-bottom: 5px; font-size: 18px"
                       >
                         {{ place.name_property }}
                       </div>
-                      <div class="col-6 poppins-semibold">
+                      <!-- <div class="col-6 poppins-semibold">
                         <q-icon
                           name="star"
                           size="20px"
@@ -437,13 +437,7 @@
                           "
                         />
                         4.9
-                      </div>
-                    </div>
-                    <div
-                      class="text-h9 poppins-semibold"
-                      style="margin-bottom: 5px"
-                    >
-                      {{ place.id_kota }}
+                      </div> -->
                     </div>
                     <div class="text-h8 poppins-semibold">
                       {{ `${intl.format(place.price)} / night` }}
@@ -556,17 +550,18 @@ const linksList = [
 export default defineComponent({
   name: "MainLayout",
 
-  mounted() {
+  created() {
     this.get_list_property();
   },
 
-  computed: {
-    // ...mapState(["User"]),
-  },
+  mounted() {},
+
+  computed: {},
 
   data() {
     return {
       listState: null,
+      val: [],
       orang: null,
       intl: new Intl.NumberFormat("id-ID", {
         style: "currency",
@@ -580,9 +575,7 @@ export default defineComponent({
     logout() {
       axios
         .post("/api/logout")
-        .then(() => {
-
-        })
+        .then(() => {})
         .catch((error) => {
           console.error(error);
         });
@@ -600,7 +593,15 @@ export default defineComponent({
         .dispatch("Property/getList")
         .then((res) => {
           this.listState = res.data;
-          console.log("res", res.data);
+          const val = res.data.data.data;
+          console.log(val);
+          var valueData = {};
+          val.forEach((e) => {
+            console.log(e.id);
+            valueData[e.id] = false;
+          });
+          this.val.push(valueData);
+          console.log(this.val);
         })
         .catch((err) => {
           console.log(err);
@@ -640,7 +641,6 @@ export default defineComponent({
       dryer: ref(true),
       Air_Conditioning: ref(true),
       heating: ref(false),
-      val: ref(false),
       basic: ref(false),
       fixed: ref(false),
       dialog: ref(false),

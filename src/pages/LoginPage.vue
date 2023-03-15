@@ -78,7 +78,8 @@
                     lazy-rules
                     :rules="[
                       (val) =>
-                        (val && val.length > 0) || 'Please input your email address',
+                        (val && val.length > 0) ||
+                        'Please input your email address',
                     ]"
                     v-model="this.credential.email"
                   >
@@ -119,7 +120,7 @@
                       />
                     </template>
                   </q-input>
-
+                  <!--
                   <span
                     clickable
                     v-ripple
@@ -127,7 +128,7 @@
                     class="text-center poppins-semibold"
                     style="color: white; font-size: 16px; cursor: pointer"
                     >Forgot Password?</span
-                  >
+                  > -->
 
                   <div>
                     <q-btn
@@ -144,7 +145,7 @@
                         border-radius: 20px;
                         width: 400px;
                         height: 50px;
-
+                        margin-top: 20px;
                         margin-bottom: 5px;
                       "
                       @click="login()"

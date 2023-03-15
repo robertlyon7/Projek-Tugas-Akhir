@@ -150,11 +150,11 @@
             <q-dialog v-model="alert">
               <q-card
                 class="my-card hide-scrollbar"
-                style="border-radius: 50px; height: 350px"
+                style="border-radius: 50px; height: 350px; width: 750px"
               >
                 <q-card-section
                   class="row items-center"
-                  style="background-color: #050d21"
+                  style="background-color: #050d21; widows: 750px"
                 >
                   <q-btn icon="close" style="color: white" v-close-popup />
                 </q-card-section>

@@ -67,6 +67,10 @@ const routes = [
     component: () => import("pages/TripsPage.vue"),
   },
   {
+    path: "/DeleteFavorite",
+    component: () => import("pages/DeleteFavorite.vue"),
+  },
+  {
     path: "/TripsDetail",
     component: () => import("pages/TripsDetail.vue"),
   },

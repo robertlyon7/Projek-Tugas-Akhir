@@ -329,7 +329,17 @@ export default defineComponent({
         .dispatch("Property/getList")
         .then((res) => {
           this.listState = res.data;
-          console.log("res", res.data);
+          const val = res.data.data.data;
+          console.log(val);
+          var valueData = {
+            name: "isTrue",
+          };
+          val.forEach((e) => {
+            console.log(e.id);
+            valueData[e.id] = false;
+          });
+          this.val.push(valueData);
+          console.log(this.val);
         })
         .catch((err) => {
           console.log(err);

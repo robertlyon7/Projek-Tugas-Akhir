@@ -5,7 +5,7 @@ import axios from "axios";
 
 const api = axios.create({ baseURL: "http://api.seele.my.id/" });
 
-  // api = http://api.seele.my.id/
+// api = http://api.seele.my.id/
 
 export default boot(({ app, store }) => {
   // for use inside Vue files (Options API) through this.$axios and this.$api
