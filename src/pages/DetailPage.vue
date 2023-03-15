@@ -395,7 +395,7 @@
                               class="poppins-medium"
                               label="Check out date"
                               outlined
-                              v-model="date"
+                              v-model="date2"
                               mask="date"
                               :rules="['date']"
                             >
@@ -406,7 +406,7 @@
                                     transition-show="scale"
                                     transition-hide="scale"
                                   >
-                                    <q-date v-model="date">
+                                    <q-date v-model="date2">
                                       <div class="row items-center justify-end">
                                         <q-btn
                                           v-close-popup
@@ -437,31 +437,16 @@
                       <div class="row">
                         <div class="col">
                           <q-input
-                            label="adult"
+                            label="Guest"
                             class="row poppins-regular"
                             v-model.number="modelAdult"
                             type="number"
                             outlined
                             style="
                               font-size: 22px;
-                              width: 266px;
+                              width: 535px;
                               height: 78px;
                               margin-left: 15px;
-                            "
-                          />
-                        </div>
-                        <div class="col">
-                          <q-input
-                            label="kids"
-                            class="row poppins-regular"
-                            v-model.number="modelKids"
-                            type="number"
-                            outlined
-                            style="
-                              font-size: 22px;
-                              width: 266px;
-                              height: 78px;
-                              margin-left: -3px;
                             "
                           />
                         </div>
@@ -740,6 +725,7 @@ export default {
     return {
       val: ref(false),
       date: ref("2019/02/01"),
+      date2: ref("2019/02/01"),
       model: ref(null),
       options: ["q", "w", "e", "r", "t"],
     };
