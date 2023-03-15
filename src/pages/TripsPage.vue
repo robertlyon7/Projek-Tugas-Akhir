@@ -76,6 +76,15 @@
                 class="poppins-semibold"
                 style="margin-left: 150px; margin-top: -50px; font-size: 28px"
               >
+                <q-btn
+                  clickable
+                  v-ripple
+                  @click="$router.push('/ListingLoggedIn')"
+                  icon="chevron_left"
+                  style="color: black"
+                  v-close-popup
+                  flat
+                />
                 Your Trips
               </h6>
             </q-banner>

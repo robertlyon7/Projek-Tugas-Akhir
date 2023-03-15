@@ -67,6 +67,10 @@
             <q-form
               enctype="multipart/form-data"
               ref="element"
+              autocorrect="off"
+              autocapitalize="off"
+              autocomplete="off"
+              spellcheck="false"
               style="margin-left: 150px"
             >
               <h6
@@ -81,6 +85,7 @@
                 Property Name
               </h6>
               <q-input
+                clearable
                 name="name_property"
                 class="poppins-semibold"
                 style="
@@ -105,17 +110,19 @@
                 Property Description
               </h6>
               <q-input
+                clearable
                 name="description"
                 class="poppins-semibold"
                 style="
                   background-color: white;
                   border-radius: 10px;
-                  margin-bottom: 35px;
+                  margin-bottom: 130px;
                   width: 700px;
                   height: 60px;
                 "
                 outlined
                 v-model="PropertyDesc"
+                type="textarea"
               />
               <div class="q-gutter-md">
                 <h6
@@ -132,6 +139,7 @@
                 <q-input
                   name="price"
                   outlined
+                  clearable
                   v-model="Price"
                   mask="###.###.###.###"
                   type="number"

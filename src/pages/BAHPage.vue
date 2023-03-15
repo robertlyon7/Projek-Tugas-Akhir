@@ -78,7 +78,7 @@
           <q-btn
             clickable
             v-ripple
-            @click="$router.push('/DashboardLayout')"
+            @click="$router.push('/SignPage')"
             class="poppins-semibold"
             label="Become A Host"
             no-caps

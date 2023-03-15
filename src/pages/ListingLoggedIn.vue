@@ -252,10 +252,10 @@
                       class="text-h9 poppins-semibold"
                       style="margin-bottom: 5px"
                     >
-                      {{ place.location }}
+                      {{ place.id_kota }}
                     </div>
                     <div class="text-h8 poppins-semibold">
-                      Rp {{ place.price }} / night
+                      {{ `${intl.format(place.price)} / night` }}
                     </div>
                   </q-card-section>
                 </q-card>
@@ -377,7 +377,11 @@ export default defineComponent({
     return {
       listState: null,
       orang: null,
-      // imageLink: "http://api.seele.my.id//public/images/",
+      intl: new Intl.NumberFormat("id-ID", {
+        style: "currency",
+        currency: "IDR",
+      }),
+      data: [],
     };
   },
 
@@ -386,7 +390,7 @@ export default defineComponent({
       axios
         .post("/api/logout")
         .then(() => {
-          // Redirect the user to the login page or update the UI accordingly.
+
         })
         .catch((error) => {
           console.error(error);

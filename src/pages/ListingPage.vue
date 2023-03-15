@@ -164,7 +164,7 @@
               <div
                 class="col-3 q-pa-md"
                 v-for="place in listState.data.data"
-                :key="place"
+                :key="place.id"
               >
                 <q-card
                   class="q-ma-sm"
@@ -217,10 +217,10 @@
                       class="text-h9 poppins-semibold"
                       style="margin-bottom: 5px"
                     >
-                      {{ place.location }}
+                      {{ place.id_kota }}
                     </div>
                     <div class="text-h8 poppins-semibold">
-                      Rp {{ place.price }} / night
+                      {{ `${intl.format(place.price)} / night` }}
                     </div>
                   </q-card-section>
                 </q-card>
@@ -235,74 +235,6 @@
         </div>
       </q-page-container>
 
-      <!-- <q-page-container style="padding-top: 1px; padding-bottom: 100px">
-        <div class="q-pa-md">
-          <div class="row justify-center q-gutter-sm">
-            <q-intersection
-              v-for="index in 20"
-              :key="index"
-              transition="scale"
-              class="example-item"
-            >
-              <q-card
-                class="q-ma-sm"
-                style="border-radius: 25px"
-                clickable
-                v-ripple
-                @click="$router.push('/DetailPage')"
-              >
-                <img src="https://cdn.quasar.dev/img/mountains.jpg" />
-
-                <div id="q-app" style="height: 1vh; margin-left: 290px">
-                  <div class="q-pa-md">
-                    <q-checkbox
-                      color="red"
-                      size="50px"
-                      style="margin-top: -490px"
-                      v-model="val"
-                      checked-icon="favorite"
-                      unchecked-icon="favorite_border"
-                      indeterminate-icon="help"
-                    ></q-checkbox>
-                  </div>
-                </div>
-
-                <q-card-section>
-                  <div class="row">
-                    <div
-                      class="col-6 text-h6 poppins-semibold"
-                      style="margin-bottom: 5px"
-                    >
-                      Villa Tabanan
-                    </div>
-                    <div class="col-6 poppins-semibold">
-                      <q-icon
-                        name="star"
-                        size="20px"
-                        style="
-                          padding-left: 110px;
-                          padding-bottom: 3px;
-                          padding-right: 4px;
-                        "
-                      />
-                      4.9
-                    </div>
-                  </div>
-                  <div
-                    class="text-h9 poppins-semibold"
-                    style="margin-bottom: 5px"
-                  >
-                    Bali, Indonesia
-                  </div>
-                  <div class="text-h8 poppins-semibold">
-                    Rp 1.500.000,00 / night
-                  </div>
-                </q-card-section>
-              </q-card>
-            </q-intersection>
-          </div>
-        </div>
-      </q-page-container> -->
       <!--footer-->
       <q-footer reveal style="height: 100px">
         <q-toolbar style="padding-top: 40px; padding-left: 40px">
@@ -356,6 +288,16 @@ const linksList = [];
 
 export default defineComponent({
   name: "MainLayout",
+
+  data() {
+    return {
+      intl: new Intl.NumberFormat("id-ID", {
+        style: "currency",
+        currency: "IDR",
+      }),
+      data: [],
+    };
+  },
 
   mounted() {
     this.get_list_property();
