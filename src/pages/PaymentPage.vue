@@ -1,5 +1,5 @@
 <template>
-  <q-layout container style="height: 2100px">
+  <q-layout container style="height: 915px">
     <q-header elevated>
       <q-toolbar>
         <q-avatar
@@ -31,15 +31,15 @@
             style="margin-right: 150px"
           >
             <q-list class="poppins-semibold">
-              <q-item clickable v-ripple @click="$router.push('/SignPage')">
+              <q-item clickable v-ripple @click="$router.push('/TripsPage')">
                 <q-item-section>
-                  <q-item-section>Sign Up</q-item-section>
+                  <q-item-section>Trips</q-item-section>
                 </q-item-section>
               </q-item>
 
-              <q-item clickable v-ripple @click="$router.push('/LoginPage')">
+              <q-item clickable v-ripple @click="$router.push('/FavoritePage')">
                 <q-item-section>
-                  <q-item-label>Login</q-item-label>
+                  <q-item-label>Favorites</q-item-label>
                 </q-item-section>
               </q-item>
 
@@ -47,9 +47,37 @@
                 style="margin-left: 10px; margin-right: 10px; color: black"
               />
 
-              <q-item clickable v-ripple @click="$router.push('/BAHPage')">
+              <q-item clickable v-ripple @click="$router.push('/AccountPage')">
+                <q-item-section>
+                  <q-item-label>Account</q-item-label>
+                </q-item-section>
+              </q-item>
+
+              <q-separator
+                style="margin-left: 10px; margin-right: 10px; color: black"
+              />
+
+              <q-item
+                clickable
+                v-ripple
+                @click="$router.push('/DashboardLayout')"
+              >
                 <q-item-section>
                   <q-item-label>Become A Host</q-item-label>
+                </q-item-section>
+              </q-item>
+
+              <q-separator
+                style="margin-left: 10px; margin-right: 10px; color: black"
+              />
+
+              <q-item
+                clickable
+                v-ripple
+                @click="this.$router.push(`DetailPage/${place.id}`)"
+              >
+                <q-item-section>
+                  <q-item-label @click="logout">Log Out</q-item-label>
                 </q-item-section>
               </q-item>
             </q-list>
@@ -68,7 +96,7 @@
                     <q-btn
                       clickable
                       v-ripple
-                      @click="$router.push('/DetailPage')"
+                      @click="$router.push('/ListingLoggedIn')"
                       icon="chevron_left"
                       style="color: black"
                       v-close-popup
@@ -125,7 +153,7 @@
                   borderless
                   class="poppins-medium"
                   label="Check Out date"
-                  v-model="date"
+                  v-model="date2"
                   mask="date"
                   :rules="['date']"
                   style="margin-right: 50px"
@@ -137,7 +165,7 @@
                         transition-show="scale"
                         transition-hide="scale"
                       >
-                        <q-date v-model="date">
+                        <q-date v-model="date2">
                           <div class="row items-center justify-end">
                             <q-btn
                               v-close-popup
@@ -156,143 +184,18 @@
                 </h6>
                 <q-input
                   borderless
-                  label="adult"
+                  label="Guest"
                   class="row poppins-regular"
                   v-model.number="modelAdult"
                   type="number"
                   style="font-size: 22px; width: 367px; height: 78px"
                 />
-                <q-input
-                  borderless
-                  label="kids"
-                  class="row poppins-regular"
-                  v-model.number="modelKids"
-                  type="number"
-                  style="font-size: 22px; width: 367px; height: 78px"
-                />
-
-                <h6 class="poppins-medium" size="30px">Extra Features</h6>
-                <div>
-                  <div class="q-gutter-sm" style="margin-bottom: 20px">
-                    <q-checkbox v-model="chef" label="Chef" color="blue" />
-                    <br />
-                    <q-checkbox v-model="maid" label="Maid" color="blue" />
-                    <br />
-                    <q-checkbox v-model="beds" label="Beds" color="blue" />
-                  </div>
-                </div>
-
-                <h6 class="poppins-medium" size="30px">Pay with</h6>
-
-                <q-select
-                  class="poppins-medium"
-                  label="Payment Method"
-                  outlined
-                  v-model="model"
-                  :options="options"
-                  :dense="dense"
-                  :options-dense="denseOpts"
-                  style="margin-top: -20px; margin-right: 50px"
-                >
-                  <template v-slot:prepend>
-                    <q-icon name="credit_card" />
-                  </template>
-                </q-select>
-                <q-input
-                  class="poppins-medium"
-                  size="26px"
-                  outlined
-                  v-model="card_number"
-                  placeholder="Card number"
-                  :dense="dense"
-                  style="margin-right: 50px; margin-top: 35px"
-                />
-                <q-input
-                  class="poppins-medium"
-                  size="26px"
-                  outlined
-                  v-model="exp"
-                  placeholder="Exp date"
-                  :dense="dense"
-                  style="margin-right: 390px"
-                />
-                <q-input
-                  class="poppins-medium"
-                  size="26px"
-                  outlined
-                  v-model="cvv"
-                  placeholder="CVV"
-                  :dense="dense"
-                  style="
-                    margin-left: 320px;
-                    margin-right: 50px;
-                    margin-top: -56px;
-                  "
-                />
-                <h6 class="poppins-regular" size="28px">Billing address</h6>
-                <q-input
-                  class="poppins-medium"
-                  size="26px"
-                  outlined
-                  v-model="sa"
-                  placeholder="Street address"
-                  :dense="dense"
-                  style="margin-right: 50px; margin-top: 50px"
-                />
-                <q-input
-                  class="poppins-medium"
-                  size="26px"
-                  outlined
-                  v-model="apt"
-                  placeholder="Apt or suite number"
-                  :dense="dense"
-                  style="margin-right: 50px"
-                />
-                <q-input
-                  class="poppins-medium"
-                  size="26px"
-                  outlined
-                  v-model="city"
-                  placeholder="City"
-                  :dense="dense"
-                  style="margin-right: 50px"
-                />
-                <q-input
-                  class="poppins-medium"
-                  size="26px"
-                  outlined
-                  v-model="state"
-                  placeholder="State"
-                  :dense="dense"
-                  style="margin-right: 390px"
-                />
-                <q-input
-                  class="poppins-medium"
-                  size="26px"
-                  outlined
-                  v-model="zip"
-                  placeholder="Zip code"
-                  :dense="dense"
-                  style="
-                    margin-left: 320px;
-                    margin-right: 50px;
-                    margin-top: -56px;
-                  "
-                />
-                <h6 class="poppins-medium" size="30px">Enter promo code</h6>
-                <q-input
-                  class="poppins-medium"
-                  size="26px"
-                  outlined
-                  v-model="xxxx"
-                  placeholder="xxxx-xxxx-xxxx"
-                  style="border-radius: 30px; margin-right: 50px"
-                />
 
                 <q-btn
+                  id="pay-button"
                   clickable
                   v-ripple
-                  @click="$router.push('/CompletedPage')"
+                  @click="pay"
                   class="poppins-semibold"
                   no-caps
                   label="Confirm and pay"
@@ -303,7 +206,7 @@
                     width: 370px;
                     height: 30px;
                     font-size: 20px;
-                    margin-top: 77px;
+                    margin-top: 66px;
                   "
                 />
               </div>
@@ -312,7 +215,7 @@
                 <q-card
                   class="my-card"
                   style="
-                    height: 510px;
+                    height: 460px;
                     width: 500px;
                     margin-left: 30px;
                     border-radius: 30px;
@@ -363,7 +266,7 @@
                         </div>
                         <div
                           class="col"
-                          style="margin-top: 60px; margin-bottom: 18px"
+                          style="margin-top: 20px; margin-bottom: 18px"
                         >
                           <h6 class="poppins-regular" style="font-size: 18px">
                             1.300.000 x 2 nights
@@ -371,15 +274,13 @@
                         </div>
                         <div
                           class="col"
-                          style="margin-top: 25px; margin-bottom: 20px"
+                          style="margin-top: 20px; margin-bottom: 20px"
                         >
-                          <h6 class="poppins-regular" style="font-size: 18px">
+                          <h6
+                            class="poppins-regular"
+                            style="font-size: 18px; margin-top: 30px"
+                          >
                             Service fee
-                          </h6>
-                        </div>
-                        <div class="col" style="margin-top: 25px">
-                          <h6 class="poppins-regular" style="font-size: 18px">
-                            Promo
                           </h6>
                         </div>
                       </div>
@@ -404,24 +305,20 @@
                         <div class="col">
                           <h6
                             class="poppins-regular"
-                            style="font-size: 18px; text-align: right"
+                            style="
+                              font-size: 18px;
+                              text-align: right;
+                              margin-top: 25px;
+                            "
                           >
                             400.000
-                          </h6>
-                        </div>
-                        <div class="col">
-                          <h6
-                            class="poppins-regular"
-                            style="font-size: 18px; text-align: right"
-                          >
-                            -150.000
                           </h6>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <q-separator color="black" inset style="margin-top: 55px" />
-                  <div class="row">
+                  <q-separator color="black" inset style="margin-top: 10px" />
+                  <div class="row" style="margin-top: -10px">
                     <div
                       class="col poppins-medium"
                       style="
@@ -441,7 +338,7 @@
                         margin-top: 40px;
                       "
                     >
-                      3.850.000
+                      3.000.000
                     </div>
                   </div>
                 </q-card>
@@ -475,10 +372,18 @@ export default {
       xxxx: ref(""),
       dense: ref(false),
       val: ref(true),
-      date: ref("2019/02/01"),
+      date: ref("2023/03/01"),
+      date2: ref("2023/03/01"),
       model: ref(null),
       options: ["Credit or debit card", "OVO", "Gopay"],
     };
+  },
+  created() {},
+  methods: {
+    pay() {
+      console.log("payment");
+      window.snap.pay("67fda727-fddc-440f-b761-1ab0de01e6fe");
+    },
   },
 };
 </script>

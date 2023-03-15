@@ -2,7 +2,7 @@
   <div class="navbar navbar_open">
     <q-layout container style="height: 999px">
       <!--header-->
-      <q-header elevated>
+      <q-header elevated style="display: flex">
         <q-toolbar>
           <q-avatar
             clickable
@@ -145,7 +145,7 @@
       <!--header-->
 
       <!--page c-->
-      <q-page-container style="padding-bottom: 1px">
+      <q-page-container style="padding-bottom: 1px; display: flex">
         <div class="navbar navbar_open">
           <q-banner inline-actions class="bg-white text-black">
             <h6 class="poppins-semibold" style="margin-left: 150px">
@@ -175,7 +175,7 @@
                 >
                   <q-img
                     style="width: 365px; height: 250px"
-                    :src="`http://localhost:8000/images/${place.images[0].image}`"
+                    :src="`http://api.seele.my.id/images/${place.images[0].image}`"
                   />
 
                   <div id="q-app" style="height: 1vh; margin-left: 290px">
@@ -196,7 +196,7 @@
                     <div class="row">
                       <div
                         class="col-6 poppins-semibold"
-                        style="margin-bottom: 5px; font-size: 20px"
+                        style="margin-bottom: 5px; font-size: 18px"
                       >
                         {{ place.name_property }}
                       </div>
